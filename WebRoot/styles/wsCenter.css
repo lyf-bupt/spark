@@ -1,0 +1,147 @@
+body{
+  font-family: Arial Unicode MS,Arial,Helvetica;
+  font-size: 10pt;
+  border: none;
+  margin: 0px;
+  color: #000;
+}
+a{
+  color:#000;
+  text-decoration: none;
+  cursor: default;
+}
+a:hover{
+  background-color: #eee;
+}
+table{
+  border-spacing: 0px;
+  font-size: 15px;
+  width: 100%;
+  border:0;
+  align:center;
+}
+thead{
+  align:left;
+}
+tbody{
+  color:#444;
+}
+.logo{
+  width:127px;
+  height:68px;
+  display: inline-block;
+}
+.title{
+  height: 32px;
+  padding: 2px;
+  font-size: 18pt;
+  color: rgb(47, 164, 231);
+  display: inline-block;
+  left:140px;
+  position: absolute;
+}
+.tabs{
+  height: 32px;
+  padding: 2px;
+  display: inline-block;
+  left:140px;
+  top:35px;
+  position: absolute;
+}
+.tabs a{
+  float: left;
+  padding: 4px 12px 5px 10px;
+  width: 60px;
+  font-size: 14px;
+  text-align:left;
+}
+.active{
+  color:orange;
+}
+.panel{
+  width: 100%;
+}
+.menu{
+  width:140px;
+  display: inline-block;
+  float: left;
+}
+.monitor{
+  position: absolute;
+  display: inline-block;
+  float: left;
+  margin:50px;
+  right:0;
+  left:140px;
+  overflow: auto;
+  bottom: 0;
+  top:71px;
+}
+.underLine{
+  border-bottom: 2px solid orange;
+}
+.menu ul{
+  list-style-type:none;
+  padding-left: 20px;
+  margin-top: 100px;
+  font-size: 18px;
+  margin-right: 20px;
+}
+.menu ul li{
+  padding:20px 10px 0 0;
+}
+.monitor table td{
+  padding:15px 0;
+  border-bottom: 1px solid #999;
+}
+.monitor tbody tr:hover{
+  background-color: rgba(255,165,0,0.1);
+}
+table caption{
+  font-size: 20px;
+}
+.flag{
+  height:15px;
+  width:15px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.stop{
+  background-color: red;
+}
+.pedding{
+  background-color: orange;
+}
+.running{
+  background-color: #4aaa4a;
+}
+.bootButton{
+  background-color: #18b4ed;
+  color:#fff;
+}
+.bootButton:hover{
+  background-color: #0997cc;
+}
+.stopButton{
+  background-color: rgba(255,165,0,0.7);
+  color:#fff;
+}
+.stopButton:hover{
+  background-color: rgba(255,165,0,1);
+}
+.btn{
+  border: 1px solid transparent;
+  padding:6px 12px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+  outline: none;
+}
+.btn:visted{
+  outline: none;
+}
+.btn-disable{
+  background-color: #eee;
+  color:white;
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name></display-name>
+ 
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ExportServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.ExportServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>ExportServlet</servlet-name>
+    <url-pattern>export</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OpenServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.OpenServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>OpenServlet</servlet-name>
+    <url-pattern>open</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SaveServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.SaveServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>SaveServlet</servlet-name>
+    <url-pattern>save</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GenerateSparkServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.GenerateSparkServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>GenerateSparkServlet</servlet-name>
+    <url-pattern>genSpark</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CodeAndResultServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.CodeAndResultServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>CodeAndResultServlet</servlet-name>
+    <url-pattern>code</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>CodeAndResultServlet</servlet-name>
+    <url-pattern>result</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>CodeAndResultServlet</servlet-name>
+    <url-pattern>init</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TopicServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.TopicServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>TopicServlet</servlet-name>
+    <url-pattern>topic</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WebServiceServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.WebServiceServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>WebServiceServlet</servlet-name>
+    <url-pattern>webservice</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GennerateJavaServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.GennerateJavaServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>GennerateJavaServlet</servlet-name>
+    <url-pattern>genJava</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GennerateWSServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.GennerateWebServiceServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>GennerateWSServlet</servlet-name>
+    <url-pattern>genWS</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddProjectServlet</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.AddProjectServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>AddProjectServlet</servlet-name>
+    <url-pattern>newProject</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>wsCenter</servlet-name>
+    <servlet-class>com.mxgraph.example.WSCenter.WSCenterServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>wsCenter</servlet-name>
+    <url-pattern>wsCenter</url-pattern>
+  </servlet-mapping>
+ 
+  <welcome-file-list>
+    <welcome-file>../index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

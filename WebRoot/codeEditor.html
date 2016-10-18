@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/src-noconflict/ace.js"></script>
+	<script type="text/javascript" src="js/src-noconflict/mode-java.js"></script>
+	<script type="text/javascript" src="js/src-noconflict/theme-eclipse.js"></script>
+	<style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+  </style>
+</head>
+<body>
+	<div id="editor">public class name{
+    public int add(int num){
+        return num+100;
+    }
+    public int minus(int num){
+        return num-100;
+    }
+}</div>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/eclipse");
+    		editor.session.setMode("ace/mode/java");
+    		editor.setHighlightActiveLine(true);
+      	editor.setOption("enableBasicAutocompletion",true);
+      	editor.setOption("spellcheck",true);
+    		editor.commands.addCommand({
+		    	name: 'myCommand',
+		    	bindKey: {win: 'Ctrl-M',  mac: 'Command-M'},
+		    	exec: function(editor) {
+		        alert(getEditorValue());
+		    },
+		    readOnly: true // false if this command should not apply in readOnly mode
+		});
+        function getEditorValue(){
+            return editor.getValue();
+        }
+
+    </script>
+
+</body>
+</html>
