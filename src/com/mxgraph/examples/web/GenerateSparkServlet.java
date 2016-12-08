@@ -172,7 +172,7 @@ public class GenerateSparkServlet extends HttpServlet
 				
 				response.setContentType("text/html;charset=GB2312");
 				PrintWriter out = response.getWriter();
-				//打包提交线程池，虽然没什么卵用
+				//打包提交线程池
 				ExecutorService pool = Executors.newFixedThreadPool(5);
 				
 				//调试中...............
