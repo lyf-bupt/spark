@@ -132,7 +132,7 @@
     <url-pattern>newProject</url-pattern>
   </servlet-mapping>
   
-      <servlet>
+  <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>wsCenter</servlet-name>
@@ -142,6 +142,18 @@
   <servlet-mapping>
     <servlet-name>wsCenter</servlet-name>
     <url-pattern>wsCenter</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>monitor</servlet-name>
+    <servlet-class>com.mxgraph.example.monitor.MonitorServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>monitor</servlet-name>
+    <url-pattern>monitor</url-pattern>
   </servlet-mapping>
  
   <welcome-file-list>

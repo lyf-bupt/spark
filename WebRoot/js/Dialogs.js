@@ -1232,6 +1232,25 @@ function SourceDialog(editorUi,req)
 	td = document.createElement('td');
 	td.style.fontSize = '10pt';
 	td.style.width = '100px';
+	mxUtils.write(td, "数据源类型" + ':');
+	row.appendChild(td);
+	td = document.createElement('td');
+	var type = document.createElement('select');
+	['内置数据源','kafka','发布订阅','数据库'].map(x=>{
+		var option = document.createElement('option');
+		option.innerHTML=x;
+		type.appendChild(option);
+	})
+	type.style.width = '180px';
+	td.appendChild(type);
+	row.appendChild(td);
+	tbody.appendChild(row);
+
+	row = document.createElement('tr');
+
+	td = document.createElement('td');
+	td.style.fontSize = '10pt';
+	td.style.width = '100px';
 	mxUtils.write(td, "数据源" + ':');
 
 	row.appendChild(td);
@@ -1391,6 +1410,14 @@ function webServiceDialog(editorUi,req)
 		editorUi.hideDialog();
 		editorUi.showDialog(new codeEditorDialog(editorUi).container, 520, 500, true, true);
 	});
+	var SCABtn = mxUtils.button("SCA", function()
+	{
+		var cell = graph.getSelectionCell();
+		editorUi.hideDialog();
+		$.get("http://localhost:9005")
+		console.log(window.status);
+	});
+	td.appendChild(SCABtn);
 	td.appendChild(customBtn);
 	row.appendChild(td);
 	tbody.appendChild(row);

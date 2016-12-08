@@ -46,6 +46,10 @@ public class Constants
 	public static Vector<Process> processVec = null;//启动页面上新建的webservice的进程
 	
 	public static boolean hookFlag = false;
+	
+	public static String LOCAL_HOST= "";
+	
+	
 
 	/**
 	 * Initializes the empty image.
@@ -67,6 +71,7 @@ public class Constants
 			JAR_LOCATION = prop.getProperty("JarLocation").trim();
 			WSN_CORE = prop.getProperty("wsnCore").trim();
 			processVec = new Vector<Process>();
+			LOCAL_HOST= prop.getProperty("localhost").trim();
 		}
 		catch (Exception e)
 		{

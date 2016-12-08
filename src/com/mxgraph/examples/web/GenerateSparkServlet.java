@@ -124,7 +124,7 @@ public class GenerateSparkServlet extends HttpServlet
 					coreCode = "";
 				}
 				coreCode += gen.generateBranch(children, input, output,flatMap, reduce);
-//				coreCode +=gen.generateConcourse(children, input, reduce, output);
+				coreCode +=gen.generateConcourse(children, input, reduce, output);
 				System.out.println(coreCode);
 				
 				

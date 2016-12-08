@@ -42,9 +42,16 @@ public class TemplateGenerator {
 					+ "	var df = new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");//设置日期格式\n"
 					+ "	val sparkConf = new SparkConf().setAppName(\"NetworkWordCount\")\n"
 					+ "	val ssc = new StreamingContext(sparkConf, Seconds(1))\n"
-					+ "	val lines = ssc.socketTextStream(\"10.108.165.203\", 9999, StorageLevel.MEMORY_AND_DISK_SER)\n"// To-do
+					+ "	val lines = ssc.socketTextStream(\"10.108.166.75\", 9999, StorageLevel.MEMORY_AND_DISK_SER)\n"// To-do
 																														// 将ip改为从配置中读
 					+ "	 val input = lines.flatMap(_.split(\"\\n\"))\n" + "	" + coreCode + "\n"
+					+"	 res.foreachRDD(x => {\n"
+					+"   	var y = x.collect()\n"
+					+"     	y.foreach( z =>{\n"
+					+"      	out.println(df.format(new Date())+\"  \"+z._1+\":\"+z._2)\n"
+					+"      	out.flush()\n"
+					+"     	})\n"
+					+"   })\n"
 					+ "	ssc.start()\n" + "	ssc.awaitTermination()\n"
 					+ "	}\n" + "}";
 		} else {

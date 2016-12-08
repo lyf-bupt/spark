@@ -109,7 +109,14 @@ Actions.prototype.init = function()
 		},null,null,null);
 	this.addAction('webServiceDF',function(){
 		$.get('./webservice',function(req){
-			ui.showDialog(new webServiceDialog(ui,req).container, 400, 400, true, true);
+			var wsDialog = ui.showDialog(new webServiceDialog(ui,req).container, 400, 400, true, true);
+			var panel = wsDialog.container;
+			panel.addEventListener('blur',function(){
+				console.log('blur');
+			})
+			panel.addEventListener('focus',function(){
+				console.log('focus');
+			})
 		});
 		},null,null,null);
 		this.addAction('duplicate', function()
@@ -447,7 +454,6 @@ Actions.prototype.init = function()
 		{
 			ext = '_' + mxClient.language;
 		}
-
 		window.open(RESOURCES_PATH + '/help' + ext + '.html');
 	});
 	this.put('about', new Action(mxResources.get('about') + ' EDSV物联网服务平台', function()

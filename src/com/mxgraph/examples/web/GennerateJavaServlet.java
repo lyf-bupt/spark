@@ -111,7 +111,7 @@ public class GennerateJavaServlet extends HttpServlet
                         if(!method.toString().contains("Object")) {
                             result += "	"+method.getReturnType();
                             result += " ";
-                            result += method.getName()+"(";
+                            result += method.getName()+"(";       
                             int n = method.getParameterCount();
                             for(int i=0;i<n;i++){
                                 String typeName = method.getParameters()[i].getParameterizedType().getTypeName();

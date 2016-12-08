@@ -21,12 +21,12 @@ EditorUi = function(editor, container)
 		{
 			evt = window.event;
 		}
-		
+
 		if (this.isSelectionAllowed(evt))
 		{
 			return true;
 		}
-		
+
 		return graph.isEditing() || this.dialog != null;
 	});
 
@@ -36,7 +36,7 @@ EditorUi = function(editor, container)
 		document.onselectstart = textEditing;
 		document.onmousedown = textEditing;
 	}
-	
+
 	// And uses built-in context menu while editing
 	if (mxClient.IS_IE && document.documentMode != 9)
 	{
@@ -55,7 +55,7 @@ EditorUi = function(editor, container)
 	{
 		new Image().src = mxConnectionHandler.prototype.connectImage.src;
 	}
-	
+
     // Creates the user interface
 	this.actions = new Actions(this);
 	this.menus = new Menus(this);
@@ -65,7 +65,7 @@ EditorUi = function(editor, container)
 
 	// graph.init(this.webserviceContainer);
 	// graph.refresh();
-		    
+
 	// // Enables scrollbars and sets cursor style for the container
 	// graph.container.setAttribute('tabindex', '0');
 	// graph.container.style.overflow = (touchStyle) ? 'hidden' : 'auto';
@@ -76,7 +76,7 @@ EditorUi = function(editor, container)
 	// Contains the main graph instance inside the given panel
 	graph.init(this.diagramContainer);
 	graph.refresh();
-    
+
     // Enables scrollbars and sets cursor style for the container
 	graph.container.setAttribute('tabindex', '0');
    	graph.container.style.overflow = (touchStyle) ? 'hidden' : 'auto';
@@ -84,7 +84,7 @@ EditorUi = function(editor, container)
     	graph.container.style.backgroundImage = 'url(' + IMAGE_PATH + '/grid.gif)';
    	graph.container.focus();
 
-   	
+
    	// Keeps graph container focused on mouse down
    	var graphFireMouseEvent = graph.fireMouseEvent;
    	graph.fireMouseEvent = function(evtName, me, sender)
@@ -93,7 +93,7 @@ EditorUi = function(editor, container)
    		{
    			this.container.focus();
    		}
-   		
+
    		graphFireMouseEvent.apply(this, arguments);
    	};
 
@@ -105,10 +105,10 @@ EditorUi = function(editor, container)
 	{
 		this.menus.createPopupMenu(menu, cell, evt);
 	});
-	
+
 	// Initializes the outline
 	editor.outline.init(this.outlineContainer);
-	
+
 	// Hides context menu
 	var md = (mxClient.IS_TOUCH) ? 'touchstart' : 'mousedown';
 	mxEvent.addListener(document, md, mxUtils.bind(this, function(evt)
@@ -126,7 +126,7 @@ EditorUi = function(editor, container)
 				graph.view.getOverlayPane().style.visibility = 'hidden';
 			})
 		);
-	
+
 		mxEvent.addListener(graph.container, 'gestureend',
 			mxUtils.bind(this, function(evt)
 			{
@@ -137,10 +137,10 @@ EditorUi = function(editor, container)
 			})
 		);
 	}
-	
+
     // Create handler for key events
 	var keyHandler = this.createKeyHandler(editor);
-    
+
 	// Getter for key handler
 	this.getKeyHandler = function()
 	{
@@ -211,19 +211,19 @@ EditorUi.prototype.init = function()
 
 	// Overrides clipboard to update paste action state
 	var paste = this.actions.get('paste');
-	
+
 	var updatePaste = function()
 	{
 		paste.setEnabled(!mxClipboard.isEmpty());
 	};
-	
+
 	var mxClipboardCut = mxClipboard.cut;
 	mxClipboard.cut = function()
 	{
 		mxClipboardCut.apply(this, arguments);
 		updatePaste();
 	};
-	
+
 	var mxClipboardCopy = mxClipboard.copy;
 	mxClipboard.copy = function()
 	{
@@ -255,11 +255,11 @@ EditorUi.prototype.open = function()
 			{
 				try
 				{
-					var doc = mxUtils.parseXml(xml); 
+					var doc = mxUtils.parseXml(xml);
 					this.editor.setGraphXml(doc.documentElement);
 					this.editor.modified = false;
 					this.editor.undoManager.clear();
-					
+
 					if (filename != null)
 					{
 						this.editor.filename = filename;
@@ -286,7 +286,7 @@ EditorUi.prototype.save = function(name)
 	if (name != null)
 	{
 		var xml = mxUtils.getXml(this.editor.getGraphXml());
-		
+
 		try
 		{
 			if (useLocalStorage)
@@ -311,7 +311,7 @@ EditorUi.prototype.save = function(name)
 				{
 					mxUtils.alert(mxResources.get('drawingTooLarge'));
 					mxUtils.popup(xml);
-					
+
 					return;
 				}
 			}
@@ -334,7 +334,7 @@ EditorUi.prototype.generateSpark = function(name)
 	if (name != null)
 	{
 		var xml = mxUtils.getXml(this.editor.getGraphXml());
-		
+
 		try
 		{
 			if (useLocalStorage)
@@ -377,7 +377,7 @@ EditorUi.prototype.generateSpark = function(name)
 				{
 					mxUtils.alert(mxResources.get('drawingTooLarge'));
 					mxUtils.popup(xml);
-					
+
 					return;
 				}
 			}
@@ -399,7 +399,7 @@ EditorUi.prototype.getUrl = function(pathname)
 {
 	var href = (pathname != null) ? pathname : window.location.pathname;
 	var parms = (pathname.indexOf('?') > 0) ? 1 : 0;
-	
+
 	// Removes template URL parameter for new blank diagram
 	for (var key in urlParams)
 	{
@@ -411,11 +411,11 @@ EditorUi.prototype.getUrl = function(pathname)
 		{
 			href += '&';
 		}
-	
+
 		href += key + '=' + urlParams[key];
 		parms++;
 	}
-	
+
 	return href;
 };
 
@@ -426,9 +426,9 @@ EditorUi.prototype.addUndoListener = function()
 {
 	var undo = this.actions.get('undo');
 	var redo = this.actions.get('redo');
-	
+
 	var undoMgr = this.editor.undoManager;
-	
+
     var undoListener = function()
     {
     	undo.setEnabled(undoMgr.canUndo());
@@ -439,7 +439,7 @@ EditorUi.prototype.addUndoListener = function()
     undoMgr.addListener(mxEvent.UNDO, undoListener);
     undoMgr.addListener(mxEvent.REDO, undoListener);
     undoMgr.addListener(mxEvent.CLEAR, undoListener);
-	
+
 	// Updates the button states once
     undoListener();
 };
@@ -457,41 +457,41 @@ EditorUi.prototype.addSelectionListener = function()
 		var edgeSelected = false;
 
 		var cells = graph.getSelectionCells();
-		
+
 		if (cells != null)
 		{
 	    	for (var i = 0; i < cells.length; i++)
 	    	{
 	    		var cell = cells[i];
-	    		
+
 	    		if (graph.getModel().isEdge(cell))
 	    		{
 	    			edgeSelected = true;
 	    		}
-	    		
+
 	    		if (graph.getModel().isVertex(cell))
 	    		{
 	    			vertexSelected = true;
 	    		}
-	    		
+
 	    		if (edgeSelected && vertexSelected)
 				{
 					break;
 				}
 	    	}
 		}
-		
+
 		// Updates action states
 		var actions = ['cut', 'copy', 'delete', 'duplicate', 'bold', 'italic', 'style', 'fillColor',
 		               'gradientColor', 'underline', 'fontColor', 'strokeColor', 'backgroundColor',
 		               'borderColor', 'toFront', 'toBack', 'dashed', 'rounded', 'shadow', 'rotate',
 		               'autosize'];
-    	
+
     	for (var i = 0; i < actions.length; i++)
     	{
     		this.actions.get(actions[i]).setEnabled(selected);
     	}
-    	
+
     	this.actions.get('rotation').setEnabled(vertexSelected);
        	this.actions.get('group').setEnabled(graph.getSelectionCount() > 1);
        	this.actions.get('ungroup').setEnabled(graph.getSelectionCount() == 1 &&
@@ -508,16 +508,16 @@ EditorUi.prototype.addSelectionListener = function()
     	{
     		this.menus.get(menus[i]).setEnabled(selected);
     	}
-    	
+
     	menus = ['line', 'lineend', 'linestart'];
 
      	for (var i = 0; i < menus.length; i++)
      	{
      		this.menus.get(menus[i]).setEnabled(edgeSelected);
      	}
-     	
+
        	this.actions.get('setAsDefaultEdge').setEnabled(edgeSelected);
-        	
+
         this.menus.get('align').setEnabled(graph.getSelectionCount() > 1);
         this.menus.get('direction').setEnabled(vertexSelected || (edgeSelected &&
         		graph.isLoop(graph.view.getState(graph.getSelectionCell()))));
@@ -533,7 +533,7 @@ EditorUi.prototype.addSelectionListener = function()
         this.actions.get('openLink').setEnabled(graph.getSelectionCount() == 1 &&
         		graph.getLinkForCell(graph.getSelectionCell()) != null);
     });
-	    
+
     this.editor.graph.getSelectionModel().addListener(mxEvent.CHANGE, selectionListener);
     selectionListener();
 };
@@ -552,10 +552,10 @@ EditorUi.prototype.refresh = function()
 		w = document.body.clientWidth || document.documentElement.clientWidth;
 		h = (quirks) ? document.body.clientHeight || document.documentElement.clientHeight : document.documentElement.clientHeight;
 	}
-	
+
 	var effHsplitPosition = Math.max(0, Math.min(this.hsplitPosition, w - this.splitSize - 20));
 	var effVsplitPosition = Math.max(0, Math.min(this.vsplitPosition, h - this.menubarHeight - this.toolbarHeight - this.footerHeight - this.splitSize - 1));
-	
+
 	this.menubarContainer.style.height = this.menubarHeight + 'px';
 	this.toolbarContainer.style.top = this.menubarHeight + 'px';
 	this.toolbarContainer.style.height = this.toolbarHeight + 'px';
@@ -586,7 +586,7 @@ EditorUi.prototype.refresh = function()
 	this.hsplit.style.left = effHsplitPosition + 'px';
 	this.vsplit.style.width = this.sidebarContainer.style.width;
 	this.vsplit.style.bottom = (effVsplitPosition + this.footerHeight) + 'px';
-	
+
 	if (quirks)
 	{
 		this.menubarContainer.style.width = w + 'px';
@@ -658,11 +658,11 @@ EditorUi.prototype.createUi = function()
 	this.menubarContainer.appendChild(logoDiv);
 	this.menubarContainer.appendChild(titleDiv);
 	this.menubarContainer.appendChild(this.menubar.container);
-	
+
 	// Creates toolbar
 	this.toolbar = this.createToolbar(this.createDiv('geToolbar'));
 	this.toolbarContainer.appendChild(this.toolbar.container);
-	
+
 	// Creates the sidebar
 	this.sidebar = this.createSidebar(this.sidebarContainer);
 
@@ -703,7 +703,7 @@ EditorUi.prototype.createUi = function()
 	// var content = document.createElement("div");
 	// content.className="resContent";
 	// this.webserviceContainer.appendChild(content);
-	
+
 	this.setStatusText(this.editor.getStatus());
 	this.menubar.container.appendChild(this.statusContainer);
 
@@ -715,7 +715,7 @@ EditorUi.prototype.createUi = function()
 	this.loadingBackgroundContainer.appendChild(p);
 
 	this.webserviceContainer.setAttribute("id","webserviceEditor");
-	
+
 	// Inserts into DOM
 	this.container.appendChild(this.menubarContainer);
 	this.container.appendChild(this.toolbarContainer);
@@ -730,7 +730,7 @@ EditorUi.prototype.createUi = function()
 	this.container.appendChild(this.loadingBackgroundContainer);
 	this.container.appendChild(this.hsplit);
 	this.container.appendChild(this.vsplit);
-	
+
 	// HSplit
 	this.addSplitHandler(this.hsplit, true, 0, mxUtils.bind(this, function(value)
 	{
@@ -758,7 +758,7 @@ EditorUi.prototype.createStatusContainer = function()
 {
 	var container = document.createElement('a');
 	container.className = 'geItem geStatus';
-	
+
 	return container;
 };
 
@@ -790,7 +790,7 @@ EditorUi.prototype.createSidebar = function(container)
  * Creates and returns a new footer.
  */
 EditorUi.prototype.createFooter = function()
-{	
+{
 	var footer = this.createDiv('geFooter');
 	return footer;
 };
@@ -802,7 +802,7 @@ EditorUi.prototype.createDiv = function(classname)
 {
 	var elt = document.createElement('div');
 	elt.className = classname;
-	
+
 	return elt;
 };
 
@@ -813,7 +813,7 @@ EditorUi.prototype.addSplitHandler = function(elt, horizontal, dx, onChange)
 {
 	var start = null;
 	var initial = null;
-	
+
 	function getValue()
 	{
 		return parseInt(((horizontal) ? elt.style.left : elt.style.bottom));
@@ -822,14 +822,14 @@ EditorUi.prototype.addSplitHandler = function(elt, horizontal, dx, onChange)
 	var md = (mxClient.IS_TOUCH) ? 'touchstart' : 'mousedown';
 	var mm = (mxClient.IS_TOUCH) ? 'touchmove' : 'mousemove';
 	var mu = (mxClient.IS_TOUCH) ? 'touchend' : 'mouseup';
-	
+
 	mxEvent.addListener(elt, md, function(evt)
 	{
 		start = new mxPoint(mxEvent.getClientX(evt), mxEvent.getClientY(evt));
 		initial = getValue();
 		mxEvent.consume(evt);
 	});
-	
+
 	function moveHandler(evt)
 	{
 		if (start != null)
@@ -839,9 +839,9 @@ EditorUi.prototype.addSplitHandler = function(elt, horizontal, dx, onChange)
 			mxEvent.consume(evt);
 		}
 	}
-	
+
 	mxEvent.addListener(document, mm, moveHandler);
-	
+
 	mxEvent.addListener(document, mu, function(evt)
 	{
 		moveHandler(evt);
@@ -857,6 +857,7 @@ EditorUi.prototype.showDialog = function(elt, w, h, modal, closable, onClose)
 {
 	this.hideDialog();
 	this.dialog = new Dialog(this, elt, w, (mxClient.IS_VML) ? h - 12 : h, modal, closable, onClose);
+	return this.dialog;
 };
 
 /**
@@ -934,7 +935,7 @@ EditorUi.prototype.executeLayout = function(layout, animate, ignoreChildCount)
 			{
 				graph.getModel().endUpdate();
 			}));
-			
+
 			morph.startAnimation();
 		}
 		else
@@ -951,13 +952,13 @@ EditorUi.prototype.createKeyHandler = function(editor)
 {
 	var graph = this.editor.graph;
     var keyHandler = new mxKeyHandler(graph);
-    
+
     // Routes command-key to control-key on Mac
     keyHandler.isControlDown = function(evt)
     {
     	return mxEvent.isControlDown(evt) || (mxClient.IS_MAC && evt.metaKey);
     };
-	
+
 	// Helper function to move cells with the cursor keys
     function nudge(keyCode)
     {
@@ -965,7 +966,7 @@ EditorUi.prototype.createKeyHandler = function(editor)
 		{
     		var dx = 0;
     		var dy = 0;
-    		
+
     		if (keyCode == 37)
 			{
     			dx = -1;
@@ -982,7 +983,7 @@ EditorUi.prototype.createKeyHandler = function(editor)
     		{
     			dy = 1;
     		}
-    		
+
     		graph.moveCells(graph.getSelectionCells(), dx, dy);
     		graph.scrollCellVisible(graph.getSelectionCell());
 		}
@@ -992,7 +993,7 @@ EditorUi.prototype.createKeyHandler = function(editor)
     var bindAction = mxUtils.bind(this, function(code, control, key, shift)
     {
     	var action = this.actions.get(key);
-    	
+
     	if (action != null)
     	{
     		var f = function()
@@ -1002,7 +1003,7 @@ EditorUi.prototype.createKeyHandler = function(editor)
 					action.funct();
 				}
     		};
-    		
+
     		if (control)
     		{
     			if (shift)
@@ -1027,7 +1028,7 @@ EditorUi.prototype.createKeyHandler = function(editor)
     		}
     	}
     });
-    
+
     var ui = this;
     var keyHandleEscape = keyHandler.escape;
     keyHandler.escape = function(evt)
@@ -1035,7 +1036,7 @@ EditorUi.prototype.createKeyHandler = function(editor)
     	ui.hideDialog();
     	keyHandleEscape.apply(this, arguments);
     };
-    
+
     // Ignores enter keystroke. Remove this line if you want the
     // enter keystroke to stop editing.
     keyHandler.enter = function() {};
@@ -1074,6 +1075,6 @@ EditorUi.prototype.createKeyHandler = function(editor)
     bindAction(71, true, 'grid', true); // Ctrl+Shift+G
     bindAction(85, true, 'ungroup'); // Ctrl+U
     bindAction(112, false, 'about'); // F1
-    
+
     return keyHandler;
 };

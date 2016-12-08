@@ -72,6 +72,8 @@ public class PackageAndSubmitThread implements Callable<Object>{
 				String[] cmd ={"/bin/sh", "-c", "spark-submit --jars $(echo /home/zhou/genSpark/test/lib/*.jar | tr ' ' ',')  --class \""+filename+"\" --master "+Constants.MASTER+" "+Constants.JAR_LOCATION};
 				String cmd1 = "ifconfig";
 				Runtime run=Runtime.getRuntime();
+				LoadBlancer blancer = new LoadBlancer();
+//				blancer.process(null, null, false);
 				Process pro=run.exec(cmd);
 //				pro.waitFor();
 			    InputStream in2 = pro.getInputStream();  

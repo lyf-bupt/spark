@@ -406,14 +406,14 @@ public class CodeGenerator {
 					if (currentNodeId.equals(output.attributeValue("id")))
 						break;
 				}
-				code += ".map( x =>( x._1, x._2" + lastCode + "))\n";
+//				code += ".map( x =>( x._1, x._2" + lastCode + "))\n";
 				if (!vector.isEmpty()) {
 					for (Element element : vector) {
 						String type = element.attributeValue("value").split("~")[0];
 						String url = element.attributeValue("value").split("~")[1];
 						String method = element.attributeValue("value").split("~")[2];
-						code = ".map(x=>(x._1," + map.get(type) + "(\"" + url + "\",\"" + method
-								+ "\",x._2.toString).toInt))\n";
+						code += "\n res.foreachRDD(rdd=>{\n 	rdd.foreach(x=>(" + map.get(type) + "(\"" + url + "\",\"" + method
+								+ "\",x._1+\"-\"+x._2)))\n})\n";
 					}
 				}
 			}

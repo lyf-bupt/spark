@@ -34,7 +34,7 @@ public class CodeAndResultServlet extends HttpServlet {
 			if (Constants.FILE_NAME != null) {
 				outputFile = Constants.OUTPUT_PATH;
 				// 陈德冲学长毕设
-				Constants.FILE_NAME = "F99";
+//				Constants.FILE_NAME = "F99";
 				codeFile = Constants.SCALA_FILE_PATH + Constants.FILE_NAME + ".scala";
 			}
 			String type = request.getParameter("type");
@@ -97,23 +97,19 @@ public class CodeAndResultServlet extends HttpServlet {
 					out.println("未生成并执行jar包，请先点击文件->生成jar包之后重试");
 				}
 			} else if (("visio").equals(type)) {
-				Set<String> keys = RedisClient.getClient().keys("*");
-				for (String key : keys) {
-					Map<String, String> maps = RedisClient.getClient().hgetAll(key);
-					out.print(key);
-					float rate = 1;
-					if (RedisClient.getClient().hget(key, "empty") == null) {
-						rate = 0;
+				String time = request.getParameter("time");
+				if(time!=null){
+					Map<String, String> map = RedisClient.getClient().hgetAll(time);
+					for (String key : map.keySet()) {
+						out.println(key+"-"+map.get(key));
+//						out.println("=>" + rate*100+"%");
 					}
-					if (RedisClient.getClient().hget(key, "empty") != null
-							&& RedisClient.getClient().hget(key, "all") != null) {
-						rate = Float.parseFloat(RedisClient.getClient().hget(key, "empty"))
-								/ Float.parseFloat(RedisClient.getClient().hget(key, "all"));
-						if (rate > 1) {
-							rate = 1;
-						}
+				}else{
+					Set<String> keys = RedisClient.getClient().keys("*");
+					for (String key : keys) {
+						out.println(key);
+//						out.println("=>" + rate*100+"%");
 					}
-					out.println("=>" + rate*100+"%");
 				}
 			}
 			out.close();
