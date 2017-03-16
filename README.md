@@ -1,3 +1,3 @@
 # spark
 
-## this is spark
+## this is spark platform
