@@ -1,0 +1,21 @@
+.container{
+	width:60%;
+	height:100%;
+	/*background-color: Pink;*/
+	display: inline-block;
+	box-shadow: 10px 10px 10px #eee;
+}
+.configPanel{
+	width: 39%;
+	height:100%;
+	
+	background-color: #ccc;
+	display: inline-block;
+}
+.content{
+	width: 100%;
+	display: block;
+	top:70px;
+	bottom: 0;
+	position: absolute;
+}

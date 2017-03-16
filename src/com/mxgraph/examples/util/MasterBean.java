@@ -1,9 +1,17 @@
 package com.mxgraph.examples.util;
 
+/**
+ * Master节点的数据类，在计算负载时有用
+ * @author spark
+ *
+ */
 public class MasterBean {
     private String ip;
+    /** 内存使用率 */
     private double memRate;
+    /** cpu使用率 */
     private double cpuRate;
+    /** 集群应用队列里面的应用数 */
     private int appsCounter;
 
     public String getIp() {

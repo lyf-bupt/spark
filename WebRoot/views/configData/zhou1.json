@@ -1,0 +1,55 @@
+[{
+	"title": {
+		"text": "zhou1"
+	},
+	"subtitle": {
+		"text": "subtitle1"
+	},
+	"xAxis": {
+		"type": "datetime",
+		"tickPixelInterval": 7
+	},
+	"yAxis": {
+		"title": {
+			"text": "Value"
+		},
+		"plotLines": [{
+			"value": 0,
+			"width": 1,
+			"color": "#101010"
+		}]
+	},
+	"legend": {
+		"layout": "vertical",
+		"align": "right",
+		"verticalAlign": "middle",
+		"borderWidth": 0
+	}
+},{
+	"title": {
+		"text": "zhou2"
+	},
+	"subtitle": {
+		"text": "subtitle2"
+	},
+	"xAxis": {
+		"type": "datetime",
+		"tickPixelInterval": 150
+	},
+	"yAxis": {
+		"title": {
+			"text": "Value"
+		},
+		"plotLines": [{
+			"value": 0,
+			"width": 1,
+			"color": "#101010"
+		}]
+	},
+	"legend": {
+		"layout": "vertical",
+		"align": "right",
+		"verticalAlign": "middle",
+		"borderWidth": 0
+	}
+}]

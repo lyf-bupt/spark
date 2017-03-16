@@ -1,0 +1,4 @@
+Warning: Local jar /home/zhou/genSpark/test/lib/*.jar does not exist, skipping.
+Warning: Local jar /home/zhou/genSpark/test/lib/*.jar does not exist, skipping.
+Exception in thread "main" java.io.FileNotFoundException: /home/zhou/result/resOfZYJ.txt (没有那个文件或目录)
+Exception in thread "main" java.io.FileNotFoundException: /home/zhou/result/resOfZYJ.txt (没有那个文件或目录)

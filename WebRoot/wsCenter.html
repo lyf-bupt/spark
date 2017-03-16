@@ -4,6 +4,7 @@
 <head>
   <title>Web service Center</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="js/jqwidgets/styles/jqx.base.css" type="text/css" />
   <link rel="stylesheet" type="text/css" href="./styles/wsCenter.css">
 </head>
 <body class="geEditor">
@@ -28,7 +29,9 @@
     </div>
   </div>
   <div class="manager-div panel" style="display:none">
-    <div class="tree">tree</div>
+    <div class="treePanel">
+      <div id="tree" class="tree">tree</div>
+    </div>
     <div class="manager">manage</div>
   </div>
   <script type="text/javascript" src = "lib/jquery-1.11.3.min.js"></script>
@@ -36,7 +39,14 @@
   <script src="lib/react-dom.js"></script>
   <script src="lib/browser.min.js"></script>
   <link rel="stylesheet" type="text/css" href="lib/font-awesome.min.css">
-  <script type="text/babel" src = "js/wsList.js"></script>
+  <script type="text/babel" src = "js/ReactModels/wsList.js"></script>
+  <script type="text/javascript" src="js/jqwidgets/jqxcore.js"></script>
+  <script type="text/javascript" src="js/jqwidgets/jqxdata.js"></script>
+  <script type="text/javascript" src="js/jqwidgets/jqxbuttons.js"></script>
+  <script type="text/javascript" src="js/jqwidgets/jqxscrollbar.js"></script>
+  <script type="text/javascript" src="js/jqwidgets/jqxpanel.js"></script>
+  <script type="text/javascript" src="js/jqwidgets/jqxtree.js"></script>
+  <script type="text/javascript" src="js/jqwidgets/demos.js"></script>
   <script type="text/javascript" src="js/wsCenter.js"></script>
 </body>
 </html>

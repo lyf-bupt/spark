@@ -11,9 +11,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.Vector;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -25,6 +27,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -35,6 +38,7 @@ import org.dom4j.io.SAXReader;
 import com.mxgraph.examples.util.CodeGenerator;
 import com.mxgraph.examples.util.ContentParser;
 import com.mxgraph.examples.util.PackageAndSubmitThread;
+import com.mxgraph.examples.util.ParseSCAModelUtil;
 import com.mxgraph.examples.util.TemplateGenerator;
 
 public class GenerateSparkServlet extends HttpServlet
@@ -55,6 +59,17 @@ public class GenerateSparkServlet extends HttpServlet
 		{
 			String filename = request.getParameter("filename");
 			String xml = request.getParameter("xml");
+			HttpSession session = request.getSession();
+			Object project = session.getAttribute("project");
+			String projectName;
+			if(project==null){
+				projectName = UUID.randomUUID().toString().replaceAll("-", "");
+				session.setAttribute("project", projectName);
+				Constants.SESSION_MANAGER.put(projectName, new HashMap<String,String>());
+			}else{
+				projectName = (String)project; 
+			}
+			xml = xml.replaceAll("localhost", "10.109.253.71");
 			
 			if (xml != null && xml.length() > 0)
 			{	
@@ -70,6 +85,7 @@ public class GenerateSparkServlet extends HttpServlet
 				Element flatMap = null;
 				Element reduce = null;
 				HashSet<String> wsType = new HashSet<String>();
+				HashSet<String> wsURL = new HashSet<String>();
 				List<Element> children = null;
 				SAXReader saxReader = new SAXReader(); 
 				try {
@@ -88,8 +104,12 @@ public class GenerateSparkServlet extends HttpServlet
 								reduce = ele;
 							}else if("ellipse;shape=cloud".equals(ele.attributeValue("style").toString())){
 								String type = ele.attributeValue("value").toString().split("~")[0];
+								String URL = ele.attributeValue("value").toString().split("~")[1];
 								if(!wsType.contains(type)){
 									wsType.add(type);
+								}
+								if(URL.contains("10.109.253.71") && !wsURL.contains(URL)){
+									wsURL.add(URL.replaceAll("10.109.253.71", "localhost"));
 								}
 							}
 						}
@@ -113,8 +133,13 @@ public class GenerateSparkServlet extends HttpServlet
 					e.printStackTrace();
 				}
 				
+				//解析代码中含有的SCA模型并存储到sessionManager中
+				if(!wsURL.isEmpty()){
+					ParseSCAModelUtil modelUtil = new ParseSCAModelUtil(wsURL, projectName);
+					modelUtil.parseModels();
+				}
+				
 				//生成core code
-				//陈德冲学长毕设封闭 2016/6/7
 				String coreCode = "var res = input";
 				CodeGenerator gen = new CodeGenerator(wsType);
 				String pre = gen.genneratePretreatment(children, input, flatMap, reduce, output);
@@ -129,7 +154,6 @@ public class GenerateSparkServlet extends HttpServlet
 				
 				
 				//scala模板
-				//陈德冲学长毕设封闭 2016/6/7
 				TemplateGenerator tGen = new TemplateGenerator(wsType);
 				String template = tGen.generateTemplate(coreCode, filename, input, reduce);
 //				System.out.println(template);
@@ -145,7 +169,6 @@ public class GenerateSparkServlet extends HttpServlet
 				}
 				
 				//写scala文件
-				//陈德冲学长毕设封闭 2016/6/7
 				try {
 				   FileWriter fw = new FileWriter(file, true);
 				   BufferedWriter bw = new BufferedWriter(fw);
@@ -172,29 +195,15 @@ public class GenerateSparkServlet extends HttpServlet
 				
 				response.setContentType("text/html;charset=GB2312");
 				PrintWriter out = response.getWriter();
-				//打包提交线程池
-				ExecutorService pool = Executors.newFixedThreadPool(5);
 				
-				//调试中...............
-				PackageAndSubmitThread thread = new PackageAndSubmitThread(filename,out);
-				Future future = pool.submit(thread);
-				while(Constants.GENERATE_RESULT==null||Constants.GENERATE_RESULT==""){
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-						response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-					}
+				out.println("代码生成成功，打包中...");
+				out.close();
+				if(Constants.GENERATE_RESULT.contains("失败")){
+//					file.delete();
 				}
-					if(Constants.GENERATE_RESULT.contains("失败"))
-					{
-						//陈德冲学长毕设
-//						file.delete();
-					}
-					out.println(Constants.GENERATE_RESULT);
-					System.out.println(Constants.GENERATE_RESULT);
-					out.close();
+//				out.println(Constants.GENERATE_RESULT);
+				System.out.println(Constants.GENERATE_RESULT);
+				out.close();
 
 //				//打包并写日志,已废除
 //				//暂时封闭by zhou in 11-9

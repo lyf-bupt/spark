@@ -1,6 +1,0 @@
-[info] Set current project to Simple Project (in build file:/home/zhou/genSpark/test/)
-[info] Compiling 1 Scala source to /home/zhou/genSpark/test/target/scala-2.10/classes...
-[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
-[info] Packaging /home/zhou/genSpark/test/target/scala-2.10/simple-project_2.10-1.0.jar ...
-[info] Done packaging.
-[success] Total time: 10 s, completed 2016-12-7 9:25:29

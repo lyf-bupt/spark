@@ -31,7 +31,7 @@ public class NotificationProcessImpl implements INotificationProcess {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void notificationProcess(String notification) {// �����߼�
+	public void notificationProcess(String notification) {// 收到消息后的行为，主要改这个
 		counter++;
 
 		// System.out.println("���ݣ�"+notification);

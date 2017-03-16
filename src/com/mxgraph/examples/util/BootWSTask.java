@@ -6,7 +6,10 @@ import java.io.InputStreamReader;
 import java.util.concurrent.Callable;
 
 import com.mxgraph.examples.web.Constants;
+/**
+* 使用另一个线程启动生成的webservice，也就是简单的SCA模型
 
+*/
 public class BootWSTask implements Callable<Integer> {
     private int i = 0;
     String dir = "";
@@ -18,10 +21,14 @@ public class BootWSTask implements Callable<Integer> {
     }
 
     // 与run()方法不同的是，call()方法具有返回值
+    /**
+    * 启动生成的webservice，也就是简单的SCA模型
+    *
+    */
     @Override
     public Integer call() {
         // 8.运行程序
-        Runtime run = Runtime.getRuntime();
+        Runtime run = Runtime.getRuntime();  //得到系统运行时
 //        dir = dir +projectName+"/"+ filename;
         System.out.println("java -cp " + this.dir+" "+this.classname);
         try{

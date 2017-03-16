@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Vector;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import com.mxgraph.examples.subscribe.singleSubscribe;
 
@@ -49,6 +51,18 @@ public class Constants
 	
 	public static String LOCAL_HOST= "";
 	
+	public static int i = 1;
+	
+	public static ExecutorService POOL = null; //线程池
+	
+	public static Map<String,String> SESSION_STATUS= null;
+	
+	public static Map<String,Map<String,String>> SESSION_MANAGER = null;
+	
+	public static String DATA_SOURCE = "";
+	
+	public static String TO_BE_DEPOLY_DIR = "/home/zhou/SCA_models";
+	
 	
 
 	/**
@@ -72,6 +86,11 @@ public class Constants
 			WSN_CORE = prop.getProperty("wsnCore").trim();
 			processVec = new Vector<Process>();
 			LOCAL_HOST= prop.getProperty("localhost").trim();
+			POOL = Executors.newFixedThreadPool(5);
+			SESSION_STATUS = new HashMap<String, String>();
+			SESSION_MANAGER = new HashMap<String,Map<String,String>>();
+			DATA_SOURCE = prop.getProperty("dataSource");
+			TO_BE_DEPOLY_DIR = prop.getProperty("toBeDeployDir");
 		}
 		catch (Exception e)
 		{

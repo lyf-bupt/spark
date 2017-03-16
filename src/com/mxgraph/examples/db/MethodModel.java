@@ -1,10 +1,13 @@
+/*
+ * 数据库的method的模型类
+ */
 package com.mxgraph.examples.db;
 
 public class MethodModel {
-	private int id;
-	private String name;
+	private int id; 
+	private String name;     //方法中文名
 	private String URL;
-	private String method;
+	private String method;   //方法名
 	public int getId() {
 		return id;
 	}

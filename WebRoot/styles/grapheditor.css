@@ -409,5 +409,25 @@ table.mxPopupMenu tr {
 }
 .tooltipsTitle p{
 	text-align:center;
-
+}
+.loadingBar{
+	position: absolute;
+	left: 35%;
+	top: 65%; 
+	width: 30%;
+	height: 10%;
+	text-align: center;
+	margin: 10px 0;
+}
+.loadingBar p{
+	position: relative;
+    margin: 0;
+    top: -20px;
+}
+.loadingFill{
+	height:20px;
+	border-radius: 20px;
+	background-color: Orange;
+	width: 0%;
+	transition:width 1s;
 }

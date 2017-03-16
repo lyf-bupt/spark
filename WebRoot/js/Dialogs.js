@@ -1236,9 +1236,11 @@ function SourceDialog(editorUi,req)
 	row.appendChild(td);
 	td = document.createElement('td');
 	var type = document.createElement('select');
-	['内置数据源','kafka','发布订阅','数据库'].map(x=>{
+	type.setAttribute('id','type');
+	['内置数据源','kafka','发布订阅','MQTT','zeroMQ'].map(x=>{
 		var option = document.createElement('option');
 		option.innerHTML=x;
+		option.setAttribute("value",x);
 		type.appendChild(option);
 	})
 	type.style.width = '180px';
@@ -1256,6 +1258,7 @@ function SourceDialog(editorUi,req)
 	row.appendChild(td);
 
 	var sourceInput = document.createElement('select');
+	sourceInput.setAttribute('id','buildIn');
 	for(var i=0;i<topic.length;i++){
 		var sourceOption = document.createElement('option');
 		sourceOption.setAttribute("value",i)
@@ -1270,6 +1273,64 @@ function SourceDialog(editorUi,req)
 
 	tbody.appendChild(row);
 
+
+	//URI
+	row = document.createElement('tr');
+
+	td = document.createElement('td');
+	td.style.fontSize = '10pt';
+	td.style.width = '100px';
+	mxUtils.write(td, "URI" + ':');
+
+	row.appendChild(td);
+
+	var sourceInput = document.createElement('input');
+	sourceInput.style.width = '180px';
+	sourceInput.setAttribute('id','sourceURI');
+	td = document.createElement('td');
+	td.appendChild(sourceInput);
+	row.appendChild(td);
+	row.style.display="none";
+	tbody.appendChild(row);
+
+	//group
+	row = document.createElement('tr');
+
+	td = document.createElement('td');
+	td.style.fontSize = '10pt';
+	td.style.width = '100px';
+	mxUtils.write(td, "group" + ':');
+
+	row.appendChild(td);
+
+	var sourceInput = document.createElement('input');
+	sourceInput.style.width = '180px';
+	sourceInput.setAttribute('id','sourceGroup');
+	td = document.createElement('td');
+	td.appendChild(sourceInput);
+	row.appendChild(td);
+	row.style.display="none";
+	tbody.appendChild(row);
+
+	//topic
+	row = document.createElement('tr');
+
+	td = document.createElement('td');
+	td.style.fontSize = '10pt';
+	td.style.width = '100px';
+	mxUtils.write(td, "topic" + ':');
+
+	row.appendChild(td);
+
+	var sourceInput = document.createElement('input');
+	sourceInput.style.width = '180px';
+	sourceInput.setAttribute('id','sourceTopic');
+	td = document.createElement('td');
+	td.appendChild(sourceInput);
+	row.appendChild(td);
+	row.style.display="none";
+	tbody.appendChild(row);
+
 	row = document.createElement('tr');
 	td = document.createElement('td');
 	td.colSpan = 2;
@@ -1280,9 +1341,12 @@ function SourceDialog(editorUi,req)
 	var saveBtn = mxUtils.button(mxResources.get('confirm'), function()
 	{
 		var cell = graph.getSelectionCell();
-		cell.setValue(topic[sourceInput.value]);
-	    	editorUi.hideDialog();
-	    	mxConstants.SOURCE = topic[sourceInput.value].split(".")[0];
+		let index = $('#buildIn')[0].value;
+		let type = $('#type')[0].value;
+		cell.setValue(topic[index].split(".")[1]);
+		graphBackend[cell.getId()] = type+"-"+topic[index];
+	    editorUi.hideDialog();
+	    mxConstants.SOURCE = topic[index].split(".")[0];
 
 	});
 
@@ -1297,6 +1361,25 @@ function SourceDialog(editorUi,req)
 
 	table.appendChild(tbody);
 	this.container = table;
+	setTimeout(function(){
+		$("#type").on("change",function(e){
+			if($("#type").val()!="内置数据源"){
+				$('#sourceURI')[0].parentNode.parentNode.style="";
+				$('#sourceTopic')[0].parentNode.parentNode.style="";
+				$('#sourceGroup')[0].parentNode.parentNode.style.display="none";
+				$('#buildIn')[0].parentNode.parentNode.style.display="none";
+				if($("#type").val()=="kafka"){
+					$('#sourceGroup')[0].parentNode.parentNode.style="";
+				}
+			}else{
+				$('#sourceURI')[0].parentNode.parentNode.style.display="none";
+				$('#sourceTopic')[0].parentNode.parentNode.style.display="none";
+				$('#sourceGroup')[0].parentNode.parentNode.style.display="none";
+				$('#buildIn')[0].parentNode.parentNode.style="";
+			}
+			// console.log($("#type").val());
+		});
+	},50);
 
 };
 
@@ -1352,9 +1435,11 @@ function OutputModelDialog(editorUi,req)
 
 	var saveBtn = mxUtils.button(mxResources.get('confirm'), function()
 	{
-		var cell = graph.getSelectionCell().setValue(sourceInput.value);
+		var cell = graph.getSelectionCell();
+		graphBackend[cell.getId()] = sourceInput.value;
 		mxConstants.OUTPUT_MODEL = "./views/"+sourceInput.value.split("(")[1].replace(")","")+".html";
-    		editorUi.hideDialog();
+		cell.setValue(sourceInput.value.split("(")[0]);
+    	editorUi.hideDialog();
 	});
 
 	td.appendChild(saveBtn);
@@ -1414,7 +1499,8 @@ function webServiceDialog(editorUi,req)
 	{
 		var cell = graph.getSelectionCell();
 		editorUi.hideDialog();
-		$.get("http://localhost:9005")
+		$.get("http://localhost:9005");
+		window.open("http://localhost:8088/sparkPlatform/wsCenter.html");
 		console.log(window.status);
 	});
 	td.appendChild(SCABtn);
@@ -1484,41 +1570,40 @@ function webServiceDialog(editorUi,req)
 	function displayService(data){
 		// var data = services;
 
-	                // prepare the data
-	                var source =
-	                {
-	                    datatype: "json",
-	                    datafields: [
-	                        { name: 'id' },
-	                        { name: 'parentid' },
-	                        { name: 'name' },
-	                    ],
-	                    id: 'id',
-	                    localdata: data
-	                };
-
-	                // create data adapter.
-	                var dataAdapter = new $.jqx.dataAdapter(source);
-	                // perform Data Binding.
-	                dataAdapter.dataBind();
-	                // get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
-	                // the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
-	                // specifies the mapping between the 'text' and 'label' fields.
-	                var records = dataAdapter.getRecordsHierarchy('id', 'parentid', 'items', [{ name: 'name', map: 'label'}]);
-	                $('#services').jqxTree({ source: records, width: '300px'});
-	                $('#services').jqxTree("refresh");
-	                $('#services').on('select',function (event)
-		{
-		    var args = event.args;
-		    var item = $('#services').jqxTree('getItem', args.element);
-		   var id = item.id;
-		    for(i in services){
-		    	if(parseInt(services[i].id) == item.id){
-		    		selected = services[i];
+	    // prepare the data
+	    var source =
+	    {
+	        datatype: "json",
+	        datafields: [
+	            { name: 'id' },
+	            { name: 'parentid' },
+	            { name: 'name' },
+	        ],
+	        id: 'id',
+	        localdata: data
+	    };
+	    // create data adapter.
+	    var dataAdapter = new $.jqx.dataAdapter(source);
+	    // perform Data Binding.
+	     	dataAdapter.dataBind();
+	     	// get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
+	     	// the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
+	     	// specifies the mapping between the 'text' and 'label' fields.
+	     	var records = dataAdapter.getRecordsHierarchy('id', 'parentid', 'items', [{ name: 'name', map: 'label'}]);
+	     	$('#services').jqxTree({ source: records, width: '300px'});
+	     	$('#services').jqxTree("refresh");
+	     	$('#services').on('select',function (event)
+			{
+		    	var args = event.args;
+		    	var item = $('#services').jqxTree('getItem', args.element);
+		   		var id = item.id;
+		    	for(i in services){
+		    		if(parseInt(services[i].id) == item.id){
+		    			selected = services[i];
+		    		}
 		    	}
-		    }
-		});
-	}
+			});
+		}
 	setTimeout(displayService,50,services);
 
 };
@@ -1626,7 +1711,8 @@ function methodDialog(editorUi,req,type)
 			if(document.getElementById("addValue").value){
 				cellValue += "~"+document.getElementById("addValue").value;
 			}
-			cell.setValue(cellValue);
+			graphBackend[cell.getId()] = cellValue;
+			cell.setValue(selected.method);
 			editorUi.hideDialog();
 		}
 		else{
@@ -1970,7 +2056,14 @@ function filterDialog(editorUi,req){
 		var value= document.getElementById("value").value;
 		if(style==2){
 			if(index&&exp&&value){
-				cell.setValue("x => x.split(\",\")("+index+").toInt"+exp+value);
+				var content = "x => x.split(\",\")("+index+").toInt"+exp+value
+				if(content.length>15){
+					var collapseContent = "x"+exp+value;
+					graphBackend[cell.getId()] = content;
+					cell.setValue(collapseContent);
+				}else{
+					cell.setValue(content);
+				}
 				editorUi.hideDialog();
 			}
 			else{
@@ -1978,14 +2071,28 @@ function filterDialog(editorUi,req){
 			}
 		}else if(style==0){
 			if(value){
-				cell.setValue("x => x.split(\",\")("+index+").indexOf(\""+value+"\") > -1");
+				var content = "x => x.split(\",\")("+index+").indexOf(\""+value+"\") > -1";
+				if(content.length>15){
+					var collapseContent = "包含"+value;
+					graphBackend[cell.getId()] = content;
+					cell.setValue(collapseContent);
+				}else{
+					cell.setValue(content);
+				}
 				editorUi.hideDialog();
 			}else{
 				alert("请将表格填充完整!!");
 			}
 		}else if(style==1){
 			if(value){
-				cell.setValue("x => x.split(\",\")("+index+").indexOf(\""+value+"\") < 0");
+				var content = "x => x.split(\",\")("+index+").indexOf(\""+value+"\") < 0";
+				if(content.length>15){
+					var collapseContent = "不包含"+value;
+					graphBackend[cell.getId()] = content;
+					cell.setValue(collapseContent);
+				}else{
+					cell.setValue(content);
+				}
 				editorUi.hideDialog();
 			}else{
 				alert("请将表格填充完整!!");
@@ -2166,14 +2273,28 @@ function mapDialog(editorUi,req){
 		console.log("x => x.split(\",\")("+index+").toInt"+exp+value);
 		if(style==0){
 			if(value){
-				cell.setValue("x => (x.split(\",\")("+index+"),"+value+")");
+				var content = "x => (x.split(\",\")("+index+"),"+value+")";
+				if(content.length>12){
+					graphBackend[cell.getId()] = content;
+					var collapsedContent = "计数"+value;
+					cell.setValue(collapsedContent)
+				}else{
+					cell.setValue(content);
+				}
 				editorUi.hideDialog();
 			}else{
 				alert("请将表格填充完整!!");
 			}
 		}else if(style==1){
 			if(index&&exp&&value){
-				cell.setValue("x => x.split(\",\")("+index+").toInt"+exp+value);
+				var content = "x => x.split(\",\")("+index+").toInt"+exp+value;
+				if(content.length>12){
+					graphBackend[cell.getId()] = content;
+					var collapsedContent = "x"+exp+value;
+					cell.setValue(collapsedContent)
+				}else{
+					cell.setValue(content);
+				}
 				editorUi.hideDialog();
 			}
 			else{
@@ -2266,6 +2387,10 @@ function cusDFDialog(ui,req){
 	iframe.setAttribute("id","cusDF");
 	iframe.style.width = "500px";
 	iframe.style.height = "200px";
+	var cell = graph.getSelectionCell();
+	if(graphBackend[cell.getId()]){
+		iframe.value = graphBackend[cell.getId()];
+	}
 	td.appendChild(iframe);
 	row.appendChild(td);
 	tbody.appendChild(row);
@@ -2282,8 +2407,15 @@ function cusDFDialog(ui,req){
 		var ifr = document.getElementById('cusDF');
 		var editorValue = ifr.value;
 		var cell = graph.getSelectionCell();
-		cell.setValue(editorValue);
-	    	editorUi.hideDialog();
+		var content = editorValue;
+		if(content.length>12){
+			graphBackend[cell.getId()] = content;
+			var collapsedContent = content.substring(0,12)+"\n...";
+			cell.setValue(collapsedContent)
+		}else{
+			cell.setValue(editorValue);
+		}
+	    editorUi.hideDialog();
 	});
 
 	td.appendChild(saveBtn);

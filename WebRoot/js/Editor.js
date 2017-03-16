@@ -256,6 +256,12 @@ Editor.prototype.setWebGraphXml = function(node)
 Editor.prototype.getGraphXml = function()
 {
 	var enc = new mxCodec(mxUtils.createXmlDocument());
+	var cells = this.graph.getModel().cells;
+	for(let i in cells){
+		if(graphBackend[i]){
+			cells[i].setValue(graphBackend[i]);
+		}
+	}
 	var node = enc.encode(this.graph.getModel());
 
 	if (this.graph.view.translate.x != 0 || this.graph.view.translate.y != 0)

@@ -16,6 +16,10 @@ import javax.naming.NamingException;
 import com.bupt.wangfu.ldap.Ldap;
 import com.bupt.wangfu.ldap.TopicEntry;
 
+/** 
+ * 得到发布订阅中所有的主题，已废弃
+ * 
+ */
 public class GetAllTopic {
 	public LinkedList<String> AllTopicByGivenFile(){
     	LinkedList<String> result = new LinkedList<String>();

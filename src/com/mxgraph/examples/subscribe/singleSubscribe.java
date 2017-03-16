@@ -1,3 +1,6 @@
+/**
+ * 发布/订阅的主类、这个类可以暂时不用管
+ */
 package com.mxgraph.examples.subscribe;
 
 import java.io.File;
@@ -17,9 +20,8 @@ public class singleSubscribe {
 	private SendWSNCommand sendWSNCommand = null;
 	
 	public void bootSubscribeSys(){
-		String subWebSAddr = "http://10.108.165.187:9016/wsn-subscribe";// �����û�webservice��ַ
-		// ip���뱾��
-		String wsnAddr = Constants.WSN_CORE;// �������Ľڵ��ַ
+		String subWebSAddr = "http://10.108.165.187:9016/wsn-subscribe";// 本地webservice地址，需要改成本机ip
+		String wsnAddr = Constants.WSN_CORE;// 发布/订阅主机地址
 		System.out.println("Starting Server");
 		Socket socket = null;
 		NotificationProcessImpl implementor = new NotificationProcessImpl();

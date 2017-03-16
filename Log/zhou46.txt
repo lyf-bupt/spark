@@ -1,0 +1,469 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/03/01 11:31:34 INFO SparkContext: Running Spark version 1.5.0
+17/03/01 11:31:34 INFO SparkContext: Running Spark version 1.5.0
+17/03/01 11:31:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/01 11:31:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/03/01 11:31:35 WARN Utils: Your hostname, spark-client resolves to a loopback address: 127.0.1.1; using 10.108.164.252 instead (on interface enp1s0f2)
+17/03/01 11:31:35 WARN Utils: Your hostname, spark-client resolves to a loopback address: 127.0.1.1; using 10.108.164.252 instead (on interface enp1s0f2)
+17/03/01 11:31:35 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/03/01 11:31:35 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/03/01 11:31:35 INFO SecurityManager: Changing view acls to: spark
+17/03/01 11:31:35 INFO SecurityManager: Changing view acls to: spark
+17/03/01 11:31:35 INFO SecurityManager: Changing modify acls to: spark
+17/03/01 11:31:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(spark); users with modify permissions: Set(spark)
+17/03/01 11:31:35 INFO SecurityManager: Changing modify acls to: spark
+17/03/01 11:31:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(spark); users with modify permissions: Set(spark)
+17/03/01 11:31:37 INFO Slf4jLogger: Slf4jLogger started
+17/03/01 11:31:37 INFO Slf4jLogger: Slf4jLogger started
+17/03/01 11:31:37 INFO Remoting: Starting remoting
+17/03/01 11:31:37 INFO Remoting: Starting remoting
+17/03/01 11:31:37 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.108.164.252:36463]
+17/03/01 11:31:37 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.108.164.252:41023]
+17/03/01 11:31:37 INFO Utils: Successfully started service 'sparkDriver' on port 41023.
+17/03/01 11:31:37 INFO Utils: Successfully started service 'sparkDriver' on port 36463.
+17/03/01 11:31:37 INFO SparkEnv: Registering MapOutputTracker
+17/03/01 11:31:37 INFO SparkEnv: Registering MapOutputTracker
+17/03/01 11:31:37 INFO SparkEnv: Registering BlockManagerMaster
+17/03/01 11:31:37 INFO SparkEnv: Registering BlockManagerMaster
+17/03/01 11:31:37 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6266897f-c807-4dcf-93f8-1c7a23084553
+17/03/01 11:31:37 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-66ad4451-d402-4e6e-ba48-7ca23c493f99
+17/03/01 11:31:37 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+17/03/01 11:31:37 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+17/03/01 11:31:37 INFO HttpFileServer: HTTP File server directory is /tmp/spark-05ae4c74-7e10-48dc-bc10-99249f5c3575/httpd-ed96c18d-d2e7-4f07-b05a-a37e79ce62aa
+17/03/01 11:31:37 INFO HttpFileServer: HTTP File server directory is /tmp/spark-288744a2-1aa3-4cc5-87cd-5dd494be9aec/httpd-31caf411-2c5b-424b-ba0b-f3be66b522af
+17/03/01 11:31:37 INFO HttpServer: Starting HTTP Server
+17/03/01 11:31:37 INFO HttpServer: Starting HTTP Server
+17/03/01 11:31:38 INFO Utils: Successfully started service 'HTTP file server' on port 44398.
+17/03/01 11:31:38 INFO Utils: Successfully started service 'HTTP file server' on port 42154.
+17/03/01 11:31:38 INFO SparkEnv: Registering OutputCommitCoordinator
+17/03/01 11:31:38 INFO SparkEnv: Registering OutputCommitCoordinator
+17/03/01 11:31:38 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/03/01 11:31:38 INFO SparkUI: Started SparkUI at http://10.108.164.252:4040
+17/03/01 11:31:38 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/03/01 11:31:38 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+17/03/01 11:31:38 INFO SparkUI: Started SparkUI at http://10.108.164.252:4041
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/activation-1.1.jar at http://10.108.164.252:42154/jars/activation-1.1.jar with timestamp 1488339098407
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/antlr-2.7.7.jar at http://10.108.164.252:42154/jars/antlr-2.7.7.jar with timestamp 1488339098409
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/apache-mime4j-core-0.7.2.jar at http://10.108.164.252:42154/jars/apache-mime4j-core-0.7.2.jar with timestamp 1488339098412
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-api-1.2.19.jar at http://10.108.164.252:42154/jars/axiom-api-1.2.19.jar with timestamp 1488339098417
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-dom-1.2.19.jar at http://10.108.164.252:42154/jars/axiom-dom-1.2.19.jar with timestamp 1488339098422
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/activation-1.1.jar at http://10.108.164.252:44398/jars/activation-1.1.jar with timestamp 1488339098428
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-impl-1.2.19.jar at http://10.108.164.252:42154/jars/axiom-impl-1.2.19.jar with timestamp 1488339098429
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/antlr-2.7.7.jar at http://10.108.164.252:44398/jars/antlr-2.7.7.jar with timestamp 1488339098430
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/apache-mime4j-core-0.7.2.jar at http://10.108.164.252:44398/jars/apache-mime4j-core-0.7.2.jar with timestamp 1488339098430
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-api-1.2.19.jar at http://10.108.164.252:44398/jars/axiom-api-1.2.19.jar with timestamp 1488339098431
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-dom-1.2.19.jar at http://10.108.164.252:44398/jars/axiom-dom-1.2.19.jar with timestamp 1488339098432
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-jaxb-1.2.19.jar at http://10.108.164.252:42154/jars/axiom-jaxb-1.2.19.jar with timestamp 1488339098432
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-impl-1.2.19.jar at http://10.108.164.252:44398/jars/axiom-impl-1.2.19.jar with timestamp 1488339098433
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axiom-jaxb-1.2.19.jar at http://10.108.164.252:44398/jars/axiom-jaxb-1.2.19.jar with timestamp 1488339098433
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-adb-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-adb-1.7.2.jar with timestamp 1488339098450
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-adb-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-adb-1.7.2.jar with timestamp 1488339098450
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-adb-codegen-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-adb-codegen-1.7.2.jar with timestamp 1488339098452
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-adb-codegen-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-adb-codegen-1.7.2.jar with timestamp 1488339098452
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-ant-plugin-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-ant-plugin-1.7.2.jar with timestamp 1488339098453
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-ant-plugin-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-ant-plugin-1.7.2.jar with timestamp 1488339098453
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-clustering-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-clustering-1.7.2.jar with timestamp 1488339098455
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-clustering-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-clustering-1.7.2.jar with timestamp 1488339098455
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-codegen-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-codegen-1.7.2.jar with timestamp 1488339098458
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-codegen-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-codegen-1.7.2.jar with timestamp 1488339098458
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-corba-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-corba-1.7.2.jar with timestamp 1488339098460
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-corba-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-corba-1.7.2.jar with timestamp 1488339098460
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-fastinfoset-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-fastinfoset-1.7.2.jar with timestamp 1488339098460
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-java2wsdl-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-java2wsdl-1.7.2.jar with timestamp 1488339098461
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-fastinfoset-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-fastinfoset-1.7.2.jar with timestamp 1488339098460
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-java2wsdl-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-java2wsdl-1.7.2.jar with timestamp 1488339098465
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-jaxbri-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-jaxbri-1.7.2.jar with timestamp 1488339098465
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-jaxbri-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-jaxbri-1.7.2.jar with timestamp 1488339098463
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-jaxws-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-jaxws-1.7.2.jar with timestamp 1488339098472
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-jibx-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-jibx-1.7.2.jar with timestamp 1488339098473
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-jaxws-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-jaxws-1.7.2.jar with timestamp 1488339098474
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-json-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-json-1.7.2.jar with timestamp 1488339098475
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-jibx-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-jibx-1.7.2.jar with timestamp 1488339098475
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-json-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-json-1.7.2.jar with timestamp 1488339098476
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-kernel-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-kernel-1.7.2.jar with timestamp 1488339098485
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-kernel-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-kernel-1.7.2.jar with timestamp 1488339098485
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-metadata-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-metadata-1.7.2.jar with timestamp 1488339098492
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-metadata-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-metadata-1.7.2.jar with timestamp 1488339098492
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-mtompolicy-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-mtompolicy-1.7.2.jar with timestamp 1488339098492
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-mtompolicy-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-mtompolicy-1.7.2.jar with timestamp 1488339098492
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-saaj-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-saaj-1.7.2.jar with timestamp 1488339098493
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-saaj-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-saaj-1.7.2.jar with timestamp 1488339098493
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-soapmonitor-servlet-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-soapmonitor-servlet-1.7.2.jar with timestamp 1488339098494
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-soapmonitor-servlet-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-soapmonitor-servlet-1.7.2.jar with timestamp 1488339098495
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-spring-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-spring-1.7.2.jar with timestamp 1488339098495
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-spring-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-spring-1.7.2.jar with timestamp 1488339098496
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-base-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-base-1.7.2.jar with timestamp 1488339098497
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-base-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-base-1.7.2.jar with timestamp 1488339098497
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-http-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-http-1.7.2.jar with timestamp 1488339098499
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-http-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-http-1.7.2.jar with timestamp 1488339098499
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-jms-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-jms-1.7.2.jar with timestamp 1488339098504
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-jms-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-jms-1.7.2.jar with timestamp 1488339098504
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-local-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-local-1.7.2.jar with timestamp 1488339098505
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-local-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-local-1.7.2.jar with timestamp 1488339098505
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-mail-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-mail-1.7.2.jar with timestamp 1488339098506
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-mail-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-mail-1.7.2.jar with timestamp 1488339098506
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-tcp-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-tcp-1.7.2.jar with timestamp 1488339098506
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-tcp-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-tcp-1.7.2.jar with timestamp 1488339098506
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-udp-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-udp-1.7.2.jar with timestamp 1488339098507
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-udp-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-udp-1.7.2.jar with timestamp 1488339098508
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-xmpp-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-transport-xmpp-1.7.2.jar with timestamp 1488339098508
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-transport-xmpp-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-transport-xmpp-1.7.2.jar with timestamp 1488339098508
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-xmlbeans-1.7.2.jar at http://10.108.164.252:42154/jars/axis2-xmlbeans-1.7.2.jar with timestamp 1488339098509
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/axis2-xmlbeans-1.7.2.jar at http://10.108.164.252:44398/jars/axis2-xmlbeans-1.7.2.jar with timestamp 1488339098509
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/bcel-findbugs-6.0.jar at http://10.108.164.252:42154/jars/bcel-findbugs-6.0.jar with timestamp 1488339098511
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/bcel-findbugs-6.0.jar at http://10.108.164.252:44398/jars/bcel-findbugs-6.0.jar with timestamp 1488339098511
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-cli-1.2.jar at http://10.108.164.252:42154/jars/commons-cli-1.2.jar with timestamp 1488339098512
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-cli-1.2.jar at http://10.108.164.252:44398/jars/commons-cli-1.2.jar with timestamp 1488339098512
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-codec-1.3.jar at http://10.108.164.252:44398/jars/commons-codec-1.3.jar with timestamp 1488339098512
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-codec-1.3.jar at http://10.108.164.252:42154/jars/commons-codec-1.3.jar with timestamp 1488339098512
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-fileupload-1.3.1.jar at http://10.108.164.252:44398/jars/commons-fileupload-1.3.1.jar with timestamp 1488339098513
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-fileupload-1.3.1.jar at http://10.108.164.252:42154/jars/commons-fileupload-1.3.1.jar with timestamp 1488339098513
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-httpclient-3.1.jar at http://10.108.164.252:44398/jars/commons-httpclient-3.1.jar with timestamp 1488339098516
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-io-2.1.jar at http://10.108.164.252:44398/jars/commons-io-2.1.jar with timestamp 1488339098518
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-logging-1.1.1.jar at http://10.108.164.252:44398/jars/commons-logging-1.1.1.jar with timestamp 1488339098519
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-annotation_1.0_spec-1.1.jar at http://10.108.164.252:44398/jars/geronimo-annotation_1.0_spec-1.1.jar with timestamp 1488339098520
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-httpclient-3.1.jar at http://10.108.164.252:42154/jars/commons-httpclient-3.1.jar with timestamp 1488339098520
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-jaxws_2.2_spec-1.0.jar at http://10.108.164.252:44398/jars/geronimo-jaxws_2.2_spec-1.0.jar with timestamp 1488339098521
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-io-2.1.jar at http://10.108.164.252:42154/jars/commons-io-2.1.jar with timestamp 1488339098521
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/commons-logging-1.1.1.jar at http://10.108.164.252:42154/jars/commons-logging-1.1.1.jar with timestamp 1488339098521
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-jta_1.1_spec-1.1.jar at http://10.108.164.252:44398/jars/geronimo-jta_1.1_spec-1.1.jar with timestamp 1488339098521
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-annotation_1.0_spec-1.1.jar at http://10.108.164.252:42154/jars/geronimo-annotation_1.0_spec-1.1.jar with timestamp 1488339098521
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-jaxws_2.2_spec-1.0.jar at http://10.108.164.252:42154/jars/geronimo-jaxws_2.2_spec-1.0.jar with timestamp 1488339098521
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-saaj_1.3_spec-1.0.1.jar at http://10.108.164.252:44398/jars/geronimo-saaj_1.3_spec-1.0.1.jar with timestamp 1488339098521
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-jta_1.1_spec-1.1.jar at http://10.108.164.252:42154/jars/geronimo-jta_1.1_spec-1.1.jar with timestamp 1488339098522
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-saaj_1.3_spec-1.0.1.jar at http://10.108.164.252:42154/jars/geronimo-saaj_1.3_spec-1.0.1.jar with timestamp 1488339098522
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-stax-api_1.0_spec-1.0.1.jar at http://10.108.164.252:42154/jars/geronimo-stax-api_1.0_spec-1.0.1.jar with timestamp 1488339098522
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-stax-api_1.0_spec-1.0.1.jar at http://10.108.164.252:44398/jars/geronimo-stax-api_1.0_spec-1.0.1.jar with timestamp 1488339098522
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar at http://10.108.164.252:42154/jars/geronimo-ws-metadata_2.0_spec-1.1.2.jar with timestamp 1488339098522
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar at http://10.108.164.252:44398/jars/geronimo-ws-metadata_2.0_spec-1.1.2.jar with timestamp 1488339098522
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/gson-2.1.jar at http://10.108.164.252:42154/jars/gson-2.1.jar with timestamp 1488339098523
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/gson-2.1.jar at http://10.108.164.252:44398/jars/gson-2.1.jar with timestamp 1488339098523
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/httpclient-4.2.5.jar at http://10.108.164.252:44398/jars/httpclient-4.2.5.jar with timestamp 1488339098529
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/httpclient-4.2.5.jar at http://10.108.164.252:42154/jars/httpclient-4.2.5.jar with timestamp 1488339098529
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/httpcore-4.2.5.jar at http://10.108.164.252:42154/jars/httpcore-4.2.5.jar with timestamp 1488339098532
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/httpcore-4.2.5.jar at http://10.108.164.252:44398/jars/httpcore-4.2.5.jar with timestamp 1488339098532
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jalopy-1.5rc3.jar at http://10.108.164.252:42154/jars/jalopy-1.5rc3.jar with timestamp 1488339098549
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jalopy-1.5rc3.jar at http://10.108.164.252:44398/jars/jalopy-1.5rc3.jar with timestamp 1488339098549
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxb-api-2.2.6.jar at http://10.108.164.252:42154/jars/jaxb-api-2.2.6.jar with timestamp 1488339098550
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxb-api-2.2.6.jar at http://10.108.164.252:44398/jars/jaxb-api-2.2.6.jar with timestamp 1488339098550
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxb-impl-2.2.6.jar at http://10.108.164.252:44398/jars/jaxb-impl-2.2.6.jar with timestamp 1488339098566
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxb-impl-2.2.6.jar at http://10.108.164.252:42154/jars/jaxb-impl-2.2.6.jar with timestamp 1488339098566
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxb-xjc-2.2.6.jar at http://10.108.164.252:44398/jars/jaxb-xjc-2.2.6.jar with timestamp 1488339098626
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxb-xjc-2.2.6.jar at http://10.108.164.252:42154/jars/jaxb-xjc-2.2.6.jar with timestamp 1488339098626
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxen-1.1.6.jar at http://10.108.164.252:42154/jars/jaxen-1.1.6.jar with timestamp 1488339098628
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxen-1.1.6.jar at http://10.108.164.252:44398/jars/jaxen-1.1.6.jar with timestamp 1488339098628
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxws-tools-2.2.6.jar at http://10.108.164.252:42154/jars/jaxws-tools-2.2.6.jar with timestamp 1488339098639
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jaxws-tools-2.2.6.jar at http://10.108.164.252:44398/jars/jaxws-tools-2.2.6.jar with timestamp 1488339098639
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jedis.jar at http://10.108.164.252:44398/jars/jedis.jar with timestamp 1488339098652
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jedis.jar at http://10.108.164.252:42154/jars/jedis.jar with timestamp 1488339098652
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jettison-1.3.jar at http://10.108.164.252:42154/jars/jettison-1.3.jar with timestamp 1488339098653
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jettison-1.3.jar at http://10.108.164.252:44398/jars/jettison-1.3.jar with timestamp 1488339098653
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jibx-bind-1.2.jar at http://10.108.164.252:44398/jars/jibx-bind-1.2.jar with timestamp 1488339098655
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jibx-bind-1.2.jar at http://10.108.164.252:42154/jars/jibx-bind-1.2.jar with timestamp 1488339098655
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jibx-run-1.2.jar at http://10.108.164.252:42154/jars/jibx-run-1.2.jar with timestamp 1488339098656
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jibx-run-1.2.jar at http://10.108.164.252:44398/jars/jibx-run-1.2.jar with timestamp 1488339098655
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jsr311-api-1.1.1.jar at http://10.108.164.252:42154/jars/jsr311-api-1.1.1.jar with timestamp 1488339098656
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/jsr311-api-1.1.1.jar at http://10.108.164.252:44398/jars/jsr311-api-1.1.1.jar with timestamp 1488339098656
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/juli-6.0.16.jar at http://10.108.164.252:44398/jars/juli-6.0.16.jar with timestamp 1488339098656
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/juli-6.0.16.jar at http://10.108.164.252:42154/jars/juli-6.0.16.jar with timestamp 1488339098656
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/log4j-1.2.15.jar at http://10.108.164.252:44398/jars/log4j-1.2.15.jar with timestamp 1488339098661
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/log4j-1.2.15.jar at http://10.108.164.252:42154/jars/log4j-1.2.15.jar with timestamp 1488339098661
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/mail-1.4.jar at http://10.108.164.252:44398/jars/mail-1.4.jar with timestamp 1488339098666
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/mail-1.4.jar at http://10.108.164.252:42154/jars/mail-1.4.jar with timestamp 1488339098666
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/mex-1.7.2-impl.jar at http://10.108.164.252:44398/jars/mex-1.7.2-impl.jar with timestamp 1488339098667
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/mex-1.7.2-impl.jar at http://10.108.164.252:42154/jars/mex-1.7.2-impl.jar with timestamp 1488339098667
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/neethi-3.0.3.jar at http://10.108.164.252:42154/jars/neethi-3.0.3.jar with timestamp 1488339098667
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/neethi-3.0.3.jar at http://10.108.164.252:44398/jars/neethi-3.0.3.jar with timestamp 1488339098667
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/stax2-api-3.1.1.jar at http://10.108.164.252:44398/jars/stax2-api-3.1.1.jar with timestamp 1488339098670
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/stax2-api-3.1.1.jar at http://10.108.164.252:42154/jars/stax2-api-3.1.1.jar with timestamp 1488339098670
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/tribes-6.0.16.jar at http://10.108.164.252:44398/jars/tribes-6.0.16.jar with timestamp 1488339098673
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/tribes-6.0.16.jar at http://10.108.164.252:42154/jars/tribes-6.0.16.jar with timestamp 1488339098673
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/woden-core-1.0M10.jar at http://10.108.164.252:44398/jars/woden-core-1.0M10.jar with timestamp 1488339098677
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/woden-core-1.0M10.jar at http://10.108.164.252:42154/jars/woden-core-1.0M10.jar with timestamp 1488339098677
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/woodstox-core-asl-4.2.0.jar at http://10.108.164.252:42154/jars/woodstox-core-asl-4.2.0.jar with timestamp 1488339098684
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/woodstox-core-asl-4.2.0.jar at http://10.108.164.252:44398/jars/woodstox-core-asl-4.2.0.jar with timestamp 1488339098684
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/wsdl4j-1.6.2.jar at http://10.108.164.252:42154/jars/wsdl4j-1.6.2.jar with timestamp 1488339098686
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/wsdl4j-1.6.2.jar at http://10.108.164.252:44398/jars/wsdl4j-1.6.2.jar with timestamp 1488339098686
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xalan-2.7.0.jar at http://10.108.164.252:42154/jars/xalan-2.7.0.jar with timestamp 1488339098722
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xalan-2.7.0.jar at http://10.108.164.252:44398/jars/xalan-2.7.0.jar with timestamp 1488339098721
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xml-resolver-1.2.jar at http://10.108.164.252:42154/jars/xml-resolver-1.2.jar with timestamp 1488339098724
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xml-resolver-1.2.jar at http://10.108.164.252:44398/jars/xml-resolver-1.2.jar with timestamp 1488339098724
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xmlbeans-2.5.0.jar at http://10.108.164.252:42154/jars/xmlbeans-2.5.0.jar with timestamp 1488339098757
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xmlbeans-2.5.0.jar at http://10.108.164.252:44398/jars/xmlbeans-2.5.0.jar with timestamp 1488339098757
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xmlschema-core-2.2.1.jar at http://10.108.164.252:44398/jars/xmlschema-core-2.2.1.jar with timestamp 1488339098762
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/lib/xmlschema-core-2.2.1.jar at http://10.108.164.252:42154/jars/xmlschema-core-2.2.1.jar with timestamp 1488339098762
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/target/scala-2.10/simple-project_2.10-1.0.jar at http://10.108.164.252:44398/jars/simple-project_2.10-1.0.jar with timestamp 1488339098762
+17/03/01 11:31:38 INFO SparkContext: Added JAR file:/home/spark/genSpark/test/target/scala-2.10/simple-project_2.10-1.0.jar at http://10.108.164.252:42154/jars/simple-project_2.10-1.0.jar with timestamp 1488339098762
+17/03/01 11:31:38 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+17/03/01 11:31:38 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Connecting to master spark://10.108.167.33:7077...
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Connecting to master spark://10.109.253.71:7077...
+17/03/01 11:31:39 INFO SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20170301113137-0000
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor added: app-20170301113137-0000/0 on worker-20170227091336-10.109.253.71-35105 (10.109.253.71:35105) with 2 cores
+17/03/01 11:31:39 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170301113137-0000/0 on hostPort 10.109.253.71:35105 with 2 cores, 1024.0 MB RAM
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor added: app-20170301113137-0000/1 on worker-20170227091405-10.109.253.73-43226 (10.109.253.73:43226) with 2 cores
+17/03/01 11:31:39 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170301113137-0000/1 on hostPort 10.109.253.73:43226 with 2 cores, 1024.0 MB RAM
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor added: app-20170301113137-0000/2 on worker-20170227091354-10.109.253.74-57109 (10.109.253.74:57109) with 2 cores
+17/03/01 11:31:39 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170301113137-0000/2 on hostPort 10.109.253.74:57109 with 2 cores, 1024.0 MB RAM
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor added: app-20170301113137-0000/3 on worker-20170227091352-10.109.253.72-38834 (10.109.253.72:38834) with 2 cores
+17/03/01 11:31:39 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170301113137-0000/3 on hostPort 10.109.253.72:38834 with 2 cores, 1024.0 MB RAM
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/0 is now RUNNING
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/1 is now RUNNING
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/2 is now RUNNING
+17/03/01 11:31:39 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/3 is now RUNNING
+17/03/01 11:31:40 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46027.
+17/03/01 11:31:40 INFO NettyBlockTransferService: Server created on 46027
+17/03/01 11:31:40 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/0 is now LOADING
+17/03/01 11:31:40 INFO BlockManagerMaster: Trying to register BlockManager
+17/03/01 11:31:40 INFO BlockManagerMasterEndpoint: Registering block manager 10.108.164.252:46027 with 530.0 MB RAM, BlockManagerId(driver, 10.108.164.252, 46027)
+17/03/01 11:31:40 INFO BlockManagerMaster: Registered BlockManager
+17/03/01 11:31:40 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/3 is now LOADING
+17/03/01 11:31:40 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/2 is now LOADING
+17/03/01 11:31:40 INFO SparkDeploySchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+17/03/01 11:31:41 INFO SparkContext: Starting job: start at zhou46.scala:24
+17/03/01 11:31:41 INFO DAGScheduler: Registering RDD 1 (start at zhou46.scala:24)
+17/03/01 11:31:41 INFO DAGScheduler: Got job 0 (start at zhou46.scala:24) with 20 output partitions
+17/03/01 11:31:41 INFO DAGScheduler: Final stage: ResultStage 1(start at zhou46.scala:24)
+17/03/01 11:31:41 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+17/03/01 11:31:41 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+17/03/01 11:31:41 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[1] at start at zhou46.scala:24), which has no missing parents
+17/03/01 11:31:41 INFO MemoryStore: ensureFreeSpace(2736) called with curMem=0, maxMem=555755765
+17/03/01 11:31:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 2.7 KB, free 530.0 MB)
+17/03/01 11:31:41 INFO MemoryStore: ensureFreeSpace(1672) called with curMem=2736, maxMem=555755765
+17/03/01 11:31:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1672.0 B, free 530.0 MB)
+17/03/01 11:31:41 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.108.164.252:46027 (size: 1672.0 B, free: 530.0 MB)
+17/03/01 11:31:41 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+17/03/01 11:31:41 INFO DAGScheduler: Submitting 50 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[1] at start at zhou46.scala:24)
+17/03/01 11:31:41 INFO TaskSchedulerImpl: Adding task set 0.0 with 50 tasks
+17/03/01 11:31:42 WARN AppClient$ClientEndpoint: Could not connect to 10.108.167.33:7077: akka.remote.EndpointAssociationException: Association failed with [akka.tcp://sparkMaster@10.108.167.33:7077]
+17/03/01 11:31:45 INFO AppClient$ClientEndpoint: Executor updated: app-20170301113137-0000/1 is now LOADING
+17/03/01 11:31:48 INFO SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.109.253.71:50161/user/Executor#508139946]) with ID 0
+17/03/01 11:31:48 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:48 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:48 INFO SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.109.253.72:48712/user/Executor#2032247658]) with ID 3
+17/03/01 11:31:48 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, 10.109.253.72, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:48 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, 10.109.253.72, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:48 INFO SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.109.253.74:52884/user/Executor#-1713900677]) with ID 2
+17/03/01 11:31:48 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4, 10.109.253.74, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:48 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5, 10.109.253.74, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:48 INFO BlockManagerMasterEndpoint: Registering block manager 10.109.253.71:53860 with 534.5 MB RAM, BlockManagerId(0, 10.109.253.71, 53860)
+17/03/01 11:31:49 INFO BlockManagerMasterEndpoint: Registering block manager 10.109.253.72:50574 with 534.5 MB RAM, BlockManagerId(3, 10.109.253.72, 50574)
+17/03/01 11:31:49 INFO BlockManagerMasterEndpoint: Registering block manager 10.109.253.74:39009 with 534.5 MB RAM, BlockManagerId(2, 10.109.253.74, 39009)
+17/03/01 11:31:54 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.109.253.71:53860 (size: 1672.0 B, free: 534.5 MB)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 8158 ms on 10.109.253.71 (1/50)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 8096 ms on 10.109.253.71 (2/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 63 ms on 10.109.253.71 (3/50)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 69 ms on 10.109.253.71 (4/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 48 ms on 10.109.253.71 (5/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 65 ms on 10.109.253.71 (6/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 46 ms on 10.109.253.71 (7/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 46 ms on 10.109.253.71 (8/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 43 ms on 10.109.253.71 (9/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 41 ms on 10.109.253.71 (10/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 16.0 in stage 0.0 (TID 16, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 46 ms on 10.109.253.71 (11/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 17.0 in stage 0.0 (TID 17, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 41 ms on 10.109.253.71 (12/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 18.0 in stage 0.0 (TID 18, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 16.0 in stage 0.0 (TID 16) in 42 ms on 10.109.253.71 (13/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 19.0 in stage 0.0 (TID 19, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 17.0 in stage 0.0 (TID 17) in 40 ms on 10.109.253.71 (14/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 20.0 in stage 0.0 (TID 20, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 18.0 in stage 0.0 (TID 18) in 42 ms on 10.109.253.71 (15/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 21.0 in stage 0.0 (TID 21, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 19.0 in stage 0.0 (TID 19) in 51 ms on 10.109.253.71 (16/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 22.0 in stage 0.0 (TID 22, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 20.0 in stage 0.0 (TID 20) in 52 ms on 10.109.253.71 (17/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 23.0 in stage 0.0 (TID 23, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 21.0 in stage 0.0 (TID 21) in 36 ms on 10.109.253.71 (18/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 24.0 in stage 0.0 (TID 24, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 22.0 in stage 0.0 (TID 22) in 35 ms on 10.109.253.71 (19/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 25.0 in stage 0.0 (TID 25, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 23.0 in stage 0.0 (TID 23) in 41 ms on 10.109.253.71 (20/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 26.0 in stage 0.0 (TID 26, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 24.0 in stage 0.0 (TID 24) in 36 ms on 10.109.253.71 (21/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 27.0 in stage 0.0 (TID 27, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 25.0 in stage 0.0 (TID 25) in 35 ms on 10.109.253.71 (22/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 28.0 in stage 0.0 (TID 28, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 26.0 in stage 0.0 (TID 26) in 36 ms on 10.109.253.71 (23/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 29.0 in stage 0.0 (TID 29, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 27.0 in stage 0.0 (TID 27) in 37 ms on 10.109.253.71 (24/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 30.0 in stage 0.0 (TID 30, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 28.0 in stage 0.0 (TID 28) in 35 ms on 10.109.253.71 (25/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 31.0 in stage 0.0 (TID 31, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 29.0 in stage 0.0 (TID 29) in 29 ms on 10.109.253.71 (26/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 32.0 in stage 0.0 (TID 32, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 30.0 in stage 0.0 (TID 30) in 34 ms on 10.109.253.71 (27/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 33.0 in stage 0.0 (TID 33, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 31.0 in stage 0.0 (TID 31) in 35 ms on 10.109.253.71 (28/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 34.0 in stage 0.0 (TID 34, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 32.0 in stage 0.0 (TID 32) in 41 ms on 10.109.253.71 (29/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 35.0 in stage 0.0 (TID 35, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 33.0 in stage 0.0 (TID 33) in 33 ms on 10.109.253.71 (30/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 36.0 in stage 0.0 (TID 36, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 34.0 in stage 0.0 (TID 34) in 31 ms on 10.109.253.71 (31/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 37.0 in stage 0.0 (TID 37, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 35.0 in stage 0.0 (TID 35) in 27 ms on 10.109.253.71 (32/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 38.0 in stage 0.0 (TID 38, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 37.0 in stage 0.0 (TID 37) in 24 ms on 10.109.253.71 (33/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 39.0 in stage 0.0 (TID 39, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 36.0 in stage 0.0 (TID 36) in 28 ms on 10.109.253.71 (34/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 40.0 in stage 0.0 (TID 40, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 38.0 in stage 0.0 (TID 38) in 29 ms on 10.109.253.71 (35/50)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 39.0 in stage 0.0 (TID 39) in 27 ms on 10.109.253.71 (36/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 41.0 in stage 0.0 (TID 41, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.109.253.72:50574 (size: 1672.0 B, free: 534.5 MB)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 42.0 in stage 0.0 (TID 42, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 41.0 in stage 0.0 (TID 41) in 27 ms on 10.109.253.71 (37/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 43.0 in stage 0.0 (TID 43, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 40.0 in stage 0.0 (TID 40) in 32 ms on 10.109.253.71 (38/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 44.0 in stage 0.0 (TID 44, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 43.0 in stage 0.0 (TID 43) in 24 ms on 10.109.253.71 (39/50)
+17/03/01 11:31:56 INFO TaskSetManager: Starting task 45.0 in stage 0.0 (TID 45, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:56 INFO TaskSetManager: Finished task 42.0 in stage 0.0 (TID 42) in 28 ms on 10.109.253.71 (40/50)
+17/03/01 11:31:57 INFO TaskSetManager: Starting task 46.0 in stage 0.0 (TID 46, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:57 INFO TaskSetManager: Finished task 44.0 in stage 0.0 (TID 44) in 27 ms on 10.109.253.71 (41/50)
+17/03/01 11:31:57 INFO TaskSetManager: Starting task 47.0 in stage 0.0 (TID 47, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:57 INFO TaskSetManager: Finished task 45.0 in stage 0.0 (TID 45) in 27 ms on 10.109.253.71 (42/50)
+17/03/01 11:31:57 INFO TaskSetManager: Starting task 48.0 in stage 0.0 (TID 48, 10.109.253.71, PROCESS_LOCAL, 7051 bytes)
+17/03/01 11:31:57 INFO TaskSetManager: Finished task 46.0 in stage 0.0 (TID 46) in 26 ms on 10.109.253.71 (43/50)
+17/03/01 11:31:57 INFO TaskSetManager: Finished task 47.0 in stage 0.0 (TID 47) in 26 ms on 10.109.253.71 (44/50)
+17/03/01 11:31:57 INFO TaskSetManager: Starting task 49.0 in stage 0.0 (TID 49, 10.109.253.71, PROCESS_LOCAL, 7108 bytes)
+17/03/01 11:31:57 INFO TaskSetManager: Finished task 48.0 in stage 0.0 (TID 48) in 26 ms on 10.109.253.71 (45/50)
+17/03/01 11:31:57 INFO TaskSetManager: Finished task 49.0 in stage 0.0 (TID 49) in 24 ms on 10.109.253.71 (46/50)
+17/03/01 11:31:58 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 10337 ms on 10.109.253.72 (47/50)
+17/03/01 11:31:58 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 10338 ms on 10.109.253.72 (48/50)
+17/03/01 11:32:00 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.109.253.74:39009 (size: 1672.0 B, free: 534.5 MB)
+17/03/01 11:32:01 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 12426 ms on 10.109.253.74 (49/50)
+17/03/01 11:32:01 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 12429 ms on 10.109.253.74 (50/50)
+17/03/01 11:32:01 INFO DAGScheduler: ShuffleMapStage 0 (start at zhou46.scala:24) finished in 19.442 s
+17/03/01 11:32:01 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+17/03/01 11:32:01 INFO DAGScheduler: looking for newly runnable stages
+17/03/01 11:32:01 INFO DAGScheduler: running: Set()
+17/03/01 11:32:01 INFO DAGScheduler: waiting: Set(ResultStage 1)
+17/03/01 11:32:01 INFO DAGScheduler: failed: Set()
+17/03/01 11:32:01 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+17/03/01 11:32:01 INFO DAGScheduler: Submitting ResultStage 1 (ShuffledRDD[2] at start at zhou46.scala:24), which is now runnable
+17/03/01 11:32:01 INFO MemoryStore: ensureFreeSpace(2344) called with curMem=4408, maxMem=555755765
+17/03/01 11:32:01 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 2.3 KB, free 530.0 MB)
+17/03/01 11:32:01 INFO MemoryStore: ensureFreeSpace(1417) called with curMem=6752, maxMem=555755765
+17/03/01 11:32:01 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 1417.0 B, free 530.0 MB)
+17/03/01 11:32:01 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.108.164.252:46027 (size: 1417.0 B, free: 530.0 MB)
+17/03/01 11:32:01 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+17/03/01 11:32:01 INFO DAGScheduler: Submitting 20 missing tasks from ResultStage 1 (ShuffledRDD[2] at start at zhou46.scala:24)
+17/03/01 11:32:01 INFO TaskSchedulerImpl: Adding task set 1.0 with 20 tasks
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 50, 10.109.253.72, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 51, 10.109.253.74, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 52, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 53, 10.109.253.72, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 54, 10.109.253.74, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 55, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.109.253.74:39009 (size: 1417.0 B, free: 534.5 MB)
+17/03/01 11:32:01 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.109.253.74:52884
+17/03/01 11:32:01 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 301 bytes
+17/03/01 11:32:01 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.109.253.71:53860 (size: 1417.0 B, free: 534.5 MB)
+17/03/01 11:32:01 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.109.253.72:50574 (size: 1417.0 B, free: 534.5 MB)
+17/03/01 11:32:01 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.109.253.71:50161
+17/03/01 11:32:01 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.109.253.72:48712
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 56, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 57, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:01 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 55) in 892 ms on 10.109.253.71 (1/20)
+17/03/01 11:32:01 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 52) in 895 ms on 10.109.253.71 (2/20)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 58, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 57) in 37 ms on 10.109.253.71 (3/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 56) in 43 ms on 10.109.253.71 (4/20)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 59, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 60, 10.109.253.72, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 61, 10.109.253.72, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 53) in 945 ms on 10.109.253.72 (5/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 50) in 950 ms on 10.109.253.72 (6/20)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 62, 10.109.253.74, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 54) in 955 ms on 10.109.253.74 (7/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 59) in 24 ms on 10.109.253.71 (8/20)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 63, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 64, 10.109.253.74, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 65, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 58) in 33 ms on 10.109.253.71 (9/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 51) in 963 ms on 10.109.253.74 (10/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 15.0 in stage 1.0 (TID 65) in 28 ms on 10.109.253.71 (11/20)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 16.0 in stage 1.0 (TID 66, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 17.0 in stage 1.0 (TID 67, 10.109.253.71, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 13.0 in stage 1.0 (TID 63) in 33 ms on 10.109.253.71 (12/20)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 18.0 in stage 1.0 (TID 68, 10.109.253.72, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 61) in 59 ms on 10.109.253.72 (13/20)
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 19.0 in stage 1.0 (TID 69, 10.109.253.72, PROCESS_LOCAL, 6878 bytes)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 60) in 64 ms on 10.109.253.72 (14/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 64) in 56 ms on 10.109.253.74 (15/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 12.0 in stage 1.0 (TID 62) in 60 ms on 10.109.253.74 (16/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 17.0 in stage 1.0 (TID 67) in 29 ms on 10.109.253.71 (17/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 16.0 in stage 1.0 (TID 66) in 33 ms on 10.109.253.71 (18/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 19.0 in stage 1.0 (TID 69) in 52 ms on 10.109.253.72 (19/20)
+17/03/01 11:32:02 INFO TaskSetManager: Finished task 18.0 in stage 1.0 (TID 68) in 58 ms on 10.109.253.72 (20/20)
+17/03/01 11:32:02 INFO DAGScheduler: ResultStage 1 (start at zhou46.scala:24) finished in 1.060 s
+17/03/01 11:32:02 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+17/03/01 11:32:02 INFO DAGScheduler: Job 0 finished: start at zhou46.scala:24, took 20.957428 s
+17/03/01 11:32:02 INFO ReceiverTracker: Starting 1 receivers
+17/03/01 11:32:02 INFO ReceiverTracker: ReceiverTracker started
+17/03/01 11:32:02 INFO ForEachDStream: metadataCleanupDelay = -1
+17/03/01 11:32:02 INFO ShuffledDStream: metadataCleanupDelay = -1
+17/03/01 11:32:02 INFO MappedDStream: metadataCleanupDelay = -1
+17/03/01 11:32:02 INFO FlatMappedDStream: metadataCleanupDelay = -1
+17/03/01 11:32:02 INFO SocketInputDStream: metadataCleanupDelay = -1
+17/03/01 11:32:02 INFO SocketInputDStream: Slide time = 1000 ms
+17/03/01 11:32:02 INFO SocketInputDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/03/01 11:32:02 INFO SocketInputDStream: Checkpoint interval = null
+17/03/01 11:32:02 INFO SocketInputDStream: Remember duration = 1000 ms
+17/03/01 11:32:02 INFO SocketInputDStream: Initialized and validated org.apache.spark.streaming.dstream.SocketInputDStream@4e6f2bb5
+17/03/01 11:32:02 INFO FlatMappedDStream: Slide time = 1000 ms
+17/03/01 11:32:02 INFO FlatMappedDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/03/01 11:32:02 INFO FlatMappedDStream: Checkpoint interval = null
+17/03/01 11:32:02 INFO FlatMappedDStream: Remember duration = 1000 ms
+17/03/01 11:32:02 INFO FlatMappedDStream: Initialized and validated org.apache.spark.streaming.dstream.FlatMappedDStream@21e20ad5
+17/03/01 11:32:02 INFO MappedDStream: Slide time = 1000 ms
+17/03/01 11:32:02 INFO MappedDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/03/01 11:32:02 INFO MappedDStream: Checkpoint interval = null
+17/03/01 11:32:02 INFO MappedDStream: Remember duration = 1000 ms
+17/03/01 11:32:02 INFO MappedDStream: Initialized and validated org.apache.spark.streaming.dstream.MappedDStream@3f628ce9
+17/03/01 11:32:02 INFO ShuffledDStream: Slide time = 1000 ms
+17/03/01 11:32:02 INFO ShuffledDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/03/01 11:32:02 INFO ShuffledDStream: Checkpoint interval = null
+17/03/01 11:32:02 INFO ShuffledDStream: Remember duration = 1000 ms
+17/03/01 11:32:02 INFO ShuffledDStream: Initialized and validated org.apache.spark.streaming.dstream.ShuffledDStream@35e8316e
+17/03/01 11:32:02 INFO ForEachDStream: Slide time = 1000 ms
+17/03/01 11:32:02 INFO ForEachDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/03/01 11:32:02 INFO ForEachDStream: Checkpoint interval = null
+17/03/01 11:32:02 INFO ForEachDStream: Remember duration = 1000 ms
+17/03/01 11:32:02 INFO ForEachDStream: Initialized and validated org.apache.spark.streaming.dstream.ForEachDStream@26d96e5
+17/03/01 11:32:02 INFO DAGScheduler: Got job 1 (submitJob at ReceiverTracker.scala:557) with 1 output partitions
+17/03/01 11:32:02 INFO DAGScheduler: Final stage: ResultStage 2(submitJob at ReceiverTracker.scala:557)
+17/03/01 11:32:02 INFO DAGScheduler: Parents of final stage: List()
+17/03/01 11:32:02 INFO DAGScheduler: Missing parents: List()
+17/03/01 11:32:02 INFO DAGScheduler: Submitting ResultStage 2 (Receiver 0 ParallelCollectionRDD[3] at makeRDD at ReceiverTracker.scala:554), which has no missing parents
+17/03/01 11:32:02 INFO ReceiverTracker: Receiver 0 started
+17/03/01 11:32:02 INFO MemoryStore: ensureFreeSpace(46544) called with curMem=8169, maxMem=555755765
+17/03/01 11:32:02 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 45.5 KB, free 530.0 MB)
+17/03/01 11:32:02 INFO MemoryStore: ensureFreeSpace(15230) called with curMem=54713, maxMem=555755765
+17/03/01 11:32:02 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 14.9 KB, free 529.9 MB)
+17/03/01 11:32:02 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.108.164.252:46027 (size: 14.9 KB, free: 530.0 MB)
+17/03/01 11:32:02 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+17/03/01 11:32:02 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (Receiver 0 ParallelCollectionRDD[3] at makeRDD at ReceiverTracker.scala:554)
+17/03/01 11:32:02 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks
+17/03/01 11:32:02 INFO RecurringTimer: Started timer for JobGenerator at time 1488339123000
+17/03/01 11:32:02 INFO JobGenerator: Started JobGenerator at 1488339123000 ms
+17/03/01 11:32:02 INFO JobScheduler: Started JobScheduler
+17/03/01 11:32:02 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 70, 10.109.253.72, ANY, 7625 bytes)
+17/03/01 11:32:02 INFO StreamingContext: StreamingContext started
+17/03/01 11:32:02 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.109.253.72:50574 (size: 14.9 KB, free: 534.5 MB)
+17/03/01 11:32:02 INFO ReceiverTracker: Registered receiver for stream 0 from 10.109.253.72:48712
+17/03/01 11:32:02 ERROR ReceiverTracker: Deregistered receiver for stream 0: Restarting receiver with delay 2000ms: Error connecting to 10.108.166.75:9999 - java.net.ConnectException: 拒绝连接

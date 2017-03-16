@@ -379,37 +379,37 @@ Sidebar.prototype.addUmlPalette = function(expand)
 	this.addPalette('uml', 'map', expand || false, mxUtils.bind(this, function(content)
 	{	
     	
-    	content.appendChild(this.createVertexTemplate('rhombus', 80, 80));
+    content.appendChild(this.createVertexTemplate('rhombus', 80, 80));
 	 mxConstants.CELL_TITLE.put("rhombus","map");
 
-	 content.appendChild(this.createVertexTemplate('', 110, 50, 'Object'));
+	 // content.appendChild(this.createVertexTemplate('', 110, 50, 'Object'));
     	
-	    var classCell = new mxCell('<p style="margin:0px;margin-top:4px;text-align:center;">' +
-    			'<b>Class</b></p>' +
-				'<hr/><div style="height:2px;"></div><hr/>', new mxGeometry(0, 0, 140, 60),
-				'verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1');
-    	classCell.vertex = true;
+	 //    var classCell = new mxCell('<p style="margin:0px;margin-top:4px;text-align:center;">' +
+  //   			'<b>Class</b></p>' +
+		// 		'<hr/><div style="height:2px;"></div><hr/>', new mxGeometry(0, 0, 140, 60),
+		// 		'verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1');
+  //   	classCell.vertex = true;
 
-    	content.appendChild(this.createVertexTemplateFromCells([classCell], 140, 60));
+  //   	content.appendChild(this.createVertexTemplateFromCells([classCell], 140, 60));
     	
-	    var classCell = new mxCell('<p style="margin:0px;margin-top:4px;text-align:center;">' +
-    			'<b>Class</b></p>' +
-				'<hr/><p style="margin:0px;margin-left:4px;">+ field: Type</p><hr/>' +
-				'<p style="margin:0px;margin-left:4px;">+ method(): Type</p>', new mxGeometry(0, 0, 160, 90),
-				'verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1');
-    	classCell.vertex = true;
+	 //    var classCell = new mxCell('<p style="margin:0px;margin-top:4px;text-align:center;">' +
+  //   			'<b>Class</b></p>' +
+		// 		'<hr/><p style="margin:0px;margin-left:4px;">+ field: Type</p><hr/>' +
+		// 		'<p style="margin:0px;margin-left:4px;">+ method(): Type</p>', new mxGeometry(0, 0, 160, 90),
+		// 		'verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1');
+  //   	classCell.vertex = true;
 
-    	content.appendChild(this.createVertexTemplateFromCells([classCell], 160, 90));
+  //   	content.appendChild(this.createVertexTemplateFromCells([classCell], 160, 90));
     	
-	    var classCell = new mxCell('<p style="margin:0px;margin-top:4px;text-align:center;">' +
-    			'<i>&lt;&lt;Interface&gt;&gt;</i><br/><b>Interface</b></p>' +
-				'<hr/><p style="margin:0px;margin-left:4px;">+ field1: Type<br/>' +
-				'+ field2: Type</p>' +
-				'<hr/><p style="margin:0px;margin-left:4px;">' +
-				'+ method1(Type): Type<br/>' +
-				'+ method2(Type, Type): Type</p>', new mxGeometry(0, 0, 190, 140),
-				'verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1');
-    	classCell.vertex = true;
+	 //    var classCell = new mxCell('<p style="margin:0px;margin-top:4px;text-align:center;">' +
+  //   			'<i>&lt;&lt;Interface&gt;&gt;</i><br/><b>Interface</b></p>' +
+		// 		'<hr/><p style="margin:0px;margin-left:4px;">+ field1: Type<br/>' +
+		// 		'+ field2: Type</p>' +
+		// 		'<hr/><p style="margin:0px;margin-left:4px;">' +
+		// 		'+ method1(Type): Type<br/>' +
+		// 		'+ method2(Type, Type): Type</p>', new mxGeometry(0, 0, 190, 140),
+		// 		'verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1');
+  //   	classCell.vertex = true;
 	}));
 };
 

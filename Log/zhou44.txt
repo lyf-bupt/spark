@@ -1,0 +1,2 @@
+/bin/sh: 1: spark-submit: not found
+/bin/sh: 1: spark-submit: not found

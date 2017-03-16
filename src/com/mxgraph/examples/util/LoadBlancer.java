@@ -2,6 +2,11 @@ package com.mxgraph.examples.util;
 
 import java.util.Deque;
 
+/**
+ * 另一个负载均衡计算类，还没写好，现在暂时没在用
+ * @author spark
+ *
+ */
 public class LoadBlancer {
 	public void process(String bindingSCANode,String bindingTargetNode,boolean isStreaming) throws Exception{
         String targetNode = "10.109.253.71";

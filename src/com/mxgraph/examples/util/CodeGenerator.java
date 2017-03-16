@@ -6,14 +6,17 @@ import java.util.List;
 import java.util.Vector;
 
 import org.dom4j.Element;
-
+/**
+* 生成核心代码
+*/
 public class CodeGenerator {
-	// 对外接口的代码模板
+	/** 记录对外的接口的类型 */
 	HashMap<String, String> map = null;
 
 	public CodeGenerator(HashSet<String> set) {
 		map = new HashMap<String, String>();
 		String code = "";
+		//遍历之前解析的xml取出对外接口的类型并将类型和对应的代码存入map中
 		for (String type : set) {
 			if ("JSON".equals(type)) {
 				code = "getjsonRpc";
@@ -25,7 +28,21 @@ public class CodeGenerator {
 			map.put(type, code);
 		}
 	}
-
+	
+	 /**
+	 * 生成从数据源到分叉的代码
+	 * @param children
+	 * ：所有的节点
+	 * @param input
+	 * ：数据源
+	 * @param flatMap
+	 * ：分叉节点
+	 * @param reduce
+	 * ：归约节点
+	 * @param output
+	 *  ：数据输出节点
+	 *
+	 */
 	public String genneratePretreatment(List<Element> children, Element input, Element flatMap, Element reduce,
 			Element output) {
 		String currentNodeId = input.attributeValue("id");
@@ -35,12 +52,15 @@ public class CodeGenerator {
 			// 有input（有源）
 			// 计算从source到faltMap
 			if (input.attributeValue("value") != null && input.attributeValue("value") != "") {
+				//当前指针不指向分叉节点就沿着连线进行遍历
+				//现在的时间复杂度是n×n，可以改良一下
 				while (!currentNodeId.equals(flatMap.attributeValue("id"))) {
 					for (Element ele : children) {
 						if (ele.attribute("source") != null) {
 							if (currentNodeId.equals(ele.attributeValue("source").toString())) {
 								currentNodeId = ele.attributeValue("target");
 								for (Element ele1 : children) {
+									//菱形，map节点
 									if (ele1.attributeValue("style") != null
 											&& "rhombus".equals(ele1.attributeValue("style").toString())
 											&& currentNodeId.equals(ele1.attributeValue("id"))) {
@@ -48,15 +68,15 @@ public class CodeGenerator {
 												+ ele1.attributeValue("value") + "\n"
 												+ " var name = x.split(\"@\")(0)\n" + "name+\"@\"+value\n" + "})";
 									}
+									//web service，webservice节点，接口调用外面使用map进行包装
 									if (ele1.attributeValue("style") != null
 											&& "ellipse;shape=cloud".equals(ele1.attributeValue("style").toString())
 											&& currentNodeId.equals(ele1.attributeValue("id"))) {
 										String type = ele1.attributeValue("value").split("~")[0];
 										String url = ele1.attributeValue("value").split("~")[1];
 										String method = ele1.attributeValue("value").split("~")[2];
-										code += ".map(x=>{\n" + " var value = " + map.get(type) + "(\"" + url + "\",\""
-												+ method + "\"," + "x.split(\"@\")(1))\n"
-												+ " var name = x.split(\"@\")(0)\n" + "name+\"@\"+value\n" + "})";
+										code += ".map(x => " + map.get(type) + "(\"" + url + "\",\"" + method + "\","
+												+ "x.toString))\n";
 									}
 								}
 							}
@@ -87,7 +107,7 @@ public class CodeGenerator {
 										String url = ele1.attributeValue("value").split("~")[1];
 										String method = ele1.attributeValue("value").split("~")[2];
 										code += ".map(x => " + map.get(type) + "(\"" + url + "\",\"" + method + "\","
-												+ "x.toString).toInt)\n";
+												+ "x.toString))\n";
 									}
 								}
 							}
@@ -123,9 +143,8 @@ public class CodeGenerator {
 											String type = ele1.attributeValue("value").split("~")[0];
 											String url = ele1.attributeValue("value").split("~")[1];
 											String method = ele1.attributeValue("value").split("~")[2];
-											code += ".map(x=>{\n" + " var value =" + map.get(type) + "(\"" + url
-													+ "\",\"" + method + "\"," + "x.split(\"@\")(1))\n"
-													+ " var name = x.split(\"@\")(0)\n" + "name+\"@\"+value\n" + "})";
+											code += ".map(x => " + map.get(type) + "(\"" + url + "\",\"" + method + "\","
+													+ "x.toString))\n";
 										}
 									}
 								}
@@ -164,9 +183,8 @@ public class CodeGenerator {
 											String type = ele1.attributeValue("value").split("~")[0];
 											String url = ele1.attributeValue("value").split("~")[1];
 											String method = ele1.attributeValue("value").split("~")[2];
-											code += ".map(x=>{\n" + " var value =" + map.get(type) + "(\"" + url
-													+ "\",\"" + method + "\"," + "x.split(\"@\")(1))\n"
-													+ " var name = x.split(\"@\")(0)\n" + "name+\"@\"+value\n" + "})";
+											code += ".map(x => " + map.get(type) + "(\"" + url + "\",\"" + method + "\","
+													+ "x.toString))\n";
 										}
 									}
 								}
@@ -200,8 +218,8 @@ public class CodeGenerator {
 											String type = ele1.attributeValue("value").split("~")[0];
 											String url = ele1.attributeValue("value").split("~")[1];
 											String method = ele1.attributeValue("value").split("~")[2];
-											code += ".map(x =>" + map.get(type) + "(\"" + url + "\",\"" + method + "\","
-													+ "x.toString).toInt)\n";
+											code += ".map(x => " + map.get(type) + "(\"" + url + "\",\"" + method + "\","
+													+ "x.toString))\n";
 										}
 									}
 								}
@@ -232,8 +250,8 @@ public class CodeGenerator {
 											String type = ele1.attributeValue("value").split("~")[0];
 											String url = ele1.attributeValue("value").split("~")[1];
 											String method = ele1.attributeValue("value").split("~")[2];
-											code += ".map(x => " + map.get(type) + "(\"" + url + "\",\"" + method
-													+ "\"," + "x.toString).toInt)\n";
+											code += ".map(x => " + map.get(type) + "(\"" + url + "\",\"" + method + "\","
+													+ "x.toString))\n";
 										}
 									}
 								}
@@ -247,7 +265,19 @@ public class CodeGenerator {
 		}
 		return code;
 	}
-
+	
+	/**
+	 * 生成分叉部分的代码
+	 * @param children
+	 * ：所有的节点
+	 * @param input
+	 * ：数据源
+	 * @param flatMap
+	 * ：分叉节点
+	 * @param reduce
+	 * ：归约节点
+	 *
+	 */
 	public String generateBranch(List<Element> children, Element input, Element output, Element flatMap,
 			Element reduce) {
 		// 生成每条支路上的代码
@@ -277,7 +307,11 @@ public class CodeGenerator {
 			if (casesNodes.size() != 0) {
 				String casesOps = "";
 				Element branchEnd = null;
-				branchEnd = output;
+				if(reduce != null){
+					branchEnd = reduce;
+				}else{
+					branchEnd = output;
+				}
 				// 计算每条支路的代码
 				for (int i = 0; i < casesNodes.size(); i++) {
 					code += "val res" + i + "=input";
@@ -300,6 +334,7 @@ public class CodeGenerator {
 						code += ".map(" + casesNodes.get(i).attributeValue("value") + ")";
 					}
 					if (casesNodes.get(i).attributeValue("style") != null
+							//月牙状的是fiter算子
 							&& "shape=xor".equals(casesNodes.get(i).attributeValue("style").toString())
 							&& currentNodeId.equals(casesNodes.get(i).attributeValue("id"))) {
 						code += ".filter(" + casesNodes.get(i).attributeValue("value") + ")";
@@ -321,29 +356,14 @@ public class CodeGenerator {
 											code += ".filter(" + ele1.attributeValue("value") + ")";
 										}
 										if (ele1.attributeValue("style") != null
-												&& "triangle".equals(ele1.attributeValue("style").toString())
-												&& currentNodeId.equals(ele1.attributeValue("id"))) {
-											code += ".reduceByKey(_" + ele1.attributeValue("value") + "_)";
-										}
-										if (ele1.attributeValue("style") != null
 												&& "ellipse;shape=cloud".equals(ele1.attributeValue("style").toString())
 												&& currentNodeId.equals(ele1.attributeValue("id"))) {
 											code += "\n";
-											String[] attris = ele1.attributeValue("value").split("~");
-											String ans = "res"+i+".foreachRDD(rdd => {\n"
-													+"	val y = rdd.collect()\n"
-												    +"	y.foreach( pair =>{\n"
-												    +"		val uid = pair._1\n"
-												    +"		val clickCount = pair._2\n"
-												    +"		val value=\""+attris[3]+"\"\n"
-												    +"		val arg = uid+\"-\"+clickCount+\"-\"+value\n"
-												    +"		var rate = 1.0\n"	
-												    +"		rate = service.invokeWebService(\""+attris[1]+"\",\""+attris[2]+"\",arg).toDouble\n"
-												    +"		out.write(uid+\"结果为：\"+ rate*100+\"%\\n\")\n"
-												    +"		out.flush()\n"
-												    +"	})\n"
-												    +"})\n";
-											code += ans;
+											String type1 = ele1.attributeValue("value").split("~")[0];
+											String url = ele1.attributeValue("value").split("~")[1];
+											String method = ele1.attributeValue("value").split("~")[2];
+											code += ".map(x => " + map.get(type1) + "(\"" + url + "\",\"" + method + "\","
+													+ "x.toString))\n";
 										}
 									}
 								}
@@ -367,11 +387,27 @@ public class CodeGenerator {
 				// parser.flatMapParser(flatMap.attributeValue("value"),casesOps);
 				// code += ".map("+res+")";
 				// }
+				code += "val res=res0";
+				for(int i=1;i<casesNodes.size();i++){
+					code += ".union(res"+i+")";
+				}
 			}
 		}
 		return code;
 	}
-
+	
+	/**
+	 * 生成归约到输出的代码
+	 * @param children
+	 * ：所有的节点
+	 * @param input
+	 * ：数据源
+	 * @param reduce
+	 * ：归约节点
+	 * @param output
+	 *  ：数据输出节点
+	 *
+	 */
 	public String generateConcourse(List<Element> children, Element input, Element reduce, Element output) {
 		String code = "";
 		String currentNodeId = "";

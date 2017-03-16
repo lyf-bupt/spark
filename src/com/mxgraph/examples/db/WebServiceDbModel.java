@@ -1,10 +1,16 @@
+/*
+ * webService的模型类
+ */
 package com.mxgraph.examples.db;
 
 public class WebServiceDbModel {
 	private int id;
-	private String name;
-	private int parentid;
-	private String type;
+	/** 名字 */
+	private String name;  
+	/** 父ID */
+	private int parentid; 
+	/** 类型，包括SOAP、REST、jsonRPC */
+	private String type; 
 	private String URL;
 	
 	public String getType() {

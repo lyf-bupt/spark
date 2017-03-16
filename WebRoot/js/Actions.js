@@ -86,7 +86,7 @@ Actions.prototype.init = function()
 	this.addAction('delete', function() { graph.removeCells(); }, null, null, 'Delete');
 	this.addAction('source',function(){
 		$.get('./topic',function(req){
-			ui.showDialog(new SourceDialog(ui,req).container, 300, 100, true, true);
+			ui.showDialog(new SourceDialog(ui,req).container, 300, 150, true, true);
 		});
 	},null,null,null);
 	this.addAction('filter',function(){

@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.RandomAccessFile;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,6 +22,7 @@ public class CodeAndResultServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = -5308353652899057537L;
+	private long lastTimeFileSize = 0;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -73,22 +75,23 @@ public class CodeAndResultServlet extends HttpServlet {
 			} else if (("result").equals(type)) {
 				if (outputFile != null) {
 					File file = new File(outputFile);
-					BufferedReader reader = null;
+					RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
+					randomAccessFile.seek(lastTimeFileSize);
 					try {
-						reader = new BufferedReader(new FileReader(file));
-						String tempString = null;
-						out.println("<p>");
-						while ((tempString = reader.readLine()) != null) {
-							out.println(tempString + "</br>");
-						}
-						out.println("</p>");
-						reader.close();
+						
+						String tmp = "";
+	                    while ((tmp = randomAccessFile.readLine()) != null) {
+	                        // 输出文件内容
+	                        out.print(new String(tmp.getBytes("ISO8859-1")));
+	                        out.print("<br>");
+	                    }	
+	                    lastTimeFileSize = randomAccessFile.length();
 					} catch (IOException e) {
 						e.printStackTrace();
 					} finally {
-						if (reader != null) {
+						if (randomAccessFile != null) {
 							try {
-								reader.close();
+								randomAccessFile.close();
 							} catch (IOException e1) {
 							}
 						}

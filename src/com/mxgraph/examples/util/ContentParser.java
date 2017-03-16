@@ -6,6 +6,10 @@ import java.util.Vector;
 
 import org.dom4j.Element;
 
+/**
+ * 内容解析类，现在已经不再使用
+ *
+ */
 public class ContentParser {
 	// 每条支路上面的外部接口
 	HashMap<String, Vector<Element>> hash = null;

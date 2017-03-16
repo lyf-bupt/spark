@@ -17,6 +17,8 @@
 		var EXPORT_URL = 'export';
 		var SAVE_URL = 'save';
 		var GEN_URL = 'genSpark';
+		var PACK_URL = 'package';
+		var SUBMIT_URL = 'submit';
 		var OPEN_URL = 'open';
 		var RESOURCES_PATH = 'resources';
 		var RESOURCE_BASE = RESOURCES_PATH + '/grapheditor';
@@ -83,15 +85,26 @@
 	<script type="text/javascript" src="js/Dialogs.js"></script>
 	<script type="text/javascript" src="jscolor/jscolor.js"></script>
 	<script type="text/javascript">
-		var sumAns;
-		var detailAns;
+	var sumAns;
+	var detailAns;
+	var resultArray=[];
+	var graphBackend={};
     mxConstants.profix = "http://10.108.165.203:8088/"
 		function ajaxResult(){
-        			$.post("./result",{type:"result"},function(data) {
-  				$(".geResultcontainer").html(data);
-  			});
+        	$.post("./result",{type:"result"},function(data) {
+        		var results = data.split("<br>");
+        		results.splice(results.length-1,1);
+        		resultArray = resultArray.concat(results);
+        		if(resultArray.length>800){
+        			resultArray = resultArray.slice(resultArray.length-800,resultArray.length);
         		}
-        		function sumResult(type){
+        		var ans = resultArray.join("<br>");
+        		ans += "<br>";
+        		if(data.indexOf('未生成并执行jar包')>-1) ans = data;
+  				$(".geResultcontainer").html(ans);
+  			});
+        }
+        function sumResult(type){
 			var iframe = document.createElement("iframe");
 			if(!mxConstants.OUTPUT_MODEL){
 				return false;
@@ -103,7 +116,7 @@
 				return false;
 			}
 	  		$("#webserviceEditor").append(iframe);
-        		}
+        }
 		$(document).ready(function(){
 			clearInterval(resultAjax);
 			clearInterval(sumAns);

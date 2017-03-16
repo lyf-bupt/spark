@@ -12,6 +12,11 @@ import java.util.concurrent.Callable;
 
 import com.mxgraph.examples.web.Constants;
 
+/**
+ * 打包提交线程，已废弃
+ * @author spark
+ *
+ */
 public class PackageAndSubmitThread implements Callable<Object>{
 	private Boolean successFlag;
 	private String result;

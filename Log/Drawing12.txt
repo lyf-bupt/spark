@@ -1,8 +1,0 @@
-[info] Set current project to Simple Project (in build file:/home/zhou/genSpark/test/)
-[info] Compiling 1 Scala source and 1 Java source to /home/zhou/genSpark/test/target/scala-2.10/classes...
-[error] /home/zhou/genSpark/test/src/main/scala/Drawing12.scala:18: not a legal formal parameter
-[error]  var value = x.split("@")(1).toIntx => x.split(",")(5).toInt+1
-[error]                              ^
-[error] one error found
-[error] (compile:compileIncremental) Compilation failed
-[error] Total time: 5 s, completed 2016-10-12 13:30:31

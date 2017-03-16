@@ -155,6 +155,42 @@
     <servlet-name>monitor</servlet-name>
     <url-pattern>monitor</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>package</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.PackageServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>package</servlet-name>
+    <url-pattern>package</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>submit</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.SubmitServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>submit</servlet-name>
+    <url-pattern>submit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>addWebService</servlet-name>
+    <servlet-class>com.mxgraph.examples.web.FileUploadServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>addWebService</servlet-name>
+    <url-pattern>addWebService</url-pattern>
+  </servlet-mapping>
  
   <welcome-file-list>
     <welcome-file>../index.html</welcome-file>

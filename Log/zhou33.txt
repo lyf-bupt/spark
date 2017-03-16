@@ -1,0 +1,663 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/01/02 10:06:01 INFO SparkContext: Running Spark version 1.5.0
+17/01/02 10:06:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/01/02 10:06:02 WARN Utils: Your hostname, zhou-Lenovo resolves to a loopback address: 127.0.1.1; using 10.108.166.75 instead (on interface enp4s0)
+17/01/02 10:06:02 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/01/02 10:06:02 INFO SecurityManager: Changing view acls to: zhou
+17/01/02 10:06:02 INFO SecurityManager: Changing modify acls to: zhou
+17/01/02 10:06:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(zhou); users with modify permissions: Set(zhou)
+17/01/02 10:06:04 INFO Slf4jLogger: Slf4jLogger started
+17/01/02 10:06:05 INFO Remoting: Starting remoting
+17/01/02 10:06:05 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.108.166.75:34730]
+17/01/02 10:06:05 INFO Utils: Successfully started service 'sparkDriver' on port 34730.
+17/01/02 10:06:05 INFO SparkEnv: Registering MapOutputTracker
+17/01/02 10:06:05 INFO SparkEnv: Registering BlockManagerMaster
+17/01/02 10:06:05 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-5560b60d-7c23-4966-94f4-f92efa588cb0
+17/01/02 10:06:06 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+17/01/02 10:06:06 INFO HttpFileServer: HTTP File server directory is /tmp/spark-affd5a02-312f-4aa9-9321-1239cbf93408/httpd-e84afeaa-ad7d-44bd-b387-907cd3e32b8d
+17/01/02 10:06:06 INFO HttpServer: Starting HTTP Server
+17/01/02 10:06:06 INFO Utils: Successfully started service 'HTTP file server' on port 41629.
+17/01/02 10:06:06 INFO SparkEnv: Registering OutputCommitCoordinator
+17/01/02 10:06:06 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/01/02 10:06:06 INFO SparkUI: Started SparkUI at http://10.108.166.75:4040
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/activation-1.1.jar at http://10.108.166.75:41629/jars/activation-1.1.jar with timestamp 1483322766636
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/antlr-2.7.7.jar at http://10.108.166.75:41629/jars/antlr-2.7.7.jar with timestamp 1483322766647
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/apache-mime4j-core-0.7.2.jar at http://10.108.166.75:41629/jars/apache-mime4j-core-0.7.2.jar with timestamp 1483322766649
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-api-1.2.19.jar at http://10.108.166.75:41629/jars/axiom-api-1.2.19.jar with timestamp 1483322766652
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-dom-1.2.19.jar at http://10.108.166.75:41629/jars/axiom-dom-1.2.19.jar with timestamp 1483322766657
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-impl-1.2.19.jar at http://10.108.166.75:41629/jars/axiom-impl-1.2.19.jar with timestamp 1483322766662
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-jaxb-1.2.19.jar at http://10.108.166.75:41629/jars/axiom-jaxb-1.2.19.jar with timestamp 1483322766673
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-adb-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-adb-1.7.2.jar with timestamp 1483322766686
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-adb-codegen-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-adb-codegen-1.7.2.jar with timestamp 1483322766695
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-ant-plugin-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-ant-plugin-1.7.2.jar with timestamp 1483322766704
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-clustering-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-clustering-1.7.2.jar with timestamp 1483322766713
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-codegen-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-codegen-1.7.2.jar with timestamp 1483322766725
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-corba-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-corba-1.7.2.jar with timestamp 1483322766727
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-fastinfoset-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-fastinfoset-1.7.2.jar with timestamp 1483322766737
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-java2wsdl-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-java2wsdl-1.7.2.jar with timestamp 1483322766738
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-jaxbri-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-jaxbri-1.7.2.jar with timestamp 1483322766747
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-jaxws-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-jaxws-1.7.2.jar with timestamp 1483322766768
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-jibx-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-jibx-1.7.2.jar with timestamp 1483322766769
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-json-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-json-1.7.2.jar with timestamp 1483322766770
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-kernel-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-kernel-1.7.2.jar with timestamp 1483322766778
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-metadata-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-metadata-1.7.2.jar with timestamp 1483322766782
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-mtompolicy-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-mtompolicy-1.7.2.jar with timestamp 1483322766783
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-saaj-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-saaj-1.7.2.jar with timestamp 1483322766787
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-soapmonitor-servlet-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-soapmonitor-servlet-1.7.2.jar with timestamp 1483322766787
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-spring-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-spring-1.7.2.jar with timestamp 1483322766788
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-base-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-base-1.7.2.jar with timestamp 1483322766802
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-http-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-http-1.7.2.jar with timestamp 1483322766817
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-jms-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-jms-1.7.2.jar with timestamp 1483322766818
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-local-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-local-1.7.2.jar with timestamp 1483322766819
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-mail-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-mail-1.7.2.jar with timestamp 1483322766820
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-tcp-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-tcp-1.7.2.jar with timestamp 1483322766820
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-udp-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-udp-1.7.2.jar with timestamp 1483322766821
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-xmpp-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-transport-xmpp-1.7.2.jar with timestamp 1483322766822
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-xmlbeans-1.7.2.jar at http://10.108.166.75:41629/jars/axis2-xmlbeans-1.7.2.jar with timestamp 1483322766823
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/bcel-findbugs-6.0.jar at http://10.108.166.75:41629/jars/bcel-findbugs-6.0.jar with timestamp 1483322766827
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-cli-1.2.jar at http://10.108.166.75:41629/jars/commons-cli-1.2.jar with timestamp 1483322766828
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-codec-1.3.jar at http://10.108.166.75:41629/jars/commons-codec-1.3.jar with timestamp 1483322766832
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-fileupload-1.3.1.jar at http://10.108.166.75:41629/jars/commons-fileupload-1.3.1.jar with timestamp 1483322766833
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-httpclient-3.1.jar at http://10.108.166.75:41629/jars/commons-httpclient-3.1.jar with timestamp 1483322766841
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-io-2.1.jar at http://10.108.166.75:41629/jars/commons-io-2.1.jar with timestamp 1483322766843
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-logging-1.1.1.jar at http://10.108.166.75:41629/jars/commons-logging-1.1.1.jar with timestamp 1483322766844
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-annotation_1.0_spec-1.1.jar at http://10.108.166.75:41629/jars/geronimo-annotation_1.0_spec-1.1.jar with timestamp 1483322766846
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-jaxws_2.2_spec-1.0.jar at http://10.108.166.75:41629/jars/geronimo-jaxws_2.2_spec-1.0.jar with timestamp 1483322766847
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-jta_1.1_spec-1.1.jar at http://10.108.166.75:41629/jars/geronimo-jta_1.1_spec-1.1.jar with timestamp 1483322766849
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-saaj_1.3_spec-1.0.1.jar at http://10.108.166.75:41629/jars/geronimo-saaj_1.3_spec-1.0.1.jar with timestamp 1483322766850
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-stax-api_1.0_spec-1.0.1.jar at http://10.108.166.75:41629/jars/geronimo-stax-api_1.0_spec-1.0.1.jar with timestamp 1483322766851
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar at http://10.108.166.75:41629/jars/geronimo-ws-metadata_2.0_spec-1.1.2.jar with timestamp 1483322766852
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/gson-2.1.jar at http://10.108.166.75:41629/jars/gson-2.1.jar with timestamp 1483322766853
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/httpclient-4.2.5.jar at http://10.108.166.75:41629/jars/httpclient-4.2.5.jar with timestamp 1483322766856
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/httpcore-4.2.5.jar at http://10.108.166.75:41629/jars/httpcore-4.2.5.jar with timestamp 1483322766858
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jalopy-1.5rc3.jar at http://10.108.166.75:41629/jars/jalopy-1.5rc3.jar with timestamp 1483322766881
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxb-api-2.2.6.jar at http://10.108.166.75:41629/jars/jaxb-api-2.2.6.jar with timestamp 1483322766889
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxb-impl-2.2.6.jar at http://10.108.166.75:41629/jars/jaxb-impl-2.2.6.jar with timestamp 1483322766908
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxb-xjc-2.2.6.jar at http://10.108.166.75:41629/jars/jaxb-xjc-2.2.6.jar with timestamp 1483322766928
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxen-1.1.6.jar at http://10.108.166.75:41629/jars/jaxen-1.1.6.jar with timestamp 1483322766931
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxws-tools-2.2.6.jar at http://10.108.166.75:41629/jars/jaxws-tools-2.2.6.jar with timestamp 1483322766936
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jedis.jar at http://10.108.166.75:41629/jars/jedis.jar with timestamp 1483322766948
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jettison-1.3.jar at http://10.108.166.75:41629/jars/jettison-1.3.jar with timestamp 1483322766950
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jibx-bind-1.2.jar at http://10.108.166.75:41629/jars/jibx-bind-1.2.jar with timestamp 1483322766965
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jibx-run-1.2.jar at http://10.108.166.75:41629/jars/jibx-run-1.2.jar with timestamp 1483322766986
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jsr311-api-1.1.1.jar at http://10.108.166.75:41629/jars/jsr311-api-1.1.1.jar with timestamp 1483322766987
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/juli-6.0.16.jar at http://10.108.166.75:41629/jars/juli-6.0.16.jar with timestamp 1483322766988
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/log4j-1.2.15.jar at http://10.108.166.75:41629/jars/log4j-1.2.15.jar with timestamp 1483322766991
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/mail-1.4.jar at http://10.108.166.75:41629/jars/mail-1.4.jar with timestamp 1483322766993
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/mex-1.7.2-impl.jar at http://10.108.166.75:41629/jars/mex-1.7.2-impl.jar with timestamp 1483322766996
+17/01/02 10:06:06 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/neethi-3.0.3.jar at http://10.108.166.75:41629/jars/neethi-3.0.3.jar with timestamp 1483322766998
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/stax2-api-3.1.1.jar at http://10.108.166.75:41629/jars/stax2-api-3.1.1.jar with timestamp 1483322767008
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/tribes-6.0.16.jar at http://10.108.166.75:41629/jars/tribes-6.0.16.jar with timestamp 1483322767011
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/woden-core-1.0M10.jar at http://10.108.166.75:41629/jars/woden-core-1.0M10.jar with timestamp 1483322767021
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/woodstox-core-asl-4.2.0.jar at http://10.108.166.75:41629/jars/woodstox-core-asl-4.2.0.jar with timestamp 1483322767025
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/wsdl4j-1.6.2.jar at http://10.108.166.75:41629/jars/wsdl4j-1.6.2.jar with timestamp 1483322767027
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xalan-2.7.0.jar at http://10.108.166.75:41629/jars/xalan-2.7.0.jar with timestamp 1483322767051
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xml-resolver-1.2.jar at http://10.108.166.75:41629/jars/xml-resolver-1.2.jar with timestamp 1483322767053
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xmlbeans-2.5.0.jar at http://10.108.166.75:41629/jars/xmlbeans-2.5.0.jar with timestamp 1483322767075
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xmlschema-core-2.2.1.jar at http://10.108.166.75:41629/jars/xmlschema-core-2.2.1.jar with timestamp 1483322767077
+17/01/02 10:06:07 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/target/scala-2.10/simple-project_2.10-1.0.jar at http://10.108.166.75:41629/jars/simple-project_2.10-1.0.jar with timestamp 1483322767078
+17/01/02 10:06:07 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Connecting to master spark://10.109.253.71:7077...
+17/01/02 10:06:07 INFO SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20170102100554-0022
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor added: app-20170102100554-0022/0 on worker-20161223182137-10.109.253.73-57334 (10.109.253.73:57334) with 2 cores
+17/01/02 10:06:07 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102100554-0022/0 on hostPort 10.109.253.73:57334 with 2 cores, 1024.0 MB RAM
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor added: app-20170102100554-0022/1 on worker-20161223182135-10.109.253.74-59302 (10.109.253.74:59302) with 2 cores
+17/01/02 10:06:07 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102100554-0022/1 on hostPort 10.109.253.74:59302 with 2 cores, 1024.0 MB RAM
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor added: app-20170102100554-0022/2 on worker-20161223182125-10.109.253.71-52935 (10.109.253.71:52935) with 2 cores
+17/01/02 10:06:07 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102100554-0022/2 on hostPort 10.109.253.71:52935 with 2 cores, 1024.0 MB RAM
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor added: app-20170102100554-0022/3 on worker-20170101090337-10.109.253.72-33528 (10.109.253.72:33528) with 2 cores
+17/01/02 10:06:07 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102100554-0022/3 on hostPort 10.109.253.72:33528 with 2 cores, 1024.0 MB RAM
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/3 is now LOADING
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/2 is now LOADING
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/1 is now LOADING
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/0 is now RUNNING
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/1 is now RUNNING
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/2 is now RUNNING
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/3 is now RUNNING
+17/01/02 10:06:07 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/0 is now LOADING
+17/01/02 10:06:08 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41575.
+17/01/02 10:06:08 INFO NettyBlockTransferService: Server created on 41575
+17/01/02 10:06:08 INFO BlockManagerMaster: Trying to register BlockManager
+17/01/02 10:06:08 INFO BlockManagerMasterEndpoint: Registering block manager 10.108.166.75:41575 with 530.0 MB RAM, BlockManagerId(driver, 10.108.166.75, 41575)
+17/01/02 10:06:08 INFO BlockManagerMaster: Registered BlockManager
+17/01/02 10:06:08 INFO SparkDeploySchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+17/01/02 10:06:09 INFO SparkContext: Starting job: start at zhou33.scala:26
+17/01/02 10:06:09 INFO DAGScheduler: Registering RDD 1 (start at zhou33.scala:26)
+17/01/02 10:06:09 INFO DAGScheduler: Got job 0 (start at zhou33.scala:26) with 20 output partitions
+17/01/02 10:06:09 INFO DAGScheduler: Final stage: ResultStage 1(start at zhou33.scala:26)
+17/01/02 10:06:09 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+17/01/02 10:06:09 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+17/01/02 10:06:09 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[1] at start at zhou33.scala:26), which has no missing parents
+17/01/02 10:06:09 INFO MemoryStore: ensureFreeSpace(2736) called with curMem=0, maxMem=555755765
+17/01/02 10:06:09 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 2.7 KB, free 530.0 MB)
+17/01/02 10:06:09 INFO MemoryStore: ensureFreeSpace(1672) called with curMem=2736, maxMem=555755765
+17/01/02 10:06:09 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1672.0 B, free 530.0 MB)
+17/01/02 10:06:09 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.108.166.75:41575 (size: 1672.0 B, free: 530.0 MB)
+17/01/02 10:06:09 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+17/01/02 10:06:09 INFO DAGScheduler: Submitting 50 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[1] at start at zhou33.scala:26)
+17/01/02 10:06:09 INFO TaskSchedulerImpl: Adding task set 0.0 with 50 tasks
+17/01/02 10:06:14 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/3 is now EXITED (Command exited with code 1)
+17/01/02 10:06:14 INFO SparkDeploySchedulerBackend: Executor app-20170102100554-0022/3 removed: Command exited with code 1
+17/01/02 10:06:14 INFO SparkDeploySchedulerBackend: Asked to remove non-existent executor 3
+17/01/02 10:06:14 INFO AppClient$ClientEndpoint: Executor added: app-20170102100554-0022/4 on worker-20170101090337-10.109.253.72-33528 (10.109.253.72:33528) with 2 cores
+17/01/02 10:06:14 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102100554-0022/4 on hostPort 10.109.253.72:33528 with 2 cores, 1024.0 MB RAM
+17/01/02 10:06:14 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/4 is now LOADING
+17/01/02 10:06:14 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/4 is now RUNNING
+17/01/02 10:06:15 INFO SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.109.253.73:45378/user/Executor#-787490337]) with ID 0
+17/01/02 10:06:16 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, 10.109.253.73, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:16 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, 10.109.253.73, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:16 INFO SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.109.253.74:43480/user/Executor#-1001947018]) with ID 1
+17/01/02 10:06:16 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:16 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:16 INFO BlockManagerMasterEndpoint: Registering block manager 10.109.253.73:47064 with 534.5 MB RAM, BlockManagerId(0, 10.109.253.73, 47064)
+17/01/02 10:06:16 INFO SparkDeploySchedulerBackend: Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@10.109.253.71:44057/user/Executor#-359015581]) with ID 2
+17/01/02 10:06:16 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4, 10.109.253.71, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:16 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5, 10.109.253.71, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:16 INFO BlockManagerMasterEndpoint: Registering block manager 10.109.253.74:42519 with 534.5 MB RAM, BlockManagerId(1, 10.109.253.74, 42519)
+17/01/02 10:06:17 INFO BlockManagerMasterEndpoint: Registering block manager 10.109.253.71:50789 with 534.5 MB RAM, BlockManagerId(2, 10.109.253.71, 50789)
+17/01/02 10:06:23 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.109.253.71:50789 (size: 1672.0 B, free: 534.5 MB)
+17/01/02 10:06:28 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.109.253.74:42519 (size: 1672.0 B, free: 534.5 MB)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 72 ms on 10.109.253.74 (1/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 12912 ms on 10.109.253.74 (2/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 12921 ms on 10.109.253.74 (3/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 90 ms on 10.109.253.74 (4/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 47 ms on 10.109.253.74 (5/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 46 ms on 10.109.253.74 (6/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 41 ms on 10.109.253.74 (7/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 49 ms on 10.109.253.74 (8/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 41 ms on 10.109.253.74 (9/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 52 ms on 10.109.253.74 (10/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 16.0 in stage 0.0 (TID 16, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 34 ms on 10.109.253.74 (11/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 17.0 in stage 0.0 (TID 17, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 43 ms on 10.109.253.74 (12/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 18.0 in stage 0.0 (TID 18, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 16.0 in stage 0.0 (TID 16) in 44 ms on 10.109.253.74 (13/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 17.0 in stage 0.0 (TID 17) in 42 ms on 10.109.253.74 (14/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 19.0 in stage 0.0 (TID 19, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 20.0 in stage 0.0 (TID 20, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 18.0 in stage 0.0 (TID 18) in 53 ms on 10.109.253.74 (15/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 21.0 in stage 0.0 (TID 21, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 19.0 in stage 0.0 (TID 19) in 55 ms on 10.109.253.74 (16/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 22.0 in stage 0.0 (TID 22, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 20.0 in stage 0.0 (TID 20) in 47 ms on 10.109.253.74 (17/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 23.0 in stage 0.0 (TID 23, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 21.0 in stage 0.0 (TID 21) in 50 ms on 10.109.253.74 (18/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 24.0 in stage 0.0 (TID 24, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 23.0 in stage 0.0 (TID 23) in 29 ms on 10.109.253.74 (19/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 25.0 in stage 0.0 (TID 25, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 22.0 in stage 0.0 (TID 22) in 44 ms on 10.109.253.74 (20/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 26.0 in stage 0.0 (TID 26, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 25.0 in stage 0.0 (TID 25) in 34 ms on 10.109.253.74 (21/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 24.0 in stage 0.0 (TID 24) in 42 ms on 10.109.253.74 (22/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 27.0 in stage 0.0 (TID 27, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 28.0 in stage 0.0 (TID 28, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 26.0 in stage 0.0 (TID 26) in 32 ms on 10.109.253.74 (23/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 29.0 in stage 0.0 (TID 29, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 27.0 in stage 0.0 (TID 27) in 31 ms on 10.109.253.74 (24/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 30.0 in stage 0.0 (TID 30, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 29.0 in stage 0.0 (TID 29) in 62 ms on 10.109.253.74 (25/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 31.0 in stage 0.0 (TID 31, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 28.0 in stage 0.0 (TID 28) in 68 ms on 10.109.253.74 (26/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 32.0 in stage 0.0 (TID 32, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 31.0 in stage 0.0 (TID 31) in 90 ms on 10.109.253.74 (27/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 33.0 in stage 0.0 (TID 33, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 30.0 in stage 0.0 (TID 30) in 98 ms on 10.109.253.74 (28/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 34.0 in stage 0.0 (TID 34, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 33.0 in stage 0.0 (TID 33) in 33 ms on 10.109.253.74 (29/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 35.0 in stage 0.0 (TID 35, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 32.0 in stage 0.0 (TID 32) in 53 ms on 10.109.253.74 (30/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 36.0 in stage 0.0 (TID 36, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 35.0 in stage 0.0 (TID 35) in 28 ms on 10.109.253.74 (31/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 34.0 in stage 0.0 (TID 34) in 39 ms on 10.109.253.74 (32/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 37.0 in stage 0.0 (TID 37, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 38.0 in stage 0.0 (TID 38, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 36.0 in stage 0.0 (TID 36) in 39 ms on 10.109.253.74 (33/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 39.0 in stage 0.0 (TID 39, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 37.0 in stage 0.0 (TID 37) in 37 ms on 10.109.253.74 (34/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 40.0 in stage 0.0 (TID 40, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 41.0 in stage 0.0 (TID 41, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 39.0 in stage 0.0 (TID 39) in 29 ms on 10.109.253.74 (35/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 38.0 in stage 0.0 (TID 38) in 32 ms on 10.109.253.74 (36/50)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 42.0 in stage 0.0 (TID 42, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Starting task 43.0 in stage 0.0 (TID 43, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 40.0 in stage 0.0 (TID 40) in 32 ms on 10.109.253.74 (37/50)
+17/01/02 10:06:29 INFO TaskSetManager: Finished task 41.0 in stage 0.0 (TID 41) in 34 ms on 10.109.253.74 (38/50)
+17/01/02 10:06:30 INFO TaskSetManager: Starting task 44.0 in stage 0.0 (TID 44, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:30 INFO TaskSetManager: Starting task 45.0 in stage 0.0 (TID 45, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 43.0 in stage 0.0 (TID 43) in 60 ms on 10.109.253.74 (39/50)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 42.0 in stage 0.0 (TID 42) in 60 ms on 10.109.253.74 (40/50)
+17/01/02 10:06:30 INFO TaskSetManager: Starting task 46.0 in stage 0.0 (TID 46, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 44.0 in stage 0.0 (TID 44) in 49 ms on 10.109.253.74 (41/50)
+17/01/02 10:06:30 INFO TaskSetManager: Starting task 47.0 in stage 0.0 (TID 47, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 45.0 in stage 0.0 (TID 45) in 50 ms on 10.109.253.74 (42/50)
+17/01/02 10:06:30 INFO TaskSetManager: Starting task 48.0 in stage 0.0 (TID 48, 10.109.253.74, PROCESS_LOCAL, 6975 bytes)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 47.0 in stage 0.0 (TID 47) in 64 ms on 10.109.253.74 (43/50)
+17/01/02 10:06:30 INFO TaskSetManager: Starting task 49.0 in stage 0.0 (TID 49, 10.109.253.74, PROCESS_LOCAL, 7032 bytes)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 46.0 in stage 0.0 (TID 46) in 71 ms on 10.109.253.74 (44/50)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 49.0 in stage 0.0 (TID 49) in 71 ms on 10.109.253.74 (45/50)
+17/01/02 10:06:30 INFO TaskSetManager: Finished task 48.0 in stage 0.0 (TID 48) in 74 ms on 10.109.253.74 (46/50)
+17/01/02 10:06:31 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/4 is now EXITED (Command exited with code 1)
+17/01/02 10:06:31 INFO SparkDeploySchedulerBackend: Executor app-20170102100554-0022/4 removed: Command exited with code 1
+17/01/02 10:06:31 INFO SparkDeploySchedulerBackend: Asked to remove non-existent executor 4
+17/01/02 10:06:31 INFO AppClient$ClientEndpoint: Executor added: app-20170102100554-0022/5 on worker-20170101090337-10.109.253.72-33528 (10.109.253.72:33528) with 2 cores
+17/01/02 10:06:31 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102100554-0022/5 on hostPort 10.109.253.72:33528 with 2 cores, 1024.0 MB RAM
+17/01/02 10:06:31 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/5 is now LOADING
+17/01/02 10:06:31 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/5 is now RUNNING
+17/01/02 10:06:32 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 15975 ms on 10.109.253.71 (47/50)
+17/01/02 10:06:32 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 15981 ms on 10.109.253.71 (48/50)
+17/01/02 10:06:35 INFO AppClient$ClientEndpoint: Executor updated: app-20170102100554-0022/5 is now LOST (worker lost)
+17/01/02 10:06:35 INFO SparkDeploySchedulerBackend: Executor app-20170102100554-0022/5 removed: worker lost
+17/01/02 10:06:35 INFO SparkDeploySchedulerBackend: Asked to remove non-existent executor 5
+17/01/02 10:06:36 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.109.253.73:47064 (size: 1672.0 B, free: 534.5 MB)
+17/01/02 10:06:38 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 22720 ms on 10.109.253.73 (49/50)
+17/01/02 10:06:38 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 22798 ms on 10.109.253.73 (50/50)
+17/01/02 10:06:38 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+17/01/02 10:06:38 INFO DAGScheduler: ShuffleMapStage 0 (start at zhou33.scala:26) finished in 28.912 s
+17/01/02 10:06:38 INFO DAGScheduler: looking for newly runnable stages
+17/01/02 10:06:38 INFO DAGScheduler: running: Set()
+17/01/02 10:06:38 INFO DAGScheduler: waiting: Set(ResultStage 1)
+17/01/02 10:06:38 INFO DAGScheduler: failed: Set()
+17/01/02 10:06:38 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+17/01/02 10:06:38 INFO DAGScheduler: Submitting ResultStage 1 (ShuffledRDD[2] at start at zhou33.scala:26), which is now runnable
+17/01/02 10:06:38 INFO MemoryStore: ensureFreeSpace(2344) called with curMem=4408, maxMem=555755765
+17/01/02 10:06:38 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 2.3 KB, free 530.0 MB)
+17/01/02 10:06:38 INFO MemoryStore: ensureFreeSpace(1417) called with curMem=6752, maxMem=555755765
+17/01/02 10:06:38 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 1417.0 B, free 530.0 MB)
+17/01/02 10:06:38 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.108.166.75:41575 (size: 1417.0 B, free: 530.0 MB)
+17/01/02 10:06:38 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+17/01/02 10:06:38 INFO DAGScheduler: Submitting 20 missing tasks from ResultStage 1 (ShuffledRDD[2] at start at zhou33.scala:26)
+17/01/02 10:06:38 INFO TaskSchedulerImpl: Adding task set 1.0 with 20 tasks
+17/01/02 10:06:38 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 50, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:38 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 51, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:38 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 52, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:38 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 53, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:38 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 54, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:38 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 55, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:38 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.109.253.74:42519 (size: 1417.0 B, free: 534.5 MB)
+17/01/02 10:06:38 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.109.253.71:50789 (size: 1417.0 B, free: 534.5 MB)
+17/01/02 10:06:38 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.109.253.74:43480
+17/01/02 10:06:38 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 294 bytes
+17/01/02 10:06:38 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.109.253.71:44057
+17/01/02 10:06:39 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.109.253.73:47064 (size: 1417.0 B, free: 534.5 MB)
+17/01/02 10:06:39 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.109.253.73:45378
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 56, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 57, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 53) in 473 ms on 10.109.253.71 (1/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 50) in 484 ms on 10.109.253.71 (2/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 58, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 55) in 562 ms on 10.109.253.74 (3/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 59, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 56) in 181 ms on 10.109.253.71 (4/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 60, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 57) in 187 ms on 10.109.253.71 (5/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 61, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 58) in 104 ms on 10.109.253.74 (6/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 62, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 54) in 713 ms on 10.109.253.73 (7/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 63, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 64, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 51) in 732 ms on 10.109.253.73 (8/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 61) in 68 ms on 10.109.253.74 (9/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 65, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 12.0 in stage 1.0 (TID 62) in 71 ms on 10.109.253.73 (10/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 16.0 in stage 1.0 (TID 66, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 59) in 142 ms on 10.109.253.71 (11/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 17.0 in stage 1.0 (TID 67, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 13.0 in stage 1.0 (TID 63) in 83 ms on 10.109.253.73 (12/20)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 18.0 in stage 1.0 (TID 68, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Starting task 19.0 in stage 1.0 (TID 69, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 52) in 825 ms on 10.109.253.74 (13/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 64) in 95 ms on 10.109.253.74 (14/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 60) in 175 ms on 10.109.253.71 (15/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 15.0 in stage 1.0 (TID 65) in 93 ms on 10.109.253.73 (16/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 16.0 in stage 1.0 (TID 66) in 230 ms on 10.109.253.71 (17/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 17.0 in stage 1.0 (TID 67) in 215 ms on 10.109.253.73 (18/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 18.0 in stage 1.0 (TID 68) in 207 ms on 10.109.253.74 (19/20)
+17/01/02 10:06:39 INFO TaskSetManager: Finished task 19.0 in stage 1.0 (TID 69) in 213 ms on 10.109.253.74 (20/20)
+17/01/02 10:06:39 INFO DAGScheduler: ResultStage 1 (start at zhou33.scala:26) finished in 1.019 s
+17/01/02 10:06:39 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+17/01/02 10:06:39 INFO DAGScheduler: Job 0 finished: start at zhou33.scala:26, took 30.526255 s
+17/01/02 10:06:39 INFO ReceiverTracker: Starting 1 receivers
+17/01/02 10:06:39 INFO ReceiverTracker: ReceiverTracker started
+17/01/02 10:06:39 INFO ForEachDStream: metadataCleanupDelay = -1
+17/01/02 10:06:39 INFO ShuffledDStream: metadataCleanupDelay = -1
+17/01/02 10:06:39 INFO MappedDStream: metadataCleanupDelay = -1
+17/01/02 10:06:39 INFO MappedDStream: metadataCleanupDelay = -1
+17/01/02 10:06:39 INFO MappedDStream: metadataCleanupDelay = -1
+17/01/02 10:06:39 INFO FlatMappedDStream: metadataCleanupDelay = -1
+17/01/02 10:06:39 INFO SocketInputDStream: metadataCleanupDelay = -1
+17/01/02 10:06:39 INFO SocketInputDStream: Slide time = 1000 ms
+17/01/02 10:06:39 INFO SocketInputDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/01/02 10:06:39 INFO SocketInputDStream: Checkpoint interval = null
+17/01/02 10:06:39 INFO SocketInputDStream: Remember duration = 1000 ms
+17/01/02 10:06:39 INFO SocketInputDStream: Initialized and validated org.apache.spark.streaming.dstream.SocketInputDStream@1317b708
+17/01/02 10:06:39 INFO FlatMappedDStream: Slide time = 1000 ms
+17/01/02 10:06:39 INFO FlatMappedDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/01/02 10:06:39 INFO FlatMappedDStream: Checkpoint interval = null
+17/01/02 10:06:39 INFO FlatMappedDStream: Remember duration = 1000 ms
+17/01/02 10:06:39 INFO FlatMappedDStream: Initialized and validated org.apache.spark.streaming.dstream.FlatMappedDStream@6438a7fe
+17/01/02 10:06:39 INFO MappedDStream: Slide time = 1000 ms
+17/01/02 10:06:39 INFO MappedDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/01/02 10:06:39 INFO MappedDStream: Checkpoint interval = null
+17/01/02 10:06:39 INFO MappedDStream: Remember duration = 1000 ms
+17/01/02 10:06:39 INFO MappedDStream: Initialized and validated org.apache.spark.streaming.dstream.MappedDStream@2e51d054
+17/01/02 10:06:39 INFO MappedDStream: Slide time = 1000 ms
+17/01/02 10:06:39 INFO MappedDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/01/02 10:06:39 INFO MappedDStream: Checkpoint interval = null
+17/01/02 10:06:39 INFO MappedDStream: Remember duration = 1000 ms
+17/01/02 10:06:39 INFO MappedDStream: Initialized and validated org.apache.spark.streaming.dstream.MappedDStream@4f5f6e45
+17/01/02 10:06:39 INFO MappedDStream: Slide time = 1000 ms
+17/01/02 10:06:39 INFO MappedDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/01/02 10:06:39 INFO MappedDStream: Checkpoint interval = null
+17/01/02 10:06:39 INFO MappedDStream: Remember duration = 1000 ms
+17/01/02 10:06:39 INFO MappedDStream: Initialized and validated org.apache.spark.streaming.dstream.MappedDStream@615e3f51
+17/01/02 10:06:39 INFO ShuffledDStream: Slide time = 1000 ms
+17/01/02 10:06:39 INFO ShuffledDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/01/02 10:06:39 INFO ShuffledDStream: Checkpoint interval = null
+17/01/02 10:06:39 INFO ShuffledDStream: Remember duration = 1000 ms
+17/01/02 10:06:39 INFO ShuffledDStream: Initialized and validated org.apache.spark.streaming.dstream.ShuffledDStream@407873d3
+17/01/02 10:06:39 INFO ForEachDStream: Slide time = 1000 ms
+17/01/02 10:06:39 INFO ForEachDStream: Storage level = StorageLevel(false, false, false, false, 1)
+17/01/02 10:06:39 INFO ForEachDStream: Checkpoint interval = null
+17/01/02 10:06:39 INFO ForEachDStream: Remember duration = 1000 ms
+17/01/02 10:06:39 INFO ForEachDStream: Initialized and validated org.apache.spark.streaming.dstream.ForEachDStream@608bc8f8
+17/01/02 10:06:40 INFO DAGScheduler: Got job 1 (submitJob at ReceiverTracker.scala:557) with 1 output partitions
+17/01/02 10:06:40 INFO DAGScheduler: Final stage: ResultStage 2(submitJob at ReceiverTracker.scala:557)
+17/01/02 10:06:40 INFO DAGScheduler: Parents of final stage: List()
+17/01/02 10:06:40 INFO DAGScheduler: Missing parents: List()
+17/01/02 10:06:40 INFO DAGScheduler: Submitting ResultStage 2 (Receiver 0 ParallelCollectionRDD[3] at makeRDD at ReceiverTracker.scala:554), which has no missing parents
+17/01/02 10:06:40 INFO MemoryStore: ensureFreeSpace(46544) called with curMem=8169, maxMem=555755765
+17/01/02 10:06:40 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 45.5 KB, free 530.0 MB)
+17/01/02 10:06:40 INFO ReceiverTracker: Receiver 0 started
+17/01/02 10:06:40 INFO MemoryStore: ensureFreeSpace(15229) called with curMem=54713, maxMem=555755765
+17/01/02 10:06:40 INFO RecurringTimer: Started timer for JobGenerator at time 1483322800000
+17/01/02 10:06:40 INFO JobGenerator: Started JobGenerator at 1483322800000 ms
+17/01/02 10:06:40 INFO JobScheduler: Started JobScheduler
+17/01/02 10:06:40 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 14.9 KB, free 529.9 MB)
+17/01/02 10:06:40 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.108.166.75:41575 (size: 14.9 KB, free: 530.0 MB)
+17/01/02 10:06:40 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+17/01/02 10:06:40 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (Receiver 0 ParallelCollectionRDD[3] at makeRDD at ReceiverTracker.scala:554)
+17/01/02 10:06:40 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks
+17/01/02 10:06:40 INFO StreamingContext: StreamingContext started
+17/01/02 10:06:40 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 70, 10.109.253.73, ANY, 7549 bytes)
+17/01/02 10:06:40 INFO JobScheduler: Added jobs for time 1483322800000 ms
+17/01/02 10:06:40 INFO JobScheduler: Starting job streaming job 1483322800000 ms.0 from job set of time 1483322800000 ms
+17/01/02 10:06:40 INFO SparkContext: Starting job: foreachRDD at zhou33.scala:19
+17/01/02 10:06:40 INFO DAGScheduler: Registering RDD 8 (map at zhou33.scala:18)
+17/01/02 10:06:40 INFO DAGScheduler: Got job 2 (foreachRDD at zhou33.scala:19) with 2 output partitions
+17/01/02 10:06:40 INFO DAGScheduler: Final stage: ResultStage 4(foreachRDD at zhou33.scala:19)
+17/01/02 10:06:40 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+17/01/02 10:06:40 INFO DAGScheduler: Missing parents: List()
+17/01/02 10:06:40 INFO DAGScheduler: Submitting ResultStage 4 (ShuffledRDD[9] at reduceByKey at zhou33.scala:18), which has no missing parents
+17/01/02 10:06:40 INFO MemoryStore: ensureFreeSpace(2296) called with curMem=69942, maxMem=555755765
+17/01/02 10:06:40 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 2.2 KB, free 529.9 MB)
+17/01/02 10:06:40 INFO MemoryStore: ensureFreeSpace(1376) called with curMem=72238, maxMem=555755765
+17/01/02 10:06:40 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 1376.0 B, free 529.9 MB)
+17/01/02 10:06:40 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.108.166.75:41575 (size: 1376.0 B, free: 530.0 MB)
+17/01/02 10:06:40 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:861
+17/01/02 10:06:40 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 4 (ShuffledRDD[9] at reduceByKey at zhou33.scala:18)
+17/01/02 10:06:40 INFO TaskSchedulerImpl: Adding task set 4.0 with 2 tasks
+17/01/02 10:06:40 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 71, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:40 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 72, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:40 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.109.253.74:42519 (size: 1376.0 B, free: 534.5 MB)
+17/01/02 10:06:40 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.109.253.73:47064 (size: 14.9 KB, free: 534.5 MB)
+17/01/02 10:06:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 10.109.253.74:43480
+17/01/02 10:06:40 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 1 is 82 bytes
+17/01/02 10:06:40 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 71) in 68 ms on 10.109.253.74 (1/2)
+17/01/02 10:06:40 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.109.253.73:47064 (size: 1376.0 B, free: 534.5 MB)
+17/01/02 10:06:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 10.109.253.73:45378
+17/01/02 10:06:40 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 72) in 304 ms on 10.109.253.73 (2/2)
+17/01/02 10:06:40 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+17/01/02 10:06:40 INFO DAGScheduler: ResultStage 4 (foreachRDD at zhou33.scala:19) finished in 0.299 s
+17/01/02 10:06:40 INFO DAGScheduler: Job 2 finished: foreachRDD at zhou33.scala:19, took 0.342628 s
+17/01/02 10:06:40 INFO JobScheduler: Finished job streaming job 1483322800000 ms.0 from job set of time 1483322800000 ms
+17/01/02 10:06:40 INFO JobScheduler: Total delay: 0.671 s for time 1483322800000 ms (execution: 0.354 s)
+17/01/02 10:06:40 INFO ReceivedBlockTracker: Deleting batches ArrayBuffer()
+17/01/02 10:06:40 INFO InputInfoTracker: remove old batch metadata: 
+17/01/02 10:06:41 INFO JobScheduler: Starting job streaming job 1483322801000 ms.0 from job set of time 1483322801000 ms
+17/01/02 10:06:41 INFO SparkContext: Starting job: foreachRDD at zhou33.scala:19
+17/01/02 10:06:41 INFO JobScheduler: Added jobs for time 1483322801000 ms
+17/01/02 10:06:41 INFO DAGScheduler: Registering RDD 14 (map at zhou33.scala:18)
+17/01/02 10:06:41 INFO DAGScheduler: Got job 3 (foreachRDD at zhou33.scala:19) with 2 output partitions
+17/01/02 10:06:41 INFO DAGScheduler: Final stage: ResultStage 6(foreachRDD at zhou33.scala:19)
+17/01/02 10:06:41 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+17/01/02 10:06:41 INFO DAGScheduler: Missing parents: List()
+17/01/02 10:06:41 INFO DAGScheduler: Submitting ResultStage 6 (ShuffledRDD[15] at reduceByKey at zhou33.scala:18), which has no missing parents
+17/01/02 10:06:41 INFO MemoryStore: ensureFreeSpace(2296) called with curMem=73614, maxMem=555755765
+17/01/02 10:06:41 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 2.2 KB, free 529.9 MB)
+17/01/02 10:06:41 INFO MemoryStore: ensureFreeSpace(1381) called with curMem=75910, maxMem=555755765
+17/01/02 10:06:41 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 1381.0 B, free 529.9 MB)
+17/01/02 10:06:41 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.108.166.75:41575 (size: 1381.0 B, free: 530.0 MB)
+17/01/02 10:06:41 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:861
+17/01/02 10:06:41 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 6 (ShuffledRDD[15] at reduceByKey at zhou33.scala:18)
+17/01/02 10:06:41 INFO TaskSchedulerImpl: Adding task set 6.0 with 2 tasks
+17/01/02 10:06:41 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 73, 10.109.253.74, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:41 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 74, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:41 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.109.253.74:42519 (size: 1381.0 B, free: 534.5 MB)
+17/01/02 10:06:41 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 10.109.253.74:43480
+17/01/02 10:06:41 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 2 is 82 bytes
+17/01/02 10:06:41 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.109.253.73:47064 (size: 1381.0 B, free: 534.5 MB)
+17/01/02 10:06:41 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 73) in 141 ms on 10.109.253.74 (1/2)
+17/01/02 10:06:41 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 10.109.253.73:45378
+17/01/02 10:06:41 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 74) in 195 ms on 10.109.253.73 (2/2)
+17/01/02 10:06:41 INFO DAGScheduler: ResultStage 6 (foreachRDD at zhou33.scala:19) finished in 0.197 s
+17/01/02 10:06:41 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+17/01/02 10:06:41 INFO DAGScheduler: Job 3 finished: foreachRDD at zhou33.scala:19, took 0.237383 s
+17/01/02 10:06:41 INFO JobScheduler: Finished job streaming job 1483322801000 ms.0 from job set of time 1483322801000 ms
+17/01/02 10:06:41 INFO ShuffledRDD: Removing RDD 9 from persistence list
+17/01/02 10:06:41 INFO JobScheduler: Total delay: 0.276 s for time 1483322801000 ms (execution: 0.244 s)
+17/01/02 10:06:41 INFO MapPartitionsRDD: Removing RDD 8 from persistence list
+17/01/02 10:06:41 INFO BlockManager: Removing RDD 9
+17/01/02 10:06:41 INFO MapPartitionsRDD: Removing RDD 7 from persistence list
+17/01/02 10:06:41 INFO MapPartitionsRDD: Removing RDD 6 from persistence list
+17/01/02 10:06:41 INFO MapPartitionsRDD: Removing RDD 5 from persistence list
+17/01/02 10:06:41 INFO BlockRDD: Removing RDD 4 from persistence list
+17/01/02 10:06:41 INFO SocketInputDStream: Removing blocks of RDD BlockRDD[4] at socketTextStream at zhou33.scala:15 of time 1483322801000 ms
+17/01/02 10:06:41 INFO ReceivedBlockTracker: Deleting batches ArrayBuffer()
+17/01/02 10:06:41 INFO InputInfoTracker: remove old batch metadata: 
+17/01/02 10:06:41 INFO BlockManager: Removing RDD 8
+17/01/02 10:06:41 INFO BlockManager: Removing RDD 7
+17/01/02 10:06:41 INFO BlockManager: Removing RDD 6
+17/01/02 10:06:41 INFO BlockManager: Removing RDD 5
+17/01/02 10:06:41 INFO BlockManager: Removing RDD 4
+17/01/02 10:06:41 INFO ReceiverTracker: Registered receiver for stream 0 from 10.109.253.73:45378
+17/01/02 10:06:42 INFO JobScheduler: Starting job streaming job 1483322802000 ms.0 from job set of time 1483322802000 ms
+17/01/02 10:06:42 INFO SparkContext: Starting job: foreachRDD at zhou33.scala:19
+17/01/02 10:06:42 INFO DAGScheduler: Registering RDD 20 (map at zhou33.scala:18)
+17/01/02 10:06:42 INFO DAGScheduler: Got job 4 (foreachRDD at zhou33.scala:19) with 2 output partitions
+17/01/02 10:06:42 INFO DAGScheduler: Final stage: ResultStage 8(foreachRDD at zhou33.scala:19)
+17/01/02 10:06:42 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+17/01/02 10:06:42 INFO DAGScheduler: Missing parents: List()
+17/01/02 10:06:42 INFO DAGScheduler: Submitting ResultStage 8 (ShuffledRDD[21] at reduceByKey at zhou33.scala:18), which has no missing parents
+17/01/02 10:06:42 INFO MemoryStore: ensureFreeSpace(2296) called with curMem=77291, maxMem=555755765
+17/01/02 10:06:42 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 2.2 KB, free 529.9 MB)
+17/01/02 10:06:42 INFO JobScheduler: Added jobs for time 1483322802000 ms
+17/01/02 10:06:42 INFO MemoryStore: ensureFreeSpace(1382) called with curMem=79587, maxMem=555755765
+17/01/02 10:06:42 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 1382.0 B, free 529.9 MB)
+17/01/02 10:06:42 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.108.166.75:41575 (size: 1382.0 B, free: 530.0 MB)
+17/01/02 10:06:42 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:861
+17/01/02 10:06:42 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 8 (ShuffledRDD[21] at reduceByKey at zhou33.scala:18)
+17/01/02 10:06:42 INFO TaskSchedulerImpl: Adding task set 8.0 with 2 tasks
+17/01/02 10:06:42 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 75, 10.109.253.71, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:42 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 76, 10.109.253.73, PROCESS_LOCAL, 6802 bytes)
+17/01/02 10:06:42 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.109.253.73:47064 (size: 1382.0 B, free: 534.5 MB)
+17/01/02 10:06:42 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.109.253.71:50789 (size: 1382.0 B, free: 534.5 MB)
+17/01/02 10:06:42 INFO BlockManagerInfo: Added input-0-1483322788600 in memory on 10.109.253.73:47064 (size: 4.1 KB, free: 534.5 MB)
+17/01/02 10:06:42 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 10.109.253.73:45378
+17/01/02 10:06:42 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 3 is 82 bytes
+17/01/02 10:06:42 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 10.109.253.71:44057
+17/01/02 10:06:42 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 75) in 86 ms on 10.109.253.71 (1/2)
+17/01/02 10:06:42 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 76) in 101 ms on 10.109.253.73 (2/2)
+17/01/02 10:06:42 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+17/01/02 10:06:42 INFO DAGScheduler: ResultStage 8 (foreachRDD at zhou33.scala:19) finished in 0.097 s
+17/01/02 10:06:42 INFO DAGScheduler: Job 4 finished: foreachRDD at zhou33.scala:19, took 0.129452 s
+17/01/02 10:06:42 INFO JobScheduler: Finished job streaming job 1483322802000 ms.0 from job set of time 1483322802000 ms
+17/01/02 10:06:42 INFO JobScheduler: Total delay: 0.179 s for time 1483322802000 ms (execution: 0.137 s)
+17/01/02 10:06:42 INFO ShuffledRDD: Removing RDD 15 from persistence list
+17/01/02 10:06:42 INFO BlockManager: Removing RDD 15
+17/01/02 10:06:42 INFO MapPartitionsRDD: Removing RDD 14 from persistence list
+17/01/02 10:06:42 INFO BlockManager: Removing RDD 14
+17/01/02 10:06:42 INFO MapPartitionsRDD: Removing RDD 13 from persistence list
+17/01/02 10:06:42 INFO BlockManager: Removing RDD 13
+17/01/02 10:06:42 INFO MapPartitionsRDD: Removing RDD 12 from persistence list
+17/01/02 10:06:42 INFO MapPartitionsRDD: Removing RDD 11 from persistence list
+17/01/02 10:06:42 INFO BlockManager: Removing RDD 12
+17/01/02 10:06:42 INFO BlockManager: Removing RDD 11
+17/01/02 10:06:42 INFO BlockRDD: Removing RDD 10 from persistence list
+17/01/02 10:06:42 INFO BlockManager: Removing RDD 10
+17/01/02 10:06:42 INFO SocketInputDStream: Removing blocks of RDD BlockRDD[10] at socketTextStream at zhou33.scala:15 of time 1483322802000 ms
+17/01/02 10:06:42 INFO ReceivedBlockTracker: Deleting batches ArrayBuffer(1483322800000 ms)
+17/01/02 10:06:42 INFO InputInfoTracker: remove old batch metadata: 1483322800000 ms
+17/01/02 10:06:42 INFO BlockManagerInfo: Added input-0-1483322788800 in memory on 10.109.253.73:47064 (size: 3.1 KB, free: 534.5 MB)
+17/01/02 10:06:42 INFO BlockManagerInfo: Added input-0-1483322789000 in memory on 10.109.253.73:47064 (size: 2.8 KB, free: 534.5 MB)
+17/01/02 10:06:42 INFO BlockManagerInfo: Added input-0-1483322789200 in memory on 10.109.253.73:47064 (size: 2.9 KB, free: 534.5 MB)
+17/01/02 10:06:42 INFO BlockManagerInfo: Added input-0-1483322789400 in memory on 10.109.253.73:47064 (size: 2.9 KB, free: 534.5 MB)
+17/01/02 10:06:43 INFO JobScheduler: Added jobs for time 1483322803000 ms
+17/01/02 10:06:43 INFO JobScheduler: Starting job streaming job 1483322803000 ms.0 from job set of time 1483322803000 ms
+17/01/02 10:06:43 INFO SparkContext: Starting job: foreachRDD at zhou33.scala:19
+17/01/02 10:06:43 INFO DAGScheduler: Registering RDD 26 (map at zhou33.scala:18)
+17/01/02 10:06:43 INFO DAGScheduler: Got job 5 (foreachRDD at zhou33.scala:19) with 2 output partitions
+17/01/02 10:06:43 INFO DAGScheduler: Final stage: ResultStage 10(foreachRDD at zhou33.scala:19)
+17/01/02 10:06:43 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 9)
+17/01/02 10:06:43 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 9)
+17/01/02 10:06:43 INFO DAGScheduler: Submitting ShuffleMapStage 9 (MapPartitionsRDD[26] at map at zhou33.scala:18), which has no missing parents
+17/01/02 10:06:43 INFO MemoryStore: ensureFreeSpace(3000) called with curMem=80969, maxMem=555755765
+17/01/02 10:06:43 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 2.9 KB, free 529.9 MB)
+17/01/02 10:06:43 INFO MemoryStore: ensureFreeSpace(1813) called with curMem=83969, maxMem=555755765
+17/01/02 10:06:43 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 1813.0 B, free 529.9 MB)
+17/01/02 10:06:43 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.108.166.75:41575 (size: 1813.0 B, free: 530.0 MB)
+17/01/02 10:06:43 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:861
+17/01/02 10:06:43 INFO DAGScheduler: Submitting 5 missing tasks from ShuffleMapStage 9 (MapPartitionsRDD[26] at map at zhou33.scala:18)
+17/01/02 10:06:43 INFO TaskSchedulerImpl: Adding task set 9.0 with 5 tasks
+17/01/02 10:06:43 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 77, 10.109.253.73, NODE_LOCAL, 6914 bytes)
+17/01/02 10:06:43 INFO BlockManagerInfo: Added input-0-1483322789600 in memory on 10.109.253.73:47064 (size: 2.9 KB, free: 534.5 MB)
+17/01/02 10:06:43 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.109.253.73:47064 (size: 1813.0 B, free: 534.5 MB)
+17/01/02 10:06:43 INFO BlockManagerInfo: Added input-0-1483322789800 in memory on 10.109.253.73:47064 (size: 2.6 KB, free: 534.5 MB)
+17/01/02 10:06:43 INFO BlockManagerInfo: Added input-0-1483322790000 in memory on 10.109.253.73:47064 (size: 3.2 KB, free: 534.5 MB)
+17/01/02 10:06:43 INFO TaskSetManager: Starting task 1.0 in stage 9.0 (TID 78, 10.109.253.73, NODE_LOCAL, 6914 bytes)
+17/01/02 10:06:43 INFO TaskSetManager: Starting task 2.0 in stage 9.0 (TID 79, 10.109.253.73, NODE_LOCAL, 6914 bytes)
+17/01/02 10:06:43 WARN TaskSetManager: Lost task 1.0 in stage 9.0 (TID 78, 10.109.253.73): java.lang.NumberFormatException: For input string: "��B715U0"
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/01/02 10:18:17 INFO SparkContext: Running Spark version 1.5.0
+17/01/02 10:18:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/01/02 10:18:18 WARN Utils: Your hostname, zhou-Lenovo resolves to a loopback address: 127.0.1.1; using 10.108.166.75 instead (on interface enp4s0)
+17/01/02 10:18:18 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/01/02 10:18:18 INFO SecurityManager: Changing view acls to: zhou
+17/01/02 10:18:18 INFO SecurityManager: Changing modify acls to: zhou
+17/01/02 10:18:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(zhou); users with modify permissions: Set(zhou)
+17/01/02 10:18:19 INFO Slf4jLogger: Slf4jLogger started
+17/01/02 10:18:19 INFO Remoting: Starting remoting
+17/01/02 10:18:19 INFO Utils: Successfully started service 'sparkDriver' on port 33936.
+17/01/02 10:18:19 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.108.166.75:33936]
+17/01/02 10:18:19 INFO SparkEnv: Registering MapOutputTracker
+17/01/02 10:18:19 INFO SparkEnv: Registering BlockManagerMaster
+17/01/02 10:18:19 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-0c037686-a273-44e3-804d-5fb32af0e476
+17/01/02 10:18:19 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+17/01/02 10:18:19 INFO HttpFileServer: HTTP File server directory is /tmp/spark-7375e739-76d9-4c63-a695-5f92b7a674da/httpd-eee4221c-e7a1-4a60-9227-b9643c7067c8
+17/01/02 10:18:19 INFO HttpServer: Starting HTTP Server
+17/01/02 10:18:19 INFO Utils: Successfully started service 'HTTP file server' on port 46395.
+17/01/02 10:18:19 INFO SparkEnv: Registering OutputCommitCoordinator
+17/01/02 10:18:19 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/01/02 10:18:19 INFO SparkUI: Started SparkUI at http://10.108.166.75:4040
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/activation-1.1.jar at http://10.108.166.75:46395/jars/activation-1.1.jar with timestamp 1483323499854
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/antlr-2.7.7.jar at http://10.108.166.75:46395/jars/antlr-2.7.7.jar with timestamp 1483323499855
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/apache-mime4j-core-0.7.2.jar at http://10.108.166.75:46395/jars/apache-mime4j-core-0.7.2.jar with timestamp 1483323499855
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-api-1.2.19.jar at http://10.108.166.75:46395/jars/axiom-api-1.2.19.jar with timestamp 1483323499856
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-dom-1.2.19.jar at http://10.108.166.75:46395/jars/axiom-dom-1.2.19.jar with timestamp 1483323499857
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-impl-1.2.19.jar at http://10.108.166.75:46395/jars/axiom-impl-1.2.19.jar with timestamp 1483323499860
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axiom-jaxb-1.2.19.jar at http://10.108.166.75:46395/jars/axiom-jaxb-1.2.19.jar with timestamp 1483323499860
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-adb-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-adb-1.7.2.jar with timestamp 1483323499861
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-adb-codegen-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-adb-codegen-1.7.2.jar with timestamp 1483323499861
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-ant-plugin-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-ant-plugin-1.7.2.jar with timestamp 1483323499862
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-clustering-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-clustering-1.7.2.jar with timestamp 1483323499862
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-codegen-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-codegen-1.7.2.jar with timestamp 1483323499862
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-corba-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-corba-1.7.2.jar with timestamp 1483323499863
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-fastinfoset-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-fastinfoset-1.7.2.jar with timestamp 1483323499864
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-java2wsdl-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-java2wsdl-1.7.2.jar with timestamp 1483323499864
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-jaxbri-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-jaxbri-1.7.2.jar with timestamp 1483323499864
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-jaxws-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-jaxws-1.7.2.jar with timestamp 1483323499865
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-jibx-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-jibx-1.7.2.jar with timestamp 1483323499865
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-json-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-json-1.7.2.jar with timestamp 1483323499866
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-kernel-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-kernel-1.7.2.jar with timestamp 1483323499867
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-metadata-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-metadata-1.7.2.jar with timestamp 1483323499868
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-mtompolicy-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-mtompolicy-1.7.2.jar with timestamp 1483323499868
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-saaj-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-saaj-1.7.2.jar with timestamp 1483323499869
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-soapmonitor-servlet-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-soapmonitor-servlet-1.7.2.jar with timestamp 1483323499869
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-spring-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-spring-1.7.2.jar with timestamp 1483323499869
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-base-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-base-1.7.2.jar with timestamp 1483323499869
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-http-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-http-1.7.2.jar with timestamp 1483323499870
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-jms-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-jms-1.7.2.jar with timestamp 1483323499870
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-local-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-local-1.7.2.jar with timestamp 1483323499870
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-mail-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-mail-1.7.2.jar with timestamp 1483323499870
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-tcp-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-tcp-1.7.2.jar with timestamp 1483323499871
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-udp-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-udp-1.7.2.jar with timestamp 1483323499871
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-transport-xmpp-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-transport-xmpp-1.7.2.jar with timestamp 1483323499871
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/axis2-xmlbeans-1.7.2.jar at http://10.108.166.75:46395/jars/axis2-xmlbeans-1.7.2.jar with timestamp 1483323499871
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/bcel-findbugs-6.0.jar at http://10.108.166.75:46395/jars/bcel-findbugs-6.0.jar with timestamp 1483323499872
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-cli-1.2.jar at http://10.108.166.75:46395/jars/commons-cli-1.2.jar with timestamp 1483323499872
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-codec-1.3.jar at http://10.108.166.75:46395/jars/commons-codec-1.3.jar with timestamp 1483323499873
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-fileupload-1.3.1.jar at http://10.108.166.75:46395/jars/commons-fileupload-1.3.1.jar with timestamp 1483323499873
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-httpclient-3.1.jar at http://10.108.166.75:46395/jars/commons-httpclient-3.1.jar with timestamp 1483323499874
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-io-2.1.jar at http://10.108.166.75:46395/jars/commons-io-2.1.jar with timestamp 1483323499874
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/commons-logging-1.1.1.jar at http://10.108.166.75:46395/jars/commons-logging-1.1.1.jar with timestamp 1483323499874
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-annotation_1.0_spec-1.1.jar at http://10.108.166.75:46395/jars/geronimo-annotation_1.0_spec-1.1.jar with timestamp 1483323499874
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-jaxws_2.2_spec-1.0.jar at http://10.108.166.75:46395/jars/geronimo-jaxws_2.2_spec-1.0.jar with timestamp 1483323499875
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-jta_1.1_spec-1.1.jar at http://10.108.166.75:46395/jars/geronimo-jta_1.1_spec-1.1.jar with timestamp 1483323499875
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-saaj_1.3_spec-1.0.1.jar at http://10.108.166.75:46395/jars/geronimo-saaj_1.3_spec-1.0.1.jar with timestamp 1483323499875
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-stax-api_1.0_spec-1.0.1.jar at http://10.108.166.75:46395/jars/geronimo-stax-api_1.0_spec-1.0.1.jar with timestamp 1483323499875
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar at http://10.108.166.75:46395/jars/geronimo-ws-metadata_2.0_spec-1.1.2.jar with timestamp 1483323499875
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/gson-2.1.jar at http://10.108.166.75:46395/jars/gson-2.1.jar with timestamp 1483323499876
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/httpclient-4.2.5.jar at http://10.108.166.75:46395/jars/httpclient-4.2.5.jar with timestamp 1483323499877
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/httpcore-4.2.5.jar at http://10.108.166.75:46395/jars/httpcore-4.2.5.jar with timestamp 1483323499877
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jalopy-1.5rc3.jar at http://10.108.166.75:46395/jars/jalopy-1.5rc3.jar with timestamp 1483323499879
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxb-api-2.2.6.jar at http://10.108.166.75:46395/jars/jaxb-api-2.2.6.jar with timestamp 1483323499880
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxb-impl-2.2.6.jar at http://10.108.166.75:46395/jars/jaxb-impl-2.2.6.jar with timestamp 1483323499882
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxb-xjc-2.2.6.jar at http://10.108.166.75:46395/jars/jaxb-xjc-2.2.6.jar with timestamp 1483323499885
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxen-1.1.6.jar at http://10.108.166.75:46395/jars/jaxen-1.1.6.jar with timestamp 1483323499885
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jaxws-tools-2.2.6.jar at http://10.108.166.75:46395/jars/jaxws-tools-2.2.6.jar with timestamp 1483323499889
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jedis.jar at http://10.108.166.75:46395/jars/jedis.jar with timestamp 1483323499891
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jettison-1.3.jar at http://10.108.166.75:46395/jars/jettison-1.3.jar with timestamp 1483323499891
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jibx-bind-1.2.jar at http://10.108.166.75:46395/jars/jibx-bind-1.2.jar with timestamp 1483323499892
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jibx-run-1.2.jar at http://10.108.166.75:46395/jars/jibx-run-1.2.jar with timestamp 1483323499893
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/jsr311-api-1.1.1.jar at http://10.108.166.75:46395/jars/jsr311-api-1.1.1.jar with timestamp 1483323499893
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/juli-6.0.16.jar at http://10.108.166.75:46395/jars/juli-6.0.16.jar with timestamp 1483323499893
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/log4j-1.2.15.jar at http://10.108.166.75:46395/jars/log4j-1.2.15.jar with timestamp 1483323499894
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/mail-1.4.jar at http://10.108.166.75:46395/jars/mail-1.4.jar with timestamp 1483323499895
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/mex-1.7.2-impl.jar at http://10.108.166.75:46395/jars/mex-1.7.2-impl.jar with timestamp 1483323499895
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/neethi-3.0.3.jar at http://10.108.166.75:46395/jars/neethi-3.0.3.jar with timestamp 1483323499895
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/stax2-api-3.1.1.jar at http://10.108.166.75:46395/jars/stax2-api-3.1.1.jar with timestamp 1483323499896
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/tribes-6.0.16.jar at http://10.108.166.75:46395/jars/tribes-6.0.16.jar with timestamp 1483323499896
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/woden-core-1.0M10.jar at http://10.108.166.75:46395/jars/woden-core-1.0M10.jar with timestamp 1483323499897
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/woodstox-core-asl-4.2.0.jar at http://10.108.166.75:46395/jars/woodstox-core-asl-4.2.0.jar with timestamp 1483323499898
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/wsdl4j-1.6.2.jar at http://10.108.166.75:46395/jars/wsdl4j-1.6.2.jar with timestamp 1483323499898
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xalan-2.7.0.jar at http://10.108.166.75:46395/jars/xalan-2.7.0.jar with timestamp 1483323499903
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xml-resolver-1.2.jar at http://10.108.166.75:46395/jars/xml-resolver-1.2.jar with timestamp 1483323499903
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xmlbeans-2.5.0.jar at http://10.108.166.75:46395/jars/xmlbeans-2.5.0.jar with timestamp 1483323499907
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/lib/xmlschema-core-2.2.1.jar at http://10.108.166.75:46395/jars/xmlschema-core-2.2.1.jar with timestamp 1483323499907
+17/01/02 10:18:19 INFO SparkContext: Added JAR file:/home/zhou/genSpark/test/target/scala-2.10/simple-project_2.10-1.0.jar at http://10.108.166.75:46395/jars/simple-project_2.10-1.0.jar with timestamp 1483323499908
+17/01/02 10:18:19 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Connecting to master spark://10.109.253.71:7077...
+17/01/02 10:18:20 INFO SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20170102101807-0024
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor added: app-20170102101807-0024/0 on worker-20170101090337-10.109.253.72-33528 (10.109.253.72:33528) with 2 cores
+17/01/02 10:18:20 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102101807-0024/0 on hostPort 10.109.253.72:33528 with 2 cores, 1024.0 MB RAM
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor added: app-20170102101807-0024/1 on worker-20161223182137-10.109.253.73-57334 (10.109.253.73:57334) with 2 cores
+17/01/02 10:18:20 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102101807-0024/1 on hostPort 10.109.253.73:57334 with 2 cores, 1024.0 MB RAM
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor added: app-20170102101807-0024/2 on worker-20161223182135-10.109.253.74-59302 (10.109.253.74:59302) with 2 cores
+17/01/02 10:18:20 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102101807-0024/2 on hostPort 10.109.253.74:59302 with 2 cores, 1024.0 MB RAM
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor added: app-20170102101807-0024/3 on worker-20161223182125-10.109.253.71-52935 (10.109.253.71:52935) with 2 cores
+17/01/02 10:18:20 INFO SparkDeploySchedulerBackend: Granted executor ID app-20170102101807-0024/3 on hostPort 10.109.253.71:52935 with 2 cores, 1024.0 MB RAM
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor updated: app-20170102101807-0024/0 is now LOADING
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor updated: app-20170102101807-0024/3 is now LOADING
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor updated: app-20170102101807-0024/2 is now LOADING
+17/01/02 10:18:20 INFO AppClient$ClientEndpoint: Executor updated: app-20170102101807-0024/3 is now FAILED (java.io.IOException: Cannot run program "/home/spark/jdk1.8.0_60/bin/java" (in directory "/home/spark/spark-1.5.0/work/app-20170102101807-0024/3"): error=11, 资源暂时不可用)

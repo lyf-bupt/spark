@@ -194,8 +194,13 @@ Graph.prototype.getTooltipForCell = function(cell)
 			{
 				tip += '\n';
 			}
-			
-			tip += 'X: ' + f2(geo.x) + '\nY: ' + f2(geo.y) + '\nW: ' + f2(geo.width) + '\nH: ' + f2(geo.height);
+			if(graphBackend[cell.getId()]){
+				tip = graphBackend[cell.getId()];
+			}else{
+				tip = cell.getValue();
+			}
+			// tip += 'X: ' + f2(geo.x) + '\nY: ' + f2(geo.y) + '\nW: ' + f2(geo.width) + '\nH: ' + f2(geo.height);
+			// tip +="\nid:"+cell.getId();
 		}
 	}
 	else if (this.getModel().isEdge(cell))

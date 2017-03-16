@@ -4,6 +4,7 @@ let dataMap = new Map();
 function getInfo(){
   $.get("./monitor",data=>{
     cluters = JSON.parse(data);
+    console.log(cluters);
     cluters.map(cluter=>{
       cluter.apps.map(app=>{
         $.post("./monitor",{id:app.id,ip:cluter.ip},data=>app.excutors = JSON.parse(data))
@@ -19,8 +20,8 @@ function init(cluter){
             "</h3><p>"+cluter.ip+"</p>"+
             "<div class=\"panel\"><div id=\""+cluter.name+"-cpu\" style=\"height:300px;width:45%\"></div>"+
             "<div id=\""+cluter.name+"-mem\" style=\"height:300px;width:45%\"></div></div></div>";
-  dataMap.set(cluter.name+"-cpu",chart(cluter.name+"-cpu",cluter));
-  dataMap.set(cluter.name+"-mem",chart(cluter.name+"-mem",cluter));
+  dataMap.set(cluter.name+"-cpu",new chart(cluter.name+"-cpu",cluter));
+  dataMap.set(cluter.name+"-mem",new chart(cluter.name+"-mem",cluter));
   initFlag = true;
 }
 
@@ -37,7 +38,6 @@ function chart(name,cluter){
   var myChart = echarts.init(dom);
   option = null;
   var date = [];
-
   var data = [Math.random() * 150];
   var now = new Date();
 
@@ -49,17 +49,12 @@ function chart(name,cluter){
         now.getSeconds()<10?'0'+now.getSeconds():now.getSeconds()].join(':');
       let num = 0.0;
       if(name.indexOf("cpu")>-1){
-        cluter.cpus.map(cpu => {
-          num += parseFloat(cpu.substring((cpu.indexOf("states:"))+8,cpu.indexOf("user")));
-        })
-        num /= cluter.cpus.length;
-        // console.log(num);
+        num = parseFloat(cluter.cpuRate);
+        console.log(num);
       }
       if(name.indexOf("mem")>-1){
-        let mem = cluter.mem;
-        num = parseFloat(mem.substring(mem.indexOf("Used = ")+7,mem.indexOf("used")))
-        /parseFloat(mem.substring(mem.indexOf("Total = ")+8,mem.indexOf("av")));
-        num *= 100;
+        num = parseFloat(cluter.memRate).toFixed(2);
+        //parseFloat(mem.substring(mem.indexOf("Total = ")+8,mem.indexOf("av")));
       }
       date.push(now);
       data.push(num);
@@ -110,6 +105,8 @@ function chart(name,cluter){
       ]
   };
   function update(newCluter){
+  	// console.log(dom);
+  	// console.log(data);
     addData(true,newCluter);
     myChart.setOption({
         xAxis: {

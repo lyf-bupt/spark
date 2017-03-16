@@ -6,7 +6,11 @@ import java.io.FileOutputStream;
 import java.io.IOException; 
 import java.util.Properties; 
 
-
+/**
+ * 读取发布订阅模块的配置文件
+ * @author spark
+ *
+ */
 public class SubscribeConfig 
 { 
     private Properties propertie; 
@@ -55,7 +59,12 @@ public class SubscribeConfig
             return ""; 
     }//end getValue() 
 
-    
+    /**
+     * 打开配置文件并读取其中的数值
+     * @param fileName 配置文件地址
+     * @param key 配置文件属性
+     * @return 配置文件中属性的值
+     */
     public String getValue(String fileName, String key) 
     { 
         try { 
@@ -88,14 +97,22 @@ public class SubscribeConfig
         propertie.clear(); 
     }//end clear(); 
   
-    
+    /**
+     * 修改内存中配置的值
+     * @param key 修改的属性名
+     * @param value 修改的属性值
+     */
     public void setValue(String key, String value) 
     { 
         propertie.setProperty(key, value); 
     }//end setValue() 
 
    
-    
+    /**
+     * 修改配置属性并存入配置文件中
+     * @param fileName 配置文件地址
+     * @param description 配置项
+     */
     public void saveFile(String fileName, String description) 
     { 
         try { 

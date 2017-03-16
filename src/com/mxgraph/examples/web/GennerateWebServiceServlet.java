@@ -65,7 +65,7 @@ public class GennerateWebServiceServlet extends HttpServlet
 				HttpSession session = request.getSession(false); 
 				String projectName = (String)session.getAttribute("project"); 
 				String filename = code.substring(code.indexOf("class")+6,code.indexOf("{"));
-				String URL = "http://"+Constants.LOCAL_HOST+":"+(9098+Constants.processVec.size())+"/"+projectName+"/"+filename;
+				String URL = "http://"+Constants.LOCAL_HOST+":"+(19098+Constants.processVec.size())+"/"+projectName+"/"+filename;
 				//生成java文件
 				String javaFilePath = Constants.JAVA_FILE_PATH+projectName+"/src/main/java/"+projectName+"/"+filename+".java";
 				File file = new File(javaFilePath);
@@ -217,7 +217,6 @@ public class GennerateWebServiceServlet extends HttpServlet
 				response.setContentType("text/html;charset=GB2312");
 				response.setStatus(HttpServletResponse.SC_OK);
 				PrintWriter out = response.getWriter();
-				String encoding = request.getHeader("Accept-Encoding");
 				out.write(URL);
 				out.flush();
 				out.close();

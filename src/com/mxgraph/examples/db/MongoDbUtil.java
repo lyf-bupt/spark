@@ -1,3 +1,6 @@
+/*
+ * mongoDB的工具类，现在没在使用
+ */
 package com.mxgraph.examples.db;
 
 import java.net.UnknownHostException;

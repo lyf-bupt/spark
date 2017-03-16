@@ -334,6 +334,7 @@ EditorUi.prototype.generateSpark = function(name)
 	if (name != null)
 	{
 		var xml = mxUtils.getXml(this.editor.getGraphXml());
+		let timer;
 
 		try
 		{
@@ -354,18 +355,55 @@ EditorUi.prototype.generateSpark = function(name)
 				{
 					xml = encodeURIComponent(xml);
 					var onload = function(req,status)
-					{
-						$(".geLoading").removeClass('off');
-						$(".geLoading").removeClass('on');
-						$(".geLoading").addClass('off');
-					 	alert(req);
+					{	
+						if(req.indexOf('失败')>-1 || status!='success') onerror(req);
+					 	let bar = mxConstants.loadingStatus;
+					 	let barFill = bar.childNodes[0];
+					 	let text = bar.childNodes[1];
+					 	$(barFill).css('width','30%');
+					 	text.innerHTML = req;
+					 	setTimeout(()=>$.post(PACK_URL,{filename:name},onPackageLoad),50);
 					}
 					var onerror = function(req)
 					{
-						 mxUtils.alert(req.getStatus());
+						 mxUtils.alert(req);
 						 $(".geLoading").removeClass('off');
 						$(".geLoading").removeClass('on');
 						$(".geLoading").addClass('off');
+					}
+					let onPackageLoad = function(rep,status){
+						if(rep.indexOf('失败')>-1 || status!='success') onerror(rep);
+						if(rep.indexOf('打包成功')>-1){
+							let bar = mxConstants.loadingStatus;
+						 	let barFill = bar.childNodes[0];
+						 	let text = bar.childNodes[1];
+						 	$(barFill).css('width','60%');
+						 	text.innerHTML = rep;
+						 	// clearInterval(timer);
+						 	$.post(SUBMIT_URL,{filename:name},onSubmitLoad);
+						}else if(rep.indexOf('打包中')>-1){
+							setTimeout(()=>$.post(PACK_URL,{filename:name},onPackageLoad),5000);
+						}
+					 	
+					}
+					let onSubmitLoad = function(res,status){
+						if(res.indexOf('失败')>-1 || status!='success') onerror(res);
+						if(res.indexOf('提交成功')>-1){
+							let bar = mxConstants.loadingStatus;
+						 	let barFill = bar.childNodes[0];
+						 	let text = bar.childNodes[1];
+						 	$(barFill).css('width','100%');
+						 	text.innerHTML = res;
+						 	// clearInterval(timer);
+						 	setTimeout(()=>{
+						 		$(".geLoading").removeClass('off');
+								$(".geLoading").removeClass('on');
+								$(".geLoading").addClass('off');
+								alert(res);
+						 	},1500);
+						}else if(res.indexOf('提交中')>-1){
+							setTimeout(()=>$.post(SUBMIT_URL,{filename:name},onSubmitLoad),5000);
+						}
 					}
 				//	new mxXmlRequest(GEN_URL, 'filename=' + name + '&xml=' + xml).send(onload,onerror);
 					$.post(GEN_URL, {filename:name,xml:xml},onload);
@@ -710,9 +748,16 @@ EditorUi.prototype.createUi = function()
 	var img = document.createElement("img");
 	img.src = "image/loading1.gif";
 	this.loadingBackgroundContainer.appendChild(img);
+	var bar = document.createElement('div');
+	bar.className="loadingBar";
+	var fill = document.createElement('div');
+	fill.className="loadingFill";
+	bar.appendChild(fill);
+	this.loadingBackgroundContainer.appendChild(bar);
 	var p = document.createElement("p");
+	mxConstants.loadingStatus = bar;
 	p.innerHTML="打包提交中，请稍等...."
-	this.loadingBackgroundContainer.appendChild(p);
+	bar.appendChild(p);
 
 	this.webserviceContainer.setAttribute("id","webserviceEditor");
 

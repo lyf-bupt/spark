@@ -145,3 +145,27 @@ table caption{
   background-color: #eee;
   color:white;
 }
+.tree{
+  display: inline-block;
+  padding-top: 75px;
+  padding-left:15px;
+}
+.manager{
+  /*display: inline-block;*/
+  width:75%;
+  float: left;
+}
+.treePanel{
+  width:20%;
+  float: left;
+}
+.jqx-tree{
+  border-width: 0;
+}
+.manager table td{
+  padding:15px 0;
+  border-bottom: 1px solid #999;
+}
+.manager tbody tr:hover{
+  background-color: rgba(255,165,0,0.1);
+}
