@@ -17,11 +17,11 @@ import com.mxgraph.examples.subscribe.singleSubscribe;
 public class Constants
 {
 	/**
-	 * Contains an empty image.
+	 * 工程常量，整个java进程中只存在一份，用于在各个线程之间进行通信
 	 */
 	public static BufferedImage EMPTY_IMAGE;
 	
-	public static String FILE_NAME = null;   //文件名
+	public static String FILE_NAME = null;   //文件名，用于生成scala文件
 	
 	public static String LOG_PATH = null;  //日志目录
 	
@@ -47,17 +47,17 @@ public class Constants
 	
 	public static Vector<Process> processVec = null;//启动页面上新建的webservice的进程
 	
-	public static boolean hookFlag = false;
+	public static boolean hookFlag = false;  //关闭钩子，用于在进程关闭时将进程启动的附加线程关闭
 	
 	public static String LOCAL_HOST= "";
 	
-	public static int i = 1;
+	public static int i = 1;  //没什么用
 	
-	public static ExecutorService POOL = null; //线程池
+	public static ExecutorService POOL = null; //线程池，用于打包和提交
 	
-	public static Map<String,String> SESSION_STATUS= null; 
+	public static Map<String,String> SESSION_STATUS= null;   //会话状态，已废弃
 	
-	public static Map<String,Map<String,String>> SESSION_MANAGER = null;  //会话管理
+	public static Map<String,Map<String,String>> SESSION_MANAGER = null;  //会话管理，用于其别使用系统的多个用户
 	
 	public static String DATA_SOURCE = ""; //数据源
 	
@@ -66,7 +66,7 @@ public class Constants
 	
 
 	/**
-	 * Initializes the empty image.
+	 * 初始化参数
 	 */
 	static
 	{	
@@ -74,6 +74,7 @@ public class Constants
 		try
 		{	
 			EMPTY_IMAGE = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
+			//从配置文件中读取参数初始值
 			InputStream in = new BufferedInputStream(new FileInputStream(new File("../../config.properties"))); 
 			prop.load(in); 
 			LOG_PATH = prop.getProperty("LogPath").trim();
@@ -104,6 +105,7 @@ public class Constants
 	public static final int MAX_REQUEST_SIZE = 10485760;
 
 	/**
+	 * 
 	 * Maximum width for ex�prts. Default is 5000px.
 	 */
 	public static final int MAX_WIDTH = 6000;

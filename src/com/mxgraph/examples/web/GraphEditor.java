@@ -10,17 +10,13 @@ import org.mortbay.jetty.servlet.ServletHolder;
 import com.mxgraph.examples.subscribe.singleSubscribe;
 
 /**
- * The save servlet is used to echo XML to the client, eg. for SVG export and saving
- * (see Dialogs.js:SaveDialog and ExportDialog). The export servlet is used to
- * implement image and PDF export (see Dialogs.js:ExportDialog). Note that the
- * CSS support is limited to the following for all HTML markup:
- * http://docs.oracle.com/javase/6/docs/api/index.html?javax/swing/text/html/CSS.html
- * The open servlet is used to open files. It does this by calling some JavaScript
- * hook in the client-side page (see open.html).
+ * 启动类
+ * @author spark
+ *
  */
 public class GraphEditor
 {
-
+	//启动的服务器的端口号，新版本的jetty在运行参数中指定
 	public static int PORT = 8080;
 
 	/**

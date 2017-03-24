@@ -16,6 +16,11 @@ import com.mxgraph.examples.db.MysqlUtil;
 import com.mxgraph.examples.subscribe.singleSubscribe;
 import com.mxgraph.examples.util.GetAllTopic;
 
+/**
+ * 用于读取数据源
+ * @author spark
+ *
+ */
 public class TopicServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -27,6 +32,7 @@ public class TopicServlet extends HttpServlet {
 				
 				String topics = "";
 				MysqlUtil db = new MysqlUtil();
+				//从数据库中读取数据源列表
 				String sources = db.getAllDataSource();
 
 		    	 out.println(sources);
@@ -45,6 +51,7 @@ public class TopicServlet extends HttpServlet {
 			String source = request.getParameter("source");
 //			System.out.println(type);
 			if("view".equals(type)){
+				//读取数据源所对应的输出的视图，也就是output算子的对话框中的选项
 				int dataSource = Integer.parseInt(source);
 				MysqlUtil db = new MysqlUtil();
 				String fields = db.getModels(dataSource);
@@ -55,6 +62,7 @@ public class TopicServlet extends HttpServlet {
 				out.flush();
 				out.close();
 			}else if("example".equals(type)){
+				//读取数据源对应的数据实例，用于对算子进行自定义时提醒用户数据的格式
 				int dataSource = Integer.parseInt(source);
 				MysqlUtil db = new MysqlUtil();
 				String fields = db.getFields(dataSource);
@@ -67,6 +75,7 @@ public class TopicServlet extends HttpServlet {
 				out.flush();
 				out.close();
 			}else{
+				//读取数据源中数据的字段，用于对算子进行自定义时提醒用户数据的格式
 				int dataSource = Integer.parseInt(source);
 				MysqlUtil db = new MysqlUtil();
 				String fields = db.getFields(dataSource);

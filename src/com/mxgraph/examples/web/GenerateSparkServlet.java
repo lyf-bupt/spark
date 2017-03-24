@@ -41,12 +41,13 @@ import com.mxgraph.examples.util.PackageAndSubmitThread;
 import com.mxgraph.examples.util.ParseSCAModelUtil;
 import com.mxgraph.examples.util.TemplateGenerator;
 
+/**
+ * plan生成服务，用于生成scala代码
+ * @author spark
+ *
+ */
 public class GenerateSparkServlet extends HttpServlet
 {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -5308353652899057537L;
 
 	/**
@@ -58,17 +59,21 @@ public class GenerateSparkServlet extends HttpServlet
 		if (request.getContentLength() < Constants.MAX_REQUEST_SIZE)
 		{
 			String filename = request.getParameter("filename");
+			//plan的xml表示
 			String xml = request.getParameter("xml");
 			HttpSession session = request.getSession();
+			//项目名，用于区分不同的会话
 			Object project = session.getAttribute("project");
 			String projectName;
 			if(project==null){
+				//项目名为空就随机给一个uuid
 				projectName = UUID.randomUUID().toString().replaceAll("-", "");
 				session.setAttribute("project", projectName);
 				Constants.SESSION_MANAGER.put(projectName, new HashMap<String,String>());
 			}else{
 				projectName = (String)project; 
 			}
+			//将所有的新上传的SCA模型调用接口的地址换掉，这边需要改，不能写死
 			xml = xml.replaceAll("localhost", "10.109.253.71");
 			
 			if (xml != null && xml.length() > 0)
@@ -94,14 +99,19 @@ public class GenerateSparkServlet extends HttpServlet
 					children = root.elements();
 					for(Element ele:children){
 						if(ele.attribute("style")!=null){
+							//输入
 							if("ellipse".equals(ele.attributeValue("style").toString())){
 								input = ele;
+							//输出
 							}else if("ellipse;shape=doubleEllipse".equals(ele.attributeValue("style").toString())){
 								output = ele;
+							//分叉
 							}else if("shape=step".equals(ele.attributeValue("style").toString())){
 								flatMap = ele;
+							//归约
 							}else if("triangle".equals(ele.attributeValue("style").toString())){
 								reduce = ele;
+							//检查调用的接口类型，用于确定需要import什么样的接口stub
 							}else if("ellipse;shape=cloud".equals(ele.attributeValue("style").toString())){
 								String type = ele.attributeValue("value").toString().split("~")[0];
 								String URL = ele.attributeValue("value").toString().split("~")[1];
@@ -109,12 +119,14 @@ public class GenerateSparkServlet extends HttpServlet
 									wsType.add(type);
 								}
 								if(URL.contains("10.109.253.71") && !wsURL.contains(URL)){
+								//这边需要把新上传的SCA模型信息统计起来，这边不换回去会出错
 									wsURL.add(URL.replaceAll("10.109.253.71", "localhost"));
 								}
 							}
 						}
 					}
 //				System.out.println(new String(xml1));
+					//下面这几句都没设么用
 					if (flatMap != null) {
 						System.out.println("flatMap：" + flatMap.attributeValue("id"));
 					}
@@ -142,13 +154,16 @@ public class GenerateSparkServlet extends HttpServlet
 				//生成core code
 				String coreCode = "var res = input";
 				CodeGenerator gen = new CodeGenerator(wsType);
+				//生成从数据源到分叉的代码
 				String pre = gen.genneratePretreatment(children, input, flatMap, reduce, output);
 				if(pre!=null&&pre!=""){
 					coreCode += gen.genneratePretreatment(children, input, flatMap, reduce, output);
 				}else{
 					coreCode = "";
 				}
+				//生成从数据源到分叉的代码
 				coreCode += gen.generateBranch(children, input, output,flatMap, reduce);
+				//生成从数据源到分叉的代码
 				coreCode +=gen.generateConcourse(children, input, reduce, output);
 				System.out.println(coreCode);
 				
@@ -196,6 +211,7 @@ public class GenerateSparkServlet extends HttpServlet
 				response.setContentType("text/html;charset=GB2312");
 				PrintWriter out = response.getWriter();
 				
+				//将代码生成完毕信息传到前端，前端收到消息之后访问打包部署服务
 				out.println("代码生成成功，打包中...");
 				out.close();
 				if(Constants.GENERATE_RESULT.contains("失败")){

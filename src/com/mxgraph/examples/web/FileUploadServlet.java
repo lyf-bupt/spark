@@ -24,6 +24,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import com.mxgraph.examples.db.MysqlUtil;
 import com.mxgraph.examples.util.ParseJarUtil;
 
+/**
+ * 文件上传服务，用于在服务监控注册管理中心中将打包好的SCA模型上传到服务器
+ * @author spark
+ *
+ */
 public class FileUploadServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
@@ -33,6 +38,7 @@ public class FileUploadServlet extends HttpServlet{
         DiskFileItemFactory factory = new DiskFileItemFactory();  
         //获取文件需要上传到的路径  
         String path = Constants.TO_BE_DEPOLY_DIR;
+        //下面这两个不需要了，名字直接从文件名进行读取了
         String SCAName = (String) request.getAttribute("name");
         String URL = request.getParameter("URL");
           
@@ -108,10 +114,12 @@ public class FileUploadServlet extends HttpServlet{
                       
                     in.close();  
                     out.close();  
+                    //解析上传的SCA模型，解析出SCA模型向外暴露的方法和SCA模型的name属性（不是文件名，composite文件里面根节点有那么属性）
                     ParseJarUtil util = new ParseJarUtil(Constants.TO_BE_DEPOLY_DIR+"/"+filename);
                     List<String> Methods = util.getMethod();
                     SCAName = SCAName==null?util.getName():SCAName;
                     URL = util.getURL();
+                    //将SCA模型存入数据库
                     registerSCA(SCAName, Methods, URL,Constants.TO_BE_DEPOLY_DIR+"/"+filename);
                 }  
             }  
@@ -133,7 +141,9 @@ public class FileUploadServlet extends HttpServlet{
     	MysqlUtil ct = new MysqlUtil();
     	String id = String.valueOf(ct.getAllType().size()+1);
     	String father = "6";
+    	//一般SCA模型都是soap接口的
     	String type="Soap";
+    	//没有名字就加个编号
     	String SCAName = name==null?"SCA"+id:name;
     	String sql = "INSERT INTO services (id, father, name, type, URL) VALUES ('"+id+"', '"+father+"','"+SCAName+"','"+type+"','"+path+"')";
     	ct.execute(sql);

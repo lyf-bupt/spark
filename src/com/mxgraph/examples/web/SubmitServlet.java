@@ -17,6 +17,11 @@ import com.mxgraph.examples.util.SubmitThread;
 
 import sun.misc.Contended;
 
+/**spark提交服务
+ * spark
+ * @author spark
+ *
+ */
 public class SubmitServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request,
@@ -32,7 +37,9 @@ public class SubmitServlet extends HttpServlet{
 //		String status = Constants.SESSION_STATUS.get(projectName);
 		String status = Constants.SESSION_MANAGER.get(projectName).get("status");
 		if(status.contains("打包成功")){
+			//打包成功后进行spark的提交
 //			Constants.SESSION_STATUS.put(projectName, "提交中...");
+			//没有用
 			BlancerUtil blancer = new BlancerUtil();
 			String node = blancer.caculateNode();
 			if(node!=null && node!=""){
@@ -40,7 +47,9 @@ public class SubmitServlet extends HttpServlet{
 			}
 			Constants.SESSION_MANAGER.get(projectName).put("status", "提交中...");
 			
+			//启动提交线程
 			SubmitThread thread = new SubmitThread(fileName, projectName,null);
+			//这块主要给演示用，这个是强制写死的不好，用于将应用提交到没有正在跑程序的集群
 			boolean ans = HttpMethod.sendGet("http://localhost:4040/api/v1/applications", null)!=""
 					|| HttpMethod.sendGet("http://localhost:4041/api/v1/applications", null)!="" ;
 			if(!ans){
@@ -48,7 +57,9 @@ public class SubmitServlet extends HttpServlet{
 				Future future1 = Constants.POOL.submit(thread1);
 			}
 			Future future = Constants.POOL.submit(thread);
+			//向前端返回“提交中”，前端收到信息后隔一段时间又访问本服务
 			out.write("提交中...");
+			//将plan中提到的新上传的SCA模型使用scp上传到tuscany集群的指定目录，集群中有自动部署程序会对传过去的SCA模型进行部署
 			FileTransmissionUtil util = new FileTransmissionUtil();
 			String jarsString = Constants.SESSION_MANAGER.get(projectName).get("jars");
 			if(jarsString != null && jarsString != ""){
@@ -58,6 +69,7 @@ public class SubmitServlet extends HttpServlet{
 				}
 			}	
 		}else{
+			////返回打包的状态，若是“提交中”，前端收到信息后隔一段时间又访问本服务，如果是“提交完成”，前端弹出窗口进行通知并去除gif遮罩
 			out.write(status);
 			if(status.contains("失败")){
 				Constants.SESSION_MANAGER.get(projectName).put("status", "待重试");

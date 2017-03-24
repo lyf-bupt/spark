@@ -41,13 +41,14 @@ import org.apache.tools.ant.ProjectHelper;
 import com.mxgraph.examples.util.BootWSTask;
 import com.mxgraph.examples.util.Utills;
 
-
+/**
+ * 用于将简单SCA模型编辑框内的代码生成真正的webservice并运行起来
+ * @author spark
+ *
+ */
 public class GennerateWebServiceServlet extends HttpServlet
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -5308353652899057537L;
 
 	/**
@@ -134,11 +135,13 @@ public class GennerateWebServiceServlet extends HttpServlet
                             String replacement = "";
                             for(int i=0;i < params.length;i++){
                             	String str= params[i];
+                            	//加入参数的注解
                             	replacement += "  @WebParam(name = \"in"+i+"\") "+str+",";
                             }
                             replacement = replacement.substring(0, replacement.length()-1);
 //                            System.out.println(replacement);
                             String methodReplacement = subMethod.replace(param, replacement);
+                            //加入方法的注解
                             methodReplacement = "@WebMethod\n"+methodReplacement;
                             code = code.replace(subMethod, methodReplacement);
                             methodString += method.getName()+"/";
@@ -201,6 +204,7 @@ public class GennerateWebServiceServlet extends HttpServlet
 		        thread.start();
 		        
 		        if(!Constants.hookFlag){
+		        	//当主进程关闭时将主进程创建出的进程也一起关闭
 			        Runtime.getRuntime().addShutdownHook(new Thread() {
 			            public void run() {
 			            	System.out.println("close processs");

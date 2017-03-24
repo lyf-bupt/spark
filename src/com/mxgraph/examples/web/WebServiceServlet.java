@@ -22,8 +22,16 @@ import com.mxgraph.examples.util.GetAllTopic;
 
 import net.sf.json.JSONObject;
 
+/**
+ * webservice服务，用于用户在定义webservice算子时选择已经入库了的webservice
+ * @author spark
+ *
+ */
 public class WebServiceServlet extends HttpServlet {
 
+	/**
+	 * 从数据库中读取出webservice列表
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String result = "";
@@ -35,6 +43,7 @@ public class WebServiceServlet extends HttpServlet {
 
 		MysqlUtil db = new MysqlUtil();
 		db.getConn();
+		//从数据库中读取出webservice列表
 		Vector<WebServiceDbModel> ne = db.getAllType();
 		int i = 0;
 		for (WebServiceDbModel obj : ne) {
@@ -54,7 +63,10 @@ public class WebServiceServlet extends HttpServlet {
 
 		out.close();
 	}
-
+	
+	/**
+	 * 从数据库中读取出已选的webservice对应的方法列表
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		if (request.getContentLength() < Constants.MAX_REQUEST_SIZE) {

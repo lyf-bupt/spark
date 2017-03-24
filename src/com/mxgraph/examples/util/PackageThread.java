@@ -24,6 +24,11 @@ public class PackageThread implements Callable<Object>{
 	private String filename;
 	private String project;
 	
+	/**
+	 * 打包线程
+	 * @author spark
+	 *
+	 */
 	public PackageThread(String filename,String project) {
 		// TODO Auto-generated constructor stub
 		this.successFlag = false;

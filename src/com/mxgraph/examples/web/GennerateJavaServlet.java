@@ -32,7 +32,7 @@ public class GennerateJavaServlet extends HttpServlet
 {
 
 	/**
-	 * 
+	 * 用于将简单SCA模型编辑框内的代码生成真正的webservice
 	 */
 	private static final long serialVersionUID = -5308353652899057537L;
 
@@ -106,6 +106,7 @@ public class GennerateJavaServlet extends HttpServlet
                     URLClassLoader loader=new URLClassLoader(new URL[]{new URL("file:"+classFile)});
 
                     Object name=loader.loadClass(projectName+"."+filename).newInstance();
+                    //读出webservice的方法，并将方法列表返回给前端供用户选择所需调用的方法
                     Method[] methods = name.getClass().getMethods();
                     for(Method method:methods){
                         if(!method.toString().contains("Object")) {
@@ -158,6 +159,7 @@ public class GennerateJavaServlet extends HttpServlet
 					   e.printStackTrace();
 					}
 				code = code.replaceAll(filename, filename+"Impl implements "+filename);
+				//加上注解生成真正的webservice
 				code = code.replaceAll("public class", "@Service("+filename+".class)\npublic class");
 //				System.out.print(code);
 				
