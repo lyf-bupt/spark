@@ -4,6 +4,7 @@
  */
 /**
  * Constructs a new dialog.
+ * 定义对话框
  */
 function Dialog(editorUi, elt, w, h, modal, closable, onClose)
 {
@@ -1147,6 +1148,7 @@ function ExportDialog(editorUi)
 
 /**
  * Constructs a new generate dialog.
+ * 生成jar包对话框
  */
 function GenerateDialog(editorUi)
 {
@@ -1210,6 +1212,7 @@ function GenerateDialog(editorUi)
 
 /**
  * Constructs a new source dialog.
+ * 数据源对话框
  */
 function SourceDialog(editorUi,req)
 {
@@ -1386,6 +1389,7 @@ function SourceDialog(editorUi,req)
 
 /**
  * Constructs a new outputDir dialog.
+ * 输出对话框
  */
 function OutputModelDialog(editorUi,req)
 {
@@ -1457,7 +1461,7 @@ function OutputModelDialog(editorUi,req)
 };
 
 /**
- * Constructs a new source dialog.
+ * webservice选择对话框
  */
 function webServiceDialog(editorUi,req)
 {
@@ -1609,7 +1613,7 @@ function webServiceDialog(editorUi,req)
 };
 
 /**
- * Constructs a new source dialog.
+ * 选定webservice之后选择对应的方法的对话框
  */
 function methodDialog(editorUi,req,type)
 {
@@ -1777,7 +1781,7 @@ function methodDialog(editorUi,req,type)
 };
 
 /**
- * Constructs a new outputDir dialog.
+ * 代码编辑对话框
  */
 function codeEditorDialog(editorUi)
 {
@@ -1842,6 +1846,10 @@ function codeEditorDialog(editorUi)
 
 };
 
+/**
+ * 打开页面时弹出的输入项目名称的对话框
+ *
+ */
 function HelloDialog(editorUi)
 {
 	var graph = editorUi.editor.graph;
@@ -1908,6 +1916,12 @@ function HelloDialog(editorUi)
 
 };
 
+/**
+ * filter算子定义对话框
+ * @param  {[type]} editorUi [description]
+ * @param  {[type]} req
+ * @return [type]            [description]
+ */
 function filterDialog(editorUi,req){
 	var graph = editorUi.editor.graph;
 	var bounds = graph.getGraphBounds();
@@ -2123,6 +2137,12 @@ function filterDialog(editorUi,req){
 	},50);
 };
 
+/**
+ * map算子定义对话框
+ * @param  {[type]} editorUi [description]
+ * @param  {[type]} req      [description]
+ * @return [type]            [description]
+ */
 function mapDialog(editorUi,req){
 	var graph = editorUi.editor.graph;
 	var bounds = graph.getGraphBounds();
@@ -2325,6 +2345,12 @@ function mapDialog(editorUi,req){
 	},50);
 };
 
+/**
+ * 算子自定义对话框
+ * @param  {[type]} ui  [description]
+ * @param  {[type]} req [description]
+ * @return [type]       [description]
+ */
 function cusDFDialog(ui,req){
 	var graph = editorUi.editor.graph;
 	var bounds = graph.getGraphBounds();

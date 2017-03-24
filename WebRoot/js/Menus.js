@@ -1,9 +1,11 @@
-/**
- * $Id: Menus.js,v 1.55 2012-09-14 08:16:18 gaudenz Exp $
- * Copyright (c) 2006-2012, JGraph Ltd
- */
+
 /**
  * Constructs a new graph editor
+ */
+/**
+ * 生成菜单
+ * @param   editorUi [编辑器UI]
+ * @return [菜单]
  */
 Menus = function(editorUi)
 {

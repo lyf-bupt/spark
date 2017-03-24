@@ -4,6 +4,7 @@
  */
 /**
  * Constructs the actions object for the given UI.
+ * 主要用于描述动作，比如点击某个按钮执行某套逻辑
  */
 function Actions(editorUi)
 {
