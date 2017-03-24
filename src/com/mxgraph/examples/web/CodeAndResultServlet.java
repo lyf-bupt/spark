@@ -15,7 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zhou.redic.client.RedisClient;;
-
+/**
+ * 该类用于显示生成的代码和计算的结果
+ * @author spark
+ *
+ */
 public class CodeAndResultServlet extends HttpServlet {
 
 	/**
@@ -39,11 +43,14 @@ public class CodeAndResultServlet extends HttpServlet {
 //				Constants.FILE_NAME = "F99";
 				codeFile = Constants.SCALA_FILE_PATH + Constants.FILE_NAME + ".scala";
 			}
+			//请求类型
 			String type = request.getParameter("type");
 			response.setContentType("text/html;charset=GB2312");
 			PrintWriter out = response.getWriter();
+			//类型为初始化则初始化参数
 			if (("init").equals(type)) {
 				Constants.FILE_NAME = null;
+		   //类型为code，则返回生成的代码的结果
 			} else if (("code").equals(type)) {
 				if (codeFile != null) {
 					File file = new File(codeFile);
@@ -72,6 +79,7 @@ public class CodeAndResultServlet extends HttpServlet {
 				} else {
 					out.println("未生成代码，请先点击文件->生成jar包之后重试");
 				}
+			//类型为result则返回计算的结果
 			} else if (("result").equals(type)) {
 				if (outputFile != null) {
 					File file = new File(outputFile);
@@ -99,6 +107,7 @@ public class CodeAndResultServlet extends HttpServlet {
 				} else {
 					out.println("未生成并执行jar包，请先点击文件->生成jar包之后重试");
 				}
+			//类型为visio则返回结果汇总的结果，这个现在没用了，结果汇总直接内嵌了一个页面
 			} else if (("visio").equals(type)) {
 				String time = request.getParameter("time");
 				if(time!=null){

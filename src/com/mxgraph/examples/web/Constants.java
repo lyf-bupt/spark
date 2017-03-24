@@ -55,13 +55,13 @@ public class Constants
 	
 	public static ExecutorService POOL = null; //线程池
 	
-	public static Map<String,String> SESSION_STATUS= null;
+	public static Map<String,String> SESSION_STATUS= null; 
 	
-	public static Map<String,Map<String,String>> SESSION_MANAGER = null;
+	public static Map<String,Map<String,String>> SESSION_MANAGER = null;  //会话管理
 	
-	public static String DATA_SOURCE = "";
+	public static String DATA_SOURCE = ""; //数据源
 	
-	public static String TO_BE_DEPOLY_DIR = "/home/zhou/SCA_models";
+	public static String TO_BE_DEPOLY_DIR = "/home/zhou/SCA_models";   //本地待部署的文件目录
 	
 	
 
